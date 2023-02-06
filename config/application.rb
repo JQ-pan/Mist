@@ -28,7 +28,7 @@ module Mist
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
 
-    config.railties_order = [:all, :mail_app]
+    # config.railties_order = [:all, :mail_app]
 
     config.api_only = true    
   end
