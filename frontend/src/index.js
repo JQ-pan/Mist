@@ -31,7 +31,7 @@ const initializeApp = () => {
 const store = configureStore();
 restoreSession().then(initializeApp);
 
-if (sessionStorage.getItem("X-CSRF-Token") === null) {
+if (sessionStorage.getItem("X-CSRF-Token") === null || sessionStorage.getItem("currentUser") === null) {
   restoreCSRF().then(initializeApp);
 } else {
   initializeApp();
