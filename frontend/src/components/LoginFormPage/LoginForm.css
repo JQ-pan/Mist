@@ -77,3 +77,7 @@ button {
 	width: 292px;
 	float: none;
 }
+
+#signin {
+	color: rgb(0, 110, 255);
+}

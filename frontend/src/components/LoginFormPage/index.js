@@ -31,6 +31,11 @@ function LoginFormPage() {
             });
     }
 
+    const handleDemoLogin = (e) => {
+        setCredential('guest@guest.com');
+        setPassword('password');
+    }
+
     return (
         <div className="page_content">
             <div className="signin_container">
@@ -67,6 +72,8 @@ function LoginFormPage() {
                             </div>
                         </div>
                         <button type="submit">Log In</button>
+
+                        <button onClick={handleDemoLogin} type="submit">Demo Login</button>
                     </form>
                 </div>
             </div>
