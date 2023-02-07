@@ -1,43 +1,79 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+.page_content {
+	width: 100%;
 	margin: 0;
 	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+	background: radial-gradient(farthest-corner at 40px 40px, #3D4450 0%, #23262E 80%);
+	background-size: cover;
 }
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+
+.signup_container {
+	padding: 50px;
+	min-height: 600px;
+	max-width: 700px;
 }
-body {
-	line-height: 1;
+
+.signup {
+	padding: 20px 16px;
+	position: relative;
+	font-family: "Motiva Sans", Sans-serif;
 }
-ol, ul {
-	list-style: none;
+
+.title {
+	text-shadow: 0px 4px 4px rgb(0 0 0 25%);
+	font-size: 34px;
+	color: #ffffff;
+	margin-bottom: 30px;
+	font-weight: 200;
+	letter-spacing: 2px;
 }
-blockquote, q {
-	quotes: none;
+
+.input {
+	background: #32353C;
+    border-radius: 3px;
+    color: #E9E9E9;
+    padding: 8px 6px;
+    display: block;
+    box-shadow: none;
+    border: none;
+    width: 100%;
+    transition: border ease-in-out .5s;
+    font-family: "Motiva Sans", Sans-serif;
+    font-weight: normal;
+	width: 262px;
+	float: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+
+.labels {
+	font-size: 14px;
+	color: #b8b6b4;
+	vertical-align: top;
 }
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+
+button {
+	background: linear-gradient( to right, #47bfff 5%, #1a44c2 60%);
+	color: white;
+	padding: 3px 50px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 15px;
+	margin: 4px 2px;
+	cursor: pointer;
+	border-radius: 2px;
+	line-height: 30px;
+	box-shadow: 2px 2px 5px rgb(0,0,0, 20%);
+	background-position: 25%;
+	background-size: 330% 100%;
+}
+
+.form_row {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	margin: 25px 0;
+}
+
+.form_area {
+	width: 292px;
+	float: none;
 }
