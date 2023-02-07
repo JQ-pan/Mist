@@ -20,7 +20,7 @@
     "url": "https://github.com/JQ-pan/Mist/issues"
   },
   "homepage": "https://github.com/JQ-pan/Mist#readme",
-  "engines":{
-    "node": "16.x"
+  "engines": {
+    "node": "16.18.1"
   }
 }

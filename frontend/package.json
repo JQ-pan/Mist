@@ -17,7 +17,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "BUILD_PATH='../public' react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -38,5 +38,10 @@
   },
   "devDependencies": {
     "redux-logger": "^3.0.6"
-  }
+  },
+  "description": "A no-frills template from which to create React applications with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
