@@ -7,8 +7,7 @@ import App from './App';
 import configureStore from './store';
 import csrfFetch, { restoreCSRF } from './store/csrf';
 import { restoreSession } from './store/csrf';
-
-
+import * as sessionActions from './store/session'
 
 function Root() {
   return (
@@ -41,4 +40,5 @@ if (sessionStorage.getItem("X-CSRF-Token") === null) {
 if (process.env.NODE_ENV !== 'production') {
   window.store = store;
   window.csrfFetch = csrfFetch;
+  window.sessionActions = sessionActions;
 }
