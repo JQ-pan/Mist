@@ -34,7 +34,7 @@ function LoginFormPage() {
     return (
         <div className="page_content">
             <div className="signin_container">
-                <div className="signup">
+                <div className="signin">
                     <form onSubmit={handleSubmit}>
                         <ul>
                             {errors.map(error => <li key={error}>{error}</li>)}
@@ -43,7 +43,7 @@ function LoginFormPage() {
 
                         <div className="form_row">
                             <div className="form_area">
-                                <label className="labels">Sign in with Username or Email</label>
+                                <label className="labels" id="signin">SIGN IN WITH USERNAME OR EMAIL</label>
                                 <input
                                     className="input"
                                     type="text"
@@ -56,7 +56,7 @@ function LoginFormPage() {
 
                         <div className="form_row">
                             <div className="form_area">
-                                <label className="labels">Password</label>
+                                <label className="labels">PASSWORD</label>
                                 <input
                                     className="input"
                                     type="password"
