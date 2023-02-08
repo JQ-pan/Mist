@@ -3,6 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
 import Navigation from "./components/Navigation";
+import BottomBlock from "./components/BottomBlock"
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <SignupFormPage />
           </Route>
         </Switch>
+      <BottomBlock />
     </>
   );
 }
