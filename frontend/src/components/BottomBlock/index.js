@@ -24,6 +24,7 @@ function BottomBlock() {
 
                     <div className="home-content">
                         <div className="sign-in-content">
+                        <br />
                             Sign in to view personalized recommendations
                             <div class="button-content">
                                 <div>
