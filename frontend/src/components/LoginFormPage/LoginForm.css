@@ -1,4 +1,4 @@
-.page_content {
+.page-content {
 	width: 100%;
 	margin: 0;
 	padding: 0;
@@ -6,7 +6,7 @@
 	background-size: cover;
 }
 
-.signin_container {
+.signin-container {
 	padding: 50px;
 	min-height: 390px;
 	max-width: 700px;
@@ -70,14 +70,14 @@ button {
 	background-size: 330% 100%;
 }
 
-.form_row {
+.form-row {
 	display: flex;
 	align-items: center;
 	flex-wrap: wrap;
 	margin: 25px 0;
 }
 
-.form_area {
+.form-area {
 	width: 292px;
 	float: none;
 }

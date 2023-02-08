@@ -17,7 +17,27 @@ function BottomBlock() {
     } else {
         homeContent = (
             <>
-                <p>Looking for Recommendations?</p>
+                <div id="content">
+                    <div className="home-content">
+                        <div className="content-title">Looking for recommendations?</div>
+                    </div>
+
+                    <div className="home-content">
+                        <div className="sign-in-content">
+                            Sign in to view personalized recommendations
+                            <div class="button-content">
+                                <div>
+                                    <NavLink className="login-button" to="/login">
+                                        <span>Sign In</span>
+                                    </NavLink>
+                                </div>
+                                <br />
+                                <br />
+                                <div className="bottom-content">Or &nbsp;<NavLink className="signup-button" to="/signup">sign up</NavLink>&nbsp; and join Mist for free</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </>
         )
     }

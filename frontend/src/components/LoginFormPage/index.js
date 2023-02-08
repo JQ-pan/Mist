@@ -37,8 +37,8 @@ function LoginFormPage() {
     }
 
     return (
-        <div className="page_content">
-            <div className="signin_container">
+        <div className="page-content">
+            <div className="signin-container">
                 <div className="signin">
                     <form onSubmit={handleSubmit}>
                         <ul>
@@ -46,8 +46,8 @@ function LoginFormPage() {
                         </ul>
                         <div className="title">SIGN IN</div>
 
-                        <div className="form_row">
-                            <div className="form_area">
+                        <div className="form-row">
+                            <div className="form-area">
                                 <label className="labels" id="signin">SIGN IN WITH USERNAME OR EMAIL</label>
                                 <input
                                     className="input"
