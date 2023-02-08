@@ -2,7 +2,7 @@
     color: white;
 }
 
-#content {
+.loggedout-content {
     margin-bottom: -52px;
     padding: 25px 0 0;
     background-color: black;
@@ -70,4 +70,33 @@
 
 .signup-button:hover {
     color:#67c1f5;
+}
+
+.loggedin-content {
+    padding:20px 0px;
+}
+
+.loggedin-home-content {
+    margin-top: 0px;
+    padding-top: 100px;
+}
+
+.img {
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin: auto;
+}
+
+.text1 {
+    padding: 20px 0;
+    font-size: 24px;
+    color: #67c1f5;
+    text-align: center;
+}
+
+.text2 {
+    font-size: 13px;
+    color: #9099a1;
+    text-align: center;
 }

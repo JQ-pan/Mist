@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import './BottomBlock.css';
+import logo from '../../assets/steam-icon-14885.png'
 
 function BottomBlock() {
     const sessionUser = useSelector(state => state.session.user);
@@ -11,20 +12,26 @@ function BottomBlock() {
     if (sessionUser) {
         homeContent = (
             <>
-                <p>Keep scrolling for more recommendations</p>
+                <div className="loggedin-content">
+                    <div className="loggedin-home-content">
+                        <img className="img" src={logo} alt=""></img>
+                        <div className="text1">Keep scrolling for more recommendations</div>
+                        <div className="text2">Below, you'll find a variety of titles that you may be interested in from categories across Mist</div>
+                    </div>
+                </div>
             </>
         )
     } else {
         homeContent = (
             <>
-                <div id="content">
+                <div className="loggedout-content">
                     <div className="home-content">
                         <div className="content-title">Looking for recommendations?</div>
                     </div>
 
                     <div className="home-content">
                         <div className="sign-in-content">
-                        <br />
+                            <br />
                             Sign in to view personalized recommendations
                             <div class="button-content">
                                 <div>
