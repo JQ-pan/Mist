@@ -33,7 +33,7 @@ function BottomBlock() {
                         <div className="sign-in-content">
                             <br />
                             Sign in to view personalized recommendations
-                            <div class="button-content">
+                            <div className="button-content">
                                 <div>
                                     <NavLink className="login-button" to="/login">
                                         <span>Sign In</span>
