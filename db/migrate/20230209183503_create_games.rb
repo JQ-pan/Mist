@@ -6,7 +6,7 @@ class CreateGames < ActiveRecord::Migration[7.0]
       t.string :developer, null: false
       t.string :publisher, null: false
       t.decimal :price, precision: 8, scale: 2, null: false
-      t.date :release_date, null: false
+      t.string :release_date, null: false
       t.boolean :featured, null: false, default: false
       t.string :images, array: true, null: false, default: []
       t.timestamps

@@ -8,7 +8,7 @@
 #  developer    :string           not null
 #  publisher    :string           not null
 #  price        :decimal(8, 2)    not null
-#  release_date :date             not null
+#  release_date :string           not null
 #  featured     :boolean          default(FALSE), not null
 #  images       :string           default([]), not null, is an Array
 #  created_at   :datetime         not null

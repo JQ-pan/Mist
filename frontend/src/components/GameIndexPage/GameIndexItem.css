@@ -1,0 +1,20 @@
+.banner {
+    height: 65.92px;
+    width: 175.83px;
+    background-color: white;
+}
+
+.game-div {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-bottom: 5px;
+    background: #202d39;
+    margin-left: 23px;
+    margin-right: 23px; /* may or may not have to change*/
+}
+
+#game-name {
+    display: block;
+    width: 271px;
+}

@@ -4,22 +4,24 @@ import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
 import Navigation from "./components/Navigation";
 import BottomBlock from "./components/BottomBlock"
-import GameIndex from "./components/HomeDisplayPage/GameIndex";
+import GameIndex from "./components/GameIndexPage/GameIndex";
 
 function App() {
   return (
     <>
       <Navigation />
-        <Switch>
-          <Route path="/login">
-            <LoginFormPage />
-          </Route>
-          <Route path="/signup">
-            <SignupFormPage />
-          </Route>
-        </Switch>
-        <GameIndex />
-      <BottomBlock />
+      <Switch>
+        <Route path="/login">
+          <LoginFormPage />
+        </Route>
+        <Route path="/signup">
+          <SignupFormPage />
+        </Route>
+        <Route path="/">
+          <GameIndex />
+          <BottomBlock />
+        </Route>
+      </Switch>
     </>
   );
 }

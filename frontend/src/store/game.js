@@ -17,13 +17,13 @@ const receiveGame = game => ({
 
 // selectors
 
-export const getGames = state => {
-    return state?.games ? Object.values(state.games) : []
-}
+// export const getGames = state => {
+//     return state?.games ? Object.values(state.games) : []
+// }
 
-export const getGame = (gameId) => state => {
-    return state?.game ? state.game[gameId] : null
-}
+// export const getGame = (gameId) => state => {
+//     return state?.game ? state.game[gameId] : null
+// }
 
 //thunk methods
 

@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import GameIndexItem from './GameIndexItem'
 import { fetchGames } from '../../store/game';
+import './GameIndex.css'
 
 const GameIndex = () => {
     // debugger

@@ -8,7 +8,7 @@
 #  developer    :string           not null
 #  publisher    :string           not null
 #  price        :decimal(8, 2)    not null
-#  release_date :date             not null
+#  release_date :string           not null
 #  featured     :boolean          default(FALSE), not null
 #  images       :string           default([]), not null, is an Array
 #  created_at   :datetime         not null
@@ -17,7 +17,6 @@
 class Game < ApplicationRecord
     validates :title, :developer, :publisher, :release_date, presence: true
     validates :images, presence: true, length: { minimum: 1 }
-    validates :release_date, presence: true
     validates :featured, presence: true
     validates :price, numericality: { greater_than: 0 }
     validate :images_not_empty

@@ -30,7 +30,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_09_191934) do
     t.string "developer", null: false
     t.string "publisher", null: false
     t.decimal "price", precision: 8, scale: 2, null: false
-    t.date "release_date", null: false
+    t.string "release_date", null: false
     t.boolean "featured", default: false, null: false
     t.string "images", default: [], null: false, array: true
     t.datetime "created_at", null: false

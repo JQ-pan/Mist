@@ -48,7 +48,7 @@ ApplicationRecord.transaction do
         developer: "Nintendo R&D4",
         publisher: "Nintendo",
         price: 49.99,
-        release_date: Date.parse("September 13, 1985"),
+        release_date: "September 13, 1985",
         featured: true,
         images: ["https://mario.wiki.gallery/images/c/c1/SMB_Logo_EN.png"]
       },
@@ -58,7 +58,7 @@ ApplicationRecord.transaction do
         developer: "Nintendo R&D4",
         publisher: "Nintendo",
         price: 49.99,
-        release_date: Date.parse("February 21, 1986"),
+        release_date: "February 21, 1986",
         featured: true,
         images: ["https://oyster.ignimgs.com/mediawiki/apis.ign.com/the-legend-of-zelda/2/28/Ign_loz_main_logo.jpg?width=960"]
       },
@@ -68,23 +68,51 @@ ApplicationRecord.transaction do
         developer: "Konami",
         publisher: "Konami",
         price: 49.99,
-        release_date: Date.parse("February 20, 1987"),
+        release_date: "February 20, 1987",
         featured: true,
         images: ["https://staticr1.blastingcdn.com/media/photogallery/2017/4/19/660x290/b_502x220x82/konami-contra-ixnite-ixnitecom_1281189.jpg"]
-      # },
-      # {
-      #   title: "",
-      #   description: "",
-      #   developer: "",
-      #   publisher: "",
-      #   price: "",
-      #   release_date: "",
-      #   featured: "",
-      #   images: ""
-      # },
+      },
+      {
+        title: "Metroid",
+        description: "Metroid is a sci-fi action-adventure game developed and published by Nintendo. Players control Samus Aran, a female bounty hunter, as she explores the mysterious planet Zebes, battles enemies, and uncovers secrets.",
+        developer: "Nintendo R&D1",
+        publisher: "Nintendo",
+        price: 49.99,
+        release_date: "August 6, 1986",
+        featured: true,
+        images: ["https://static.wikia.nocookie.net/metroid/images/0/0d/M1_logo_EN.png/"]
+      },
+      {
+        title: "Castlevania",
+        description: "Castlevania is a platformer-style action game developed and published by Konami. Players control Simon Belmont as he battles against the forces of evil, including the legendary vampire Dracula, in a quest to save Transylvania.",
+        developer: "Konami",
+        publisher: "Konami",
+        price: 49.99,
+        release_date: "May 1, 1987",
+        featured: true,
+        images: ["https://upload.wikimedia.org/wikipedia/commons/1/15/Castlevania_logo.png"]
+      },
+      {
+        title: "Final Fantasy",
+        description: "Final Fantasy is a role-playing game developed and published by Square. Players control a group of heroes as they embark on a quest to save the world from destruction, battling against evil forces and discovering hidden secrets along the way.",
+        developer: "Square",
+        publisher: "Square",
+        price: 49.99,
+        release_date: "December 18, 1987",
+        featured: true,
+        images: ["https://static.wikia.nocookie.net/finalfantasy/images/c/c7/FFI_logo.png/"]
+      },
+      {
+        title: "Double Dragon",
+        description: "Double Dragon is a side-scrolling beat 'em up game developed and published by Technos Japan. Players control brothers Billy and Jimmy Lee as they battle against street gangs and other enemies in a quest to rescue Billy's girlfriend Marian.",
+        developer: "Technos Japan",
+        publisher: "Technos Japan",
+        price: 49.99,
+        release_date: "June 1987",
+        featured: true,
+        images: ["https://www.arcadeclub.co.uk/cdn/game-library/double-dragon/title/double-dragon-title.jpg"]
       }
     ]
     )
-
     puts "Done!"
   end
