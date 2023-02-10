@@ -8,7 +8,7 @@ class CreateGames < ActiveRecord::Migration[7.0]
       t.decimal :price, precision: 8, scale: 2, null: false
       t.date :release_date, null: false
       t.boolean :featured, null: false, default: false
-      t.text :images, null: false, default: [].to_yaml
+      t.string :images, array: true, null: false, default: []
       t.timestamps
     end
 

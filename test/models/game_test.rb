@@ -10,7 +10,7 @@
 #  price        :decimal(8, 2)    not null
 #  release_date :date             not null
 #  featured     :boolean          default(FALSE), not null
-#  images       :text             default([]), not null
+#  images       :string           default([]), not null, is an Array
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #

@@ -4,6 +4,7 @@ import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
 import Navigation from "./components/Navigation";
 import BottomBlock from "./components/BottomBlock"
+import GameIndex from "./components/HomeDisplayPage/GameIndex";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             <SignupFormPage />
           </Route>
         </Switch>
+        <GameIndex />
       <BottomBlock />
     </>
   );

@@ -32,7 +32,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_09_191934) do
     t.decimal "price", precision: 8, scale: 2, null: false
     t.date "release_date", null: false
     t.boolean "featured", default: false, null: false
-    t.text "images", default: "--- []\n", null: false
+    t.string "images", default: [], null: false, array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["featured"], name: "index_games_on_featured"

@@ -1,7 +1,7 @@
 import csrfFetch from "./csrf";
 
-export const RECEIVE_GAMES = 'RECEIVE_GAMES'
-export const RECEIVE_GAME = 'RECEIVE_GAME'
+const RECEIVE_GAMES = 'RECEIVE_GAMES'
+const RECEIVE_GAME = 'RECEIVE_GAME'
 
 // actions
 
@@ -17,12 +17,12 @@ const receiveGame = game => ({
 
 // selectors
 
-export const getGame = (gameId) => state => {
-    return state?.games ? state.games[gameId] : null
-}
-
 export const getGames = state => {
     return state?.games ? Object.values(state.games) : []
+}
+
+export const getGame = (gameId) => state => {
+    return state?.game ? state.game[gameId] : null
 }
 
 //thunk methods
@@ -31,7 +31,7 @@ export const fetchGames = () => async dispatch => {
     const res = await csrfFetch('/api/games')
     if (res.ok) {
         const games = await res.json();
-        dispatch(receiveGames(game))
+        dispatch(receiveGames(games))
     }
 }
 
@@ -54,7 +54,7 @@ const gamesReducer = (state = {}, action) => {
             if (action.payload.id) nextState[action.payload.id] = action.payload;
             return nextState;
         case RECEIVE_GAMES:
-            return { ...nextState, ...action.products};
+            return { ...nextState, ...action.payload};
         default:
             return state;
     }

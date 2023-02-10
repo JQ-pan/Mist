@@ -10,19 +10,19 @@
 #  price        :decimal(8, 2)    not null
 #  release_date :date             not null
 #  featured     :boolean          default(FALSE), not null
-#  images       :text             default([]), not null
+#  images       :string           default([]), not null, is an Array
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #
 class Game < ApplicationRecord
-    validates :title, :developer, :publisher, :release_date, :images, presence: true
+    validates :title, :developer, :publisher, :release_date, presence: true
+    validates :images, presence: true, length: { minimum: 1 }
     validates :release_date, presence: true
     validates :featured, presence: true
     validates :price, numericality: { greater_than: 0 }
-    serialize :images, Array
     validate :images_not_empty
     
-    def image_not_empty
+    def images_not_empty
         errors.add(:images, 'must have image') if images.empty?
     end
     

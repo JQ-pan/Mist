@@ -1,6 +1,6 @@
 class Api::GamesController < ApplicationController
     def index
-        @games = Games.all
+        @games = Game.all
 
         render 'api/games/index'
     end
