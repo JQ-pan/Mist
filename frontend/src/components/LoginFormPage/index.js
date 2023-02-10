@@ -32,6 +32,9 @@ function LoginFormPage() {
     }
 
     const handleDemoLogin = (e) => {
+        // e.preventDefault();
+        // dispatch(sessionActions.login({email: "guest@guest.com", password: "password"}))
+
         setCredential('guest@guest.com');
         setPassword('password');
     }

@@ -16,3 +16,7 @@ const receiveGame = game => ({
 })
 
 // selectors
+
+export const getGames = state => {
+    
+}

@@ -41,7 +41,7 @@ function BottomBlock() {
                                 </div>
                                 <br />
                                 <br />
-                                <div className="bottom-content">Or &nbsp;<NavLink className="signup-button" to="/signup">sign up</NavLink>&nbsp; and join Mist for free</div>
+                                <div className="bottom-content">Or <NavLink className="signup-button" to="/signup">sign up</NavLink> and join Mist for free</div>
                             </div>
                         </div>
                     </div>
