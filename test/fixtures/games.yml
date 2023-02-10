@@ -7,10 +7,10 @@
 #  description  :text             not null
 #  developer    :string           not null
 #  publisher    :string           not null
-#  price        :integer          not null
+#  price        :decimal(8, 2)    not null
 #  release_date :date             not null
 #  featured     :boolean          default(FALSE), not null
-#  image        :string           default(""), not null
+#  images       :text             default([]), not null
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #

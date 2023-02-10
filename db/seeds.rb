@@ -38,5 +38,211 @@ ApplicationRecord.transaction do
     #   }) 
     # end
   
+    Game.create!([
+      {
+        title: "Super Mario Bros.",
+        description: "Super Mario Bros. is a classic side-scrolling platform game developed and published by Nintendo. Players control Mario as he tries to rescue Princess Toadstool from the evil Bowser.",
+        developer: "Nintendo R&D4",
+        publisher: "Nintendo",
+        price: 49.99,
+        release_date: "September 13, 1985",
+        featured: true,
+        images: [
+
+        ]
+      # },
+      # {
+      #   title: "",
+      #   description: "",
+      #   developer: "",
+      #   publisher: "",
+      #   price: "",
+      #   release_date: "",
+      #   featured: "",
+      #   images: ""
+      # },
+      # {
+      #   title: "",
+      #   description: "",
+      #   developer: "",
+      #   publisher: "",
+      #   price: "",
+      #   release_date: "",
+      #   featured: "",
+      #   images: ""
+      # },
+      # {
+      #   title: "",
+      #   description: "",
+      #   developer: "",
+      #   publisher: "",
+      #   price: "",
+      #   release_date: "",
+      #   featured: "",
+      #   images: ""
+      # },
+      # {
+      #   title: "",
+      #   description: "",
+      #   developer: "",
+      #   publisher: "",
+      #   price: "",
+      #   release_date: "",
+      #   featured: "",
+      #   images: ""
+      # },
+      # {
+      #   title: "",
+      #   description: "",
+      #   developer: "",
+      #   publisher: "",
+      #   price: "",
+      #   release_date: "",
+      #   featured: "",
+      #   images: ""
+      # },
+      # {
+      #   title: "",
+      #   description: "",
+      #   developer: "",
+      #   publisher: "",
+      #   price: "",
+      #   release_date: "",
+      #   featured: "",
+      #   images: ""
+      # },
+      # {
+      #   title: "",
+      #   description: "",
+      #   developer: "",
+      #   publisher: "",
+      #   price: "",
+      #   release_date: "",
+      #   featured: "",
+      #   images: ""
+      # },
+      # {
+      #   title: "",
+      #   description: "",
+      #   developer: "",
+      #   publisher: "",
+      #   price: "",
+      #   release_date: "",
+      #   featured: "",
+      #   images: ""
+      # },
+      # {
+      #   title: "",
+      #   description: "",
+      #   developer: "",
+      #   publisher: "",
+      #   price: "",
+      #   release_date: "",
+      #   featured: "",
+      #   images: ""
+      # },
+      # {
+      #   title: "",
+      #   description: "",
+      #   developer: "",
+      #   publisher: "",
+      #   price: "",
+      #   release_date: "",
+      #   featured: "",
+      #   images: ""
+      # },
+      # {
+      #   title: "",
+      #   description: "",
+      #   developer: "",
+      #   publisher: "",
+      #   price: "",
+      #   release_date: "",
+      #   featured: "",
+      #   images: ""
+      # },
+      # {
+      #   title: "",
+      #   description: "",
+      #   developer: "",
+      #   publisher: "",
+      #   price: "",
+      #   release_date: "",
+      #   featured: "",
+      #   images: ""
+      # },
+      # {
+      #   title: "",
+      #   description: "",
+      #   developer: "",
+      #   publisher: "",
+      #   price: "",
+      #   release_date: "",
+      #   featured: "",
+      #   images: ""
+      # },
+      # {
+      #   title: "",
+      #   description: "",
+      #   developer: "",
+      #   publisher: "",
+      #   price: "",
+      #   release_date: "",
+      #   featured: "",
+      #   images: ""
+      # },
+      # {
+      #   title: "",
+      #   description: "",
+      #   developer: "",
+      #   publisher: "",
+      #   price: "",
+      #   release_date: "",
+      #   featured: "",
+      #   images: ""
+      # },
+      # {
+      #   title: "",
+      #   description: "",
+      #   developer: "",
+      #   publisher: "",
+      #   price: "",
+      #   release_date: "",
+      #   featured: "",
+      #   images: ""
+      # },
+      # {
+      #   title: "",
+      #   description: "",
+      #   developer: "",
+      #   publisher: "",
+      #   price: "",
+      #   release_date: "",
+      #   featured: "",
+      #   images: ""
+      # },
+      # {
+      #   title: "",
+      #   description: "",
+      #   developer: "",
+      #   publisher: "",
+      #   price: "",
+      #   release_date: "",
+      #   featured: "",
+      #   images: ""
+      # },
+      # {
+      #   title: "",
+      #   description: "",
+      #   developer: "",
+      #   publisher: "",
+      #   price: "",
+      #   release_date: "",
+      #   featured: "",
+      #   images: ""
+      }
+    ]
+    )
+
     puts "Done!"
   end
