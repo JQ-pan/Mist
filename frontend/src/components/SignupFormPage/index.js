@@ -46,57 +46,50 @@ function SignupFormPage() {
                         </ul>
                         <div className="title">CREATE YOUR ACCOUNT</div>
                         <div className="form-row">
-                            <div className="form-area">
-                                <label className="labels">Email Address</label>
-                                <input
-                                    className="input"
-                                    type="text"
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
-                                    required
-                                />
-                            </div>
+
+                            <label className="labels">Email Address</label>
+                            <input
+                                className="input"
+                                type="text"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                required
+                            />
                         </div>
 
                         <div className="form-row">
-                            <div className="form-area">
-                                <label className="labels">Username</label>
-                                <input
-                                    className="input"
-                                    type="text"
-                                    value={username}
-                                    onChange={(e) => setUsername(e.target.value)}
-                                    required
-                                />
-                            </div>
+                            <label className="labels">Username</label>
+                            <input
+                                className="input"
+                                type="text"
+                                value={username}
+                                onChange={(e) => setUsername(e.target.value)}
+                                required
+                            />
                         </div>
 
                         <div className="form-row">
-                            <div className="form-area">
-                                <label className="labels">Password</label>
-                                <input
-                                    className="input"
-                                    type="password"
-                                    value={password}
-                                    onChange={(e) => setPassword(e.target.value)}
-                                    required
-                                />
-                            </div>
+                            <label className="labels">Password</label>
+                            <input
+                                className="input"
+                                type="password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                required
+                            />
                         </div>
 
                         <div className="form-row">
-                            <div className="form-area">
-                                <label className="labels">Confirm Password</label>
-                                <input
-                                    className="input"
-                                    type="password"
-                                    value={confirmPassword}
-                                    onChange={(e) => setConfirmPassword(e.target.value)}
-                                    required
-                                />
-                            </div>
+                            <label className="labels">Confirm Password</label>
+                            <input
+                                className="input"
+                                type="password"
+                                value={confirmPassword}
+                                onChange={(e) => setConfirmPassword(e.target.value)}
+                                required
+                            />
                         </div>
-                        <button type="submit">Sign Up</button>
+                        <button className="signup-button"type="submit">Sign Up</button>
                     </form>
                 </div>
             </div>

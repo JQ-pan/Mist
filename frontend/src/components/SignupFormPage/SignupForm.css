@@ -2,17 +2,17 @@
 	width: 100%;
 	margin: 0;
 	padding: 0;
-	background: radial-gradient(rgba(24, 26, 33, 0) 0%, #181A21 100%) fixed no-repeat, url( 'https://store.cloudflare.steamstatic.com/public/shared/images/joinsteam/new_login_bg_strong_mask.jpg' ) center top no-repeat, #181A21;
+	background: radial-gradient(30% 40% at 40% 30%, rgba(33, 36, 41, .5) 0%, rgba(33, 36, 41, 0) 100%) no-repeat, url( 'https://store.cloudflare.steamstatic.com/public/shared/images/joinsteam/acct_creation_bg.jpg' ) -45vw 0 no-repeat, #212429;
 	background-size: cover;
 }
 
 .signup-container {
 	padding: 50px;
-	min-height: 600px;
-	max-width: 700px;
 }
 
 .signup {
+	min-height: 600px;
+	max-width: 700px;
 	padding: 20px 16px;
 	position: relative;
 	font-family: "Motiva Sans", Sans-serif;
@@ -49,7 +49,7 @@
 	vertical-align: top;
 }
 
-button {
+.signup-button {
 	background: linear-gradient( to right, #47bfff 5%, #1a44c2 60%);
 	color: white;
 	padding: 3px 50px;
@@ -70,10 +70,7 @@ button {
 	display: flex;
 	align-items: center;
 	flex-wrap: wrap;
-	margin-top: 25px 0;
-}
-
-.form-area {
+	margin: 25px 0px;
 	width: 292px;
 	float: none;
 }
