@@ -1,29 +1,24 @@
-.page-content {
+.login-page-content {
 	width: 100%;
-	margin: 0;
-	padding: 0;
-	background: radial-gradient(farthest-corner at 40px 40px, #3D4450 0%, #23262E 80%);
+	background: radial-gradient(rgba(24, 26, 33, 0) 0%, #181A21 100%) fixed no-repeat, url( 'https://store.cloudflare.steamstatic.com/public/shared/images/joinsteam/new_login_bg_strong_mask.jpg' ) center top no-repeat, #181A21;
 	background-size: cover;
-}
-
-.signin-container {
-	padding: 50px;
-	min-height: 390px;
-	max-width: 700px;
-	position: relative;
 	display: flex;
-    justify-content: space-between;
-    align-items: center;
+	flex-direction: column;
+	align-items: center;
 }
 
-.signin {
-	padding: 20px 16px;
+.login-form {
+	padding: 70px 66px;
+	min-height: 390px;
+	max-width: 600px;
 	position: relative;
 	font-family: "Motiva Sans", Sans-serif;
+	display: flex;
+	flex-direction: column;
+	gap: 32px;
 }
 
-.title {
-	text-shadow: 0px 4px 4px rgb(0 0 0 25%);
+.login-title {
 	font-size: 34px;
 	color: #ffffff;
 	margin-bottom: 30px;
@@ -31,7 +26,7 @@
 	letter-spacing: 2px;
 }
 
-.input {
+.login-inputs {
 	background: #32353C;
     border-radius: 3px;
     color: #E9E9E9;
@@ -39,28 +34,39 @@
     display: block;
     box-shadow: none;
     border: none;
-    width: 100%;
     transition: border ease-in-out .5s;
     font-family: "Motiva Sans", Sans-serif;
     font-weight: normal;
-	width: 262px;
+	width: 380px;
 	float: none;
 }
 
-.labels {
+.login-form-error {
+	border: 1px solid #c15755;
+}
+
+.login-errors {
+	color: #c15755;
+	font-size: 12px;
+	font-weight: 500;
+	text-align: center;
+}
+
+.login-labels {
 	font-size: 14px;
 	color: #b8b6b4;
 	vertical-align: top;
 }
 
-button {
+.login-button {
 	background: linear-gradient( to right, #47bfff 5%, #1a44c2 60%);
 	color: white;
 	padding: 3px 50px;
 	text-align: center;
 	text-decoration: none;
 	display: inline-block;
-	font-size: 15px;
+	font-size: 18px;
+	font-weight: 500;
 	margin: 4px 2px;
 	cursor: pointer;
 	border-radius: 2px;
@@ -68,20 +74,36 @@ button {
 	box-shadow: 2px 2px 5px rgb(0,0,0, 20%);
 	background-position: 25%;
 	background-size: 330% 100%;
+	width: 270px;
+	height: 50px;
 }
 
-.form-row {
+.login-button:hover {
+	background: linear-gradient(90deg, #06BFFF 30%, #2D73FF 100%);
+}
+
+.username {
+	margin-top: 25px;
+}
+
+#login {
+	color: #1999ff;
+	font-weight: 500;
+}
+
+.login-form-container {
+	background-color: #181a21;
+	border-radius: 4px;
+	padding: 24px 32px;
+	flex: 1;
+	display: grid;
+	gap: 12px;
+}
+
+.login-button-container {
 	display: flex;
+	flex-direction: column;
 	align-items: center;
-	flex-wrap: wrap;
-	margin: 25px 0;
-}
-
-.form-area {
-	width: 292px;
-	float: none;
-}
-
-#signin {
-	color: rgb(0, 110, 255);
+	gap: 4px;
+	margin-top: 20px;
 }

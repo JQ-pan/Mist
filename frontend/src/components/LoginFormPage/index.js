@@ -32,54 +32,50 @@ function LoginFormPage() {
     }
 
     const handleDemoLogin = (e) => {
-        // e.preventDefault();
-        // dispatch(sessionActions.login({email: "guest@guest.com", password: "password"}))
-
         setCredential('guest@guest.com');
         setPassword('password');
     }
 
     return (
-        <div className="page-content">
-            <div className="signin-container">
-                <div className="signin">
-                    <form onSubmit={handleSubmit}>
-                        <ul>
-                            {errors.map(error => <li key={error}>{error}</li>)}
-                        </ul>
-                        <div className="title">SIGN IN</div>
+        <div className="login-page-content">
+            <form className="login-form" onSubmit={handleSubmit}>
 
-                        <div className="form-row">
-                            <div className="form-area">
-                                <label className="labels" id="signin">SIGN IN WITH USERNAME OR EMAIL</label>
-                                <input
-                                    className="input"
-                                    type="text"
-                                    value={credential}
-                                    onChange={(e) => setCredential(e.target.value)}
-                                    required
-                                />
-                            </div>
-                        </div>
+                <div className="login-title">SIGN IN</div>
+                <div className="login-form-container">
 
-                        <div className="form_row">
-                            <div className="form_area">
-                                <label className="labels">PASSWORD</label>
-                                <input
-                                    className="input"
-                                    type="password"
-                                    value={password}
-                                    onChange={(e) => setPassword(e.target.value)}
-                                    required
-                                />
-                            </div>
-                        </div>
-                        <button type="submit">Log In</button>
+                    <div className="login-form-area username">
+                        <label className="labels" id="login">SIGN IN WITH USERNAME OR EMAIL</label>
+                        <input
+                            className={`login-inputs ${errors.length > 0 ? "login-form-error" : ""}`}
+                            type="text"
+                            value={credential}
+                            onChange={(e) => setCredential(e.target.value)}
+                            required
+                        />
+                    </div>
 
-                        <button onClick={handleDemoLogin} type="submit">Demo Login</button>
-                    </form>
+                    <div className="login-form-area">
+                        <label className="login-labels">PASSWORD</label>
+                        <input
+                            className={`login-inputs ${errors.length > 0 ? "login-form-error" : ""}`}
+                            type="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            required
+                        />
+                    </div>
+
+                    <div className="login-button-container">
+                        <button className="login-button" type="submit">Sign In</button>
+                        <button className="login-button" onClick={handleDemoLogin} type="submit">Demo Sign In</button>
+                    </div>
+
+                    <ul className="login-errors">
+                        {errors.map(error => <li key={error}>{error}</li>)}
+                    </ul>
+
                 </div>
-            </div>
+            </form>
         </div>
     );
 }

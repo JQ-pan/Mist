@@ -2,7 +2,7 @@
 	width: 100%;
 	margin: 0;
 	padding: 0;
-	background: radial-gradient(farthest-corner at 40px 40px, #3D4450 0%, #23262E 80%);
+	background: radial-gradient(rgba(24, 26, 33, 0) 0%, #181A21 100%) fixed no-repeat, url( 'https://store.cloudflare.steamstatic.com/public/shared/images/joinsteam/new_login_bg_strong_mask.jpg' ) center top no-repeat, #181A21;
 	background-size: cover;
 }
 
@@ -39,7 +39,7 @@
     transition: border ease-in-out .5s;
     font-family: "Motiva Sans", Sans-serif;
     font-weight: normal;
-	width: 262px;
+	width: 423px;
 	float: none;
 }
 
@@ -70,7 +70,7 @@ button {
 	display: flex;
 	align-items: center;
 	flex-wrap: wrap;
-	margin: 25px 0;
+	margin-top: 25px 0;
 }
 
 .form-area {
