@@ -12,9 +12,12 @@
     background: #202d39;
     margin-left: 23px;
     margin-right: 23px; /* may or may not have to change*/
+    text-decoration: none;
+    color: white;
 }
 
-#game-name {
+.game-name {
     display: block;
     width: 271px;
+    color: #C7D5E0
 }

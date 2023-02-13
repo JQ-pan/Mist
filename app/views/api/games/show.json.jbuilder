@@ -1,1 +1,1 @@
-json.extract! @game, :id, :title, :description, :developer, :publisher, :price, :release_date, :featured
+json.extract! @game, :id, :title, :images, :description, :developer, :publisher, :price, :release_date, :featured

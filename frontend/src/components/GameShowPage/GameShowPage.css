@@ -1,0 +1,182 @@
+* {
+    color: white;
+}
+
+div {
+    display: block;
+}
+
+.show-page-content {
+    background-color: #1B2838;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 80px;
+    position: relative;
+    z-index: 1;
+    width: 940px;
+    margin: 0 auto;
+}
+
+.top-of-show-page {
+    width: 100%;
+    padding-bottom: 14px;
+}
+
+.show-page-pathing {
+    display: block;
+    color: #56707F;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.link-to-home {
+    text-decoration: none;
+    color: #56707F;
+}
+
+.show-page-game-title {
+    position: relative;
+    text-align: left;
+    padding-top: 7px;
+    min-height: 46px;
+    font-size: 26px;
+}
+
+.game-media-and-summary {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.highlights-carousel-container {
+    width: 616px;
+    float: left;
+}
+
+.highlights-cont {
+    /* overflow: hidden; */
+    margin-right: 16px;
+    position: relative;
+    height: 337px;
+    width: 600px;
+    background-color: blueviolet;
+}
+
+.image-carousel {
+    margin-top: 4px;
+    position: relative;
+    height: 69px;
+    width: 600px;
+    margin-bottom: 4px;
+    z-index: 40;
+    background-color: blueviolet;
+}
+
+.carousel-slider {
+    position: relative;
+    height: 18px;
+    background-color: gray;
+    width: 600px;
+}
+
+.game-preview-container {
+    width: 324px;
+    float: right;
+    margin-bottom: 7px;
+}
+
+.game-show-banner {
+    width: 324px;
+    height: 151px;
+    background-color: white;
+}
+
+.game-show-summary {
+    max-height: 111px;
+    overflow: hidden;
+    font-size: 13px;
+    line-height: 18px;
+    padding-right: 16px;
+    /* webkit takes care of overflow text */
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+}
+
+.game-show-reviews {
+    font-size: 12px;
+    color: #556772;
+    margin-top: 10px;
+    display: flex;
+    line-height: 16px;
+}
+
+.subcolumn-title {
+    font-size: 10px;
+    padding-right: 10px;
+    min-width: 94px;
+}
+
+.subcolumn-content {
+    color: #66C0F4;
+    font-size: 12px;
+}
+
+.rating-summary {
+    color: #66C0F4;
+}
+
+.total-reviews {
+    color: #556772;
+}
+
+.game-show-release-date {
+    display: flex;
+    line-height: 16px;
+    padding-top: 9px;
+    padding-bottom: 13px;
+}
+
+.date {
+    max-height: 30px;
+    color: #8f98a0;
+    font-size: 12px;
+}
+
+.developer-row {
+    display: flex;
+    line-height: 16px;
+}
+
+.game-show-main-column {
+    display: flex;
+}
+
+.game-show-main-left {
+    width: 616px;
+    float: left;
+}
+
+.game-show-main-right {
+    width: 308px;
+    margin-left: 14px;
+    float: right;
+}
+
+
+
+
+
+
+
+
+
+.review-content {
+    margin-bottom: 32px;
+    border-top: 1px solid black;
+    width: 100%;
+}
+
+/* .reviews-area {
+
+} */
