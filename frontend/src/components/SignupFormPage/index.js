@@ -55,6 +55,12 @@ function SignupFormPage() {
                                 onChange={(e) => setEmail(e.target.value)}
                                 required
                             />
+                            {errors.map(error => {
+                                if (error.toLowerCase().startsWith("email")) {
+                                    return <span className="error">{error}</span>
+                                }
+                                return null;
+                            })}
                         </div>
 
                         <div className="form-row">
@@ -66,6 +72,12 @@ function SignupFormPage() {
                                 onChange={(e) => setUsername(e.target.value)}
                                 required
                             />
+                            {errors.map(error => {
+                                if (error.toLowerCase().startsWith("username")) {
+                                    return <span className="error">{error}</span>
+                                }
+                                return null;
+                            })}
                         </div>
 
                         <div className="form-row">
@@ -77,6 +89,12 @@ function SignupFormPage() {
                                 onChange={(e) => setPassword(e.target.value)}
                                 required
                             />
+                            {errors.map(error => {
+                                if (error.toLowerCase().startsWith("password")) {
+                                    return <span className="error">{error}</span>
+                                }
+                                return null;
+                            })}
                         </div>
 
                         <div className="form-row">
@@ -88,7 +106,14 @@ function SignupFormPage() {
                                 onChange={(e) => setConfirmPassword(e.target.value)}
                                 required
                             />
+                            {errors.map(error => {
+                                if (error.toLowerCase().startsWith("confirm password")) {
+                                    return <span className="error">{error}</span>
+                                }
+                                return null;
+                            })}
                         </div>
+                        
                         <button className="signup-button"type="submit">Sign Up</button>
                     </form>
                 </div>
