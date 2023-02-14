@@ -19,7 +19,7 @@ function GameShowPage() {
     }
 
     return (
-        <>
+        <div className="show-page">
             <div className="show-page-content">
                 <div className="top-of-show-page">
                     <div className="show-page-pathing">
@@ -101,7 +101,7 @@ function GameShowPage() {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 

@@ -18,9 +18,17 @@ class Game < ApplicationRecord
     validates :title, :developer, :publisher, :release_date, presence: true
     validates :images, presence: true, length: { minimum: 1 }
     validates :featured, presence: true
-    validates :price, numericality: { greater_than: 0 }
+    validates :price, numericality: { greater_than_or_equal_to: 0 }
     validate :images_not_empty
     
+    has_many :cart_items,
+        foreign_key: :game_id,
+        class_name: :CartItems
+
+    has_many :buyers,
+        through: :cart_items,
+        source: :user
+
     def images_not_empty
         errors.add(:images, 'must have image') if images.empty?
     end

@@ -10,18 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_09_191934) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_14_195315) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "carts", force: :cascade do |t|
+  create_table "cart_items", force: :cascade do |t|
     t.integer "game_id", null: false
     t.integer "buyer_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["buyer_id", "game_id"], name: "index_carts_on_buyer_id_and_game_id", unique: true
-    t.index ["buyer_id"], name: "index_carts_on_buyer_id"
-    t.index ["game_id"], name: "index_carts_on_game_id"
+    t.index ["buyer_id", "game_id"], name: "index_cart_items_on_buyer_id_and_game_id", unique: true
+    t.index ["buyer_id"], name: "index_cart_items_on_buyer_id"
+    t.index ["game_id"], name: "index_cart_items_on_game_id"
   end
 
   create_table "games", force: :cascade do |t|
@@ -37,16 +37,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_09_191934) do
     t.datetime "updated_at", null: false
     t.index ["featured"], name: "index_games_on_featured"
     t.index ["title"], name: "index_games_on_title"
-  end
-
-  create_table "libraries", force: :cascade do |t|
-    t.integer "game_id", null: false
-    t.integer "owner_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["game_id"], name: "index_libraries_on_game_id"
-    t.index ["owner_id", "game_id"], name: "index_libraries_on_owner_id_and_game_id", unique: true
-    t.index ["owner_id"], name: "index_libraries_on_owner_id"
   end
 
   create_table "reviews", force: :cascade do |t|

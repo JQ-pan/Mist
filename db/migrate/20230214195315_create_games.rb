@@ -11,7 +11,6 @@ class CreateGames < ActiveRecord::Migration[7.0]
       t.string :images, array: true, null: false, default: []
       t.timestamps
     end
-
     add_index :games, :title
     add_index :games, :featured
   end

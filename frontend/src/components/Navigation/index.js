@@ -2,16 +2,27 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
+import { useDispatch } from 'react-redux';
 import './Navigation.css';
 import logo from '../../assets/steam-icon-14885.png'
+import * as sessionActions from '../../store/session';
 
 function Navigation() {
     const sessionUser = useSelector(state => state.session.user);
+    const dispatch = useDispatch();
+
+    // const logout = (e) => {
+    //     e.preventDefault();
+    //     dispatch(sessionActions.logout());
+    // };
 
     let sessionLinks;
     if (sessionUser) {
         sessionLinks = (
-            <ProfileButton user={sessionUser} />
+            <>
+                <ProfileButton user={sessionUser} />
+                {/* <button onClick={logout}>Log Out</button> */}
+            </>
         );
     } else {
         sessionLinks = (

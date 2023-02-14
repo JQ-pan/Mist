@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: carts
+# Table name: cart_items
 #
 #  id         :bigint           not null, primary key
 #  game_id    :integer          not null
@@ -10,7 +10,7 @@
 #
 require "test_helper"
 
-class CartTest < ActiveSupport::TestCase
+class CartItemTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

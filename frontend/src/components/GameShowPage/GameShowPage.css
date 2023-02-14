@@ -6,8 +6,11 @@ div {
     display: block;
 }
 
-.show-page-content {
+.show-page {
     background-color: #1B2838;
+}
+
+.show-page-content {
     display: flex;
     align-items: center;
     flex-direction: column;
