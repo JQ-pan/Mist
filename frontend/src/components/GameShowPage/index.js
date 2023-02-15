@@ -67,7 +67,7 @@ function GameShowPage() {
                             </div>
 
                             <div className="developer-row">
-                                <div className="subcolumn-title">DEVELOPER: </div>
+                                <div className="subcolumn-title">PUBLISHER: </div>
                                 <div className="subcolumn-content">{game.publisher}</div>
                             </div>
                         </div>
@@ -78,15 +78,25 @@ function GameShowPage() {
                     <div className="game-show-main-left">
                         
                         <div className="game-purchase-container">
-                            Buy {game.title}
+                            <div>Buy {game.title}</div>
+                            <div className="game-purchase-block">
+                                <div className="game-purchase-block-action">
+                                    <div className="game-purchase-price">${game.price}</div>
+                                    <div className="game-purchase-button">Add to Cart</div>
+                                </div>
+                            </div>
                         </div>
-
 
                         <div className="game-description">
                             <div className="description-header">ABOUT THIS GAME</div>
                         </div>
+
                     </div>
-                    <div className="game-show-main-right">Is this game relevant to you?</div>
+
+                    <div className="game-show-main-right">
+                        Is this game relevant to you?
+                    </div>
+
                 </div>
 
                 <div className="review-content">

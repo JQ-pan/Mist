@@ -22,7 +22,7 @@ class Api::CartItemsController < ApplicationController
         # @cart_item = current_user.cart_items.find(params[:id])
         @cart_item = CartItem.where(user_id: current_user.id, game_id: cart_item_params.game_id)
         @cart_item.destroy
-        @cart_items = current_user.cart_items.includes(:game)
+        # @cart_items = current_user.cart_items.includes(:game)
         render 'api/cart_items/index'
     end
 

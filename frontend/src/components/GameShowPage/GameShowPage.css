@@ -62,7 +62,7 @@ div {
     position: relative;
     height: 337px;
     width: 600px;
-    background-color: blueviolet;
+    border: 1px solid;
 }
 
 .image-carousel {
@@ -72,7 +72,7 @@ div {
     width: 600px;
     margin-bottom: 4px;
     z-index: 40;
-    background-color: blueviolet;
+    border: 1px solid;
 }
 
 .carousel-slider {
@@ -166,9 +166,30 @@ div {
     float: right;
 }
 
+.subcolumn-title {
+    color: #556772;
+}
 
+.game-show-main-column {
+    width: 940px;
+    margin: 0;
+}
 
+.game-show-main-right {
+    margin-top: 16px;
+    margin-left: 16px;
+    width: 308px;
+    float: right;
+    border: 1px solid;
+}
 
+.game-show-main-left {
+    border: 1px solid;
+}
+
+.game-purchase-container {
+    margin-top: 14px;
+}
 
 
 

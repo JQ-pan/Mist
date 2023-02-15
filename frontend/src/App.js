@@ -5,7 +5,8 @@ import SignupFormPage from "./components/SignupFormPage";
 import Navigation from "./components/Navigation";
 import BottomBlock from "./components/BottomBlock"
 import GameIndex from "./components/GameIndexPage/GameIndex";
-import GameShowPage from "./components/GameShowPage/index";
+import GameShowPage from "./components/GameShowPage/";
+import CartPage from "./components/CartPage/";
 
 function App() {
   return (
@@ -24,6 +25,9 @@ function App() {
         </Route>
         <Route path="/:gameId">
           <GameShowPage />
+        </Route>
+        <Route path="/cart">
+          <CartPage />
         </Route>
       </Switch>
     </>
