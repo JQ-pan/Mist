@@ -1,24 +1,23 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { deleteCartItem } from '../../store/cartItem';
 import './CartItem.css';
 
 const CartItem = ({ cartItem }) => {
     const dispatch = useDispatch();
-    const game = useSelector(state => state.games[cartItem.gameId]) || {};
     const handleRemove = () => {
-        dispatch(deleteCartItem(cartItem.id));
+        dispatch(deleteCartItem(cartItem));
     }
 
     return (
         <>
-            <Link to={`/${game.id}`}>
-                <img src={game.images} alt={""} />
+            <Link to={`/${cartItem.gameId}`}>
+                <img src={cartItem.images} alt={""} />
             </Link>
             <div>
-                <Link to={`/${game.id}`}>{game.title}</Link>
+                <Link to={`/${cartItem.gameId}`}>{cartItem.title}</Link>
                 <div className="price-and-remove-button">
-                    <div className="price">{game.price !== 0 ? '$' + game.price : 'Free'}</div>
+                    <div className="price">{cartItem.price !== 0 ? '$' + cartItem.price : 'Free'}</div>
                     <button onClick={handleRemove} className="remove-from-cart">Remove</button>
                 </div>
             </div>

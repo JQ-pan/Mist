@@ -23,11 +23,11 @@ function App() {
           <GameIndex />
           <BottomBlock />
         </Route>
-        <Route path="/:gameId">
-          <GameShowPage />
-        </Route>
         <Route path="/cart">
           <CartPage />
+        </Route>
+        <Route path="/:gameId">
+          <GameShowPage />
         </Route>
       </Switch>
     </>

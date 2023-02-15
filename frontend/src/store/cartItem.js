@@ -36,25 +36,30 @@ export const fetchCartItems = () => async (dispatch) => {
 };
 
 export const createCartItem = (gameId) => async (dispatch) => {
+    // debugger
     const res = await csrfFetch('/api/cart_items', {
         method: 'POST',
-        body: JSON.stringify({ game_id: gameId }),
+        body: JSON.stringify({ cart_item: { game_id: gameId }}),
         headers: {
             'Content-Type': 'application/json',
         },
     });
     if (res.ok) {
         const cartItem = await res.json();
+        // debugger
         dispatch(addCartItem(cartItem));
     }
 };
 
-export const deleteCartItem = (cartItemId) => async (dispatch) => {
-    const res = await csrfFetch(`/api/cart_items/${cartItemId}`, {
+export const deleteCartItem = (cartItem) => async (dispatch) => {
+    // debugger
+    const res = await csrfFetch(`/api/cart_items/${cartItem.id}`, {
         method: 'DELETE',
     });
+    // console.log(res);
     if (res.ok) {
-        dispatch(removeCartItem(cartItemId));
+        // debugger
+        dispatch(removeCartItem(cartItem.id));
     }
 };
 
@@ -72,7 +77,7 @@ const cartItemsReducer = (state = {}, action) => {
 
     switch (action.type) {
         case RECEIVE_CART_ITEMS:
-            return { ...action.payload };
+            return { ...state, ...action.payload.games };
         case ADD_CART_ITEM:
             nextState[action.payload.id] = action.payload;
             return nextState;

@@ -1,21 +1,23 @@
 // import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, Redirect } from "react-router-dom";
 import { deleteAllCartItems } from "../../store/cartItem";
+import { fetchCartItems } from "../../store/cartItem";
 import CartItem from "./CartItem";
 import "./CartPage.css";
 
 const CartPage = () => {
     const dispatch = useDispatch();
     const currentUser = useSelector(state => state.session.user);
-    const cartItemsArray = useSelector(state => Object.values(state.cartItems));
+    
+    const cartItemsArray = useSelector(state => state.cartItems ? Object.values(state.cartItems) : []);
     const cartItems = cartItemsArray.map(cartItem => <CartItem cartItem={cartItem} key={cartItem.id} />);
-
-    const pricesArray = useSelector(state => {
-        return cartItemsArray.map(cartItem => state.games[cartItem.gameId].price);
-    })
-    const summedPrice = pricesArray.sum(0);
-    const totalPrice = summedPrice.toFixed(2);
+    useEffect(() => {
+        dispatch(fetchCartItems());
+    }, [dispatch])
+    
+    const total = cartItemsArray.reduce((acc, val) => (acc + val.price), 0);
 
     const handleRemoveAll = () => {
         alert('Removing all items from cart');
@@ -25,7 +27,7 @@ const CartPage = () => {
     if (!currentUser) {
         return <Redirect to="login" />;
     } else {
-        <div className="cart-page">
+        return (<div className="cart-page">
             <div className="cart-page-header-container">
                 <span><Link to="/">All Products</Link> {'>'} Your Shopping Cart</span>
                 <h1>YOUR SHOPPING CART</h1>
@@ -35,7 +37,7 @@ const CartPage = () => {
                     {cartItems}
                     <div className="checkout-container">
                         <span>Estimated total<sup>1</sup></span>
-                        <div>${totalPrice === 0 ? "0.00" : totalPrice}</div>
+                        <div>${total === 0 ? "FREE" : Number(total).toFixed(2)}</div>
                     </div>
 
                     <div className="purchase-for-self-or-gift">Is this a purchase for yourself or is it a gift? Select one to continue to checkout.</div>
@@ -68,7 +70,7 @@ const CartPage = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div>)
     }
 }
 

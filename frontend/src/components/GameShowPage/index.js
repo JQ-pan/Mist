@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { fetchGame } from '../../store/game'
 import { NavLink } from 'react-router-dom';
+import { createCartItem } from '../../store/cartItem';
 import './GameShowPage.css'
 
 function GameShowPage() {
@@ -14,9 +15,14 @@ function GameShowPage() {
         dispatch(fetchGame(gameId));
     }, [gameId, dispatch])
 
+    const handleAddToCart = () => {
+        // debugger
+        dispatch(createCartItem(game.id))
+    }
+
     if (game === undefined) {
         return <>Still loading...</>
-    }
+    } else {
 
     return (
         <div className="show-page">
@@ -82,7 +88,7 @@ function GameShowPage() {
                             <div className="game-purchase-block">
                                 <div className="game-purchase-block-action">
                                     <div className="game-purchase-price">${game.price}</div>
-                                    <div className="game-purchase-button">Add to Cart</div>
+                                    <button onClick={handleAddToCart} className="game-purchase-button">Add to Cart</button>
                                 </div>
                             </div>
                         </div>
@@ -112,7 +118,7 @@ function GameShowPage() {
                 </div>
             </div>
         </div>
-    )
+    )}
 }
 
 export default GameShowPage

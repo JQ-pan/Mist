@@ -1,4 +1,4 @@
-if @cart_items.length > 0
+# if @cart_items.length
     @cart_items.each do |cart_item|
         json.cart_items do
             json.set! cart_item.id do
@@ -11,9 +11,8 @@ if @cart_items.length > 0
                 json.extract! cart_item.game, :id, :title, :price
             end
         end
-
     end
-else
-    json.cart_items({})
-    json.games({})
-end
+# else
+#     json.cart_items({})
+#     json.games({})
+# end
