@@ -33,25 +33,27 @@ function Navigation() {
     }
 
     return (
-        <div className="navbar">
-            <div className="navbar_left">
-                {/* Logo and Link to home page  */}
-                <NavLink className="link" exact to="/">
-                    <img className="app_logo" src={logo} alt="" />
-                    <p className="title">MIST</p>
-                </NavLink>
+        <div className="navbar-container">
+            <div className="navbar">
+                <div className="navbar_left">
+                    {/* Logo and Link to home page  */}
+                    <NavLink className="link" exact to="/">
+                        <img className="app_logo" src={logo} alt="" />
+                        <p className="title">MIST</p>
+                    </NavLink>
 
-                <div className="navbar_menu">
-                    <NavLink className="navbar_menu_links" exact to="/">STORE</NavLink>
-                    <NavLink className="navbar_menu_links" exact to="/">COMMUNITY</NavLink>
-                    <NavLink className="navbar_menu_links" exact to="/">ABOUT</NavLink>
-                    <NavLink className="navbar_menu_links" exact to="/">SUPPORT</NavLink>
+                    <div className="navbar_menu">
+                        <NavLink className="navbar_menu_links" exact to="/">STORE</NavLink>
+                        <NavLink className="navbar_menu_links" exact to="/">COMMUNITY</NavLink>
+                        <NavLink className="navbar_menu_links" exact to="/">ABOUT</NavLink>
+                        <NavLink className="navbar_menu_links" exact to="/">SUPPORT</NavLink>
+                    </div>
                 </div>
-            </div>
 
-            {/* Auth Links */}
-            <div className="auth_links">
-                {sessionLinks}
+                {/* Auth Links */}
+                <div className="auth_links">
+                    {sessionLinks}
+                </div>
             </div>
         </div>
     );

@@ -1,9 +1,16 @@
+.navbar-container {
+    margin: auto;
+}
+
 .navbar {
     height: 140px;
+    max-width: 940px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .navbar_left {
@@ -13,8 +20,7 @@
 }
 
 .navbar_menu {
-    position: absolute;
-    left: 200px;
+    position: relative;
 }
 
 .navbar_menu_links {
@@ -32,6 +38,7 @@
     justify-content: center;
     align-items: center;
     text-decoration: none;
+    margin-right: 40px;
 }
 
 .app_logo {

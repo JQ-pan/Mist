@@ -1,5 +1,34 @@
 #games-list {
     display: block;
-    background: linear-gradient(180deg, #2A475E 0%, #1B2838 80%);
     margin-top: 8px;
+}
+
+.game-display-background {
+    background: linear-gradient(180deg, #2A475E 0%, #1B2838 80%);
+}
+
+.game-display-container {
+    margin: auto;
+    width: 940px;
+    display: flex;
+    align-items: center;
+    display: relative;
+    height: 100%;
+    flex-direction: row;
+}
+
+.game-left-display-container {
+    max-width: 618px;
+    margin: auto;
+}
+
+.game-right-display-container {
+    margin-left: 14px;
+    width: 308px;
+    background-color: gray;
+    height: 771px;
+}
+
+.game-right-display-content {
+    /* background-color: black; */
 }
