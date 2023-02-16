@@ -1,36 +1,25 @@
 .navbar-container {
     margin: auto;
+    display: flex;
+    justify-content: center;
+    min-width: 940px;
 }
 
-.navbar {
-    height: 140px;
-    max-width: 940px;
+.navbar-content {
+    height: 104px;
+    width: 940px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    margin-left: auto;
-    margin-right: auto;
+    /* margin-left: auto;
+    margin-right: auto; */
+    margin: 0px 44px;
 }
 
-.navbar_left {
+.navbar-logo {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-}
-
-.navbar_menu {
-    position: relative;
-}
-
-.navbar_menu_links {
-    padding-right: 20px;
-    text-decoration: none;
-    color: #b8b6b4;
-}
-
-.navbar_menu_links:hover {
-    color: white;
 }
 
 .link  {
@@ -41,9 +30,32 @@
     margin-right: 40px;
 }
 
-.app_logo {
+.app-logo {
     width: 50px;
     height: 50px;   
+}
+
+.title {
+    font-size: 28px;
+    padding-top: 32px;
+    margin-left: 8px;
+    color: #8b929a;
+}
+
+.navbar_menu {
+    position: relative;
+    padding-left: 35px;
+}
+
+.navbar_menu_links {
+    padding-right: 14px;
+    text-decoration: none;
+    color: #b8b6b4;
+    font-size: 14px;
+}
+
+.navbar_menu_links:hover {
+    color: white;
 }
 
 .navbar .title {
@@ -59,4 +71,34 @@
 .loginButton {
     color: #b8b6b4;
     text-decoration: none;
+}
+
+.logoutButton {
+    color: #b8b6b4;
+    padding-left: 4px;
+}
+
+.auth-links {
+    border: solid 1px;
+    color: #b8b6b4;
+    font-size: 11px;
+    top: 0px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-pic-background {
+    width: 34px;
+    height: 34px;
+    padding: 1px;
+    display: inline-block;
+    margin-left: 3px;
+}
+
+.profile-pic {
+    height: 32px;
+    width: 32px;
+    padding: 1px;
+    background: linear-gradient( to bottom, rgba(83,164,196,1) 5%, rgba(69,128,151,1) 95%);
 }

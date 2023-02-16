@@ -111,6 +111,26 @@ ApplicationRecord.transaction do
         release_date: "June 1987",
         featured: true,
         images: ["https://www.arcadeclub.co.uk/cdn/game-library/double-dragon/title/double-dragon-title.jpg"]
+      },
+      {
+        title: "Mega Man",
+        description: "Mega Man is a side-scrolling action game developed and published by Capcom. Players control the robot hero Mega Man as he battles against Dr. Wily and his army of robot masters, using their unique abilities to overcome challenges and save the world.",
+        developer: "Capcom",
+        publisher: "Capcom",
+        price: 49.99,
+        release_date: "December 17, 1987",
+        featured: true,
+        images: ["https://64.media.tumblr.com/tumblr_m9dpjoxsP31rck6fwo1_1280.jpg"]
+      },
+      {
+        title: "Duck Hunt",
+        description: "Duck Hunt is a light gun shooter game developed and published by Nintendo. Players use the NES Zapper to shoot ducks as they fly across the screen, with a hunting dog retrieving any that are hit. A classic of the NES era, Duck Hunt is best known for its charming gameplay and memorable sound effects.",
+        developer: "Nintendo R&D1",
+        publisher: "Nintendo",
+        price: 29.99,
+        release_date: "April 21, 1984",
+        featured: true,
+        images: ["https://static.wikia.nocookie.net/siivagunner/images/7/79/Duck_Hunt.jpg"]
       }
     ]
     )
