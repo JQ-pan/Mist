@@ -1,6 +1,6 @@
 .game-div {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-direction: row;
     margin-bottom: 5px;
     background: #202d39;
@@ -14,10 +14,18 @@
     height: 65.92px;
     width: 175.83px;
     background-color: white;
+    margin-right: 14px;
 }
 
 .game-name {
     display: block;
-    width: 271px;
-    color: #C7D5E0
+    width: 342px;
+    color: #C7D5E0;
+    margin-top: 10px;
+}
+
+.game-price {
+    position: relative;
+    margin-left: 12px;
+    margin-top: 24px;
 }

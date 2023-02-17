@@ -7,9 +7,44 @@
     background: linear-gradient(180deg, #2A475E 0%, #1B2838 80%);
 }
 
+.cart-container {
+    display: flex;
+}
+
+.cart-button-background {
+    background-image : url(https://store.akamai.steamstatic.com/public/images/v6/storemenu/background_cart.jpg);
+    margin-left: auto;
+    height: 20px;
+    width: 98.06px;
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    box-shadow: 0 0 3px #000;
+}
+
+.cart-button-text {
+    display: flex;
+    margin: auto;
+    font-size: 11px;
+    color: #a4d007;
+}
+
+.cart-button-background:hover {
+    background-image: none;
+    background-color: rgba( 164, 208, 7, 0.50 );
+}
+
+.cart-button-background:hover .cart-button-text {
+    color: #111111;
+}
+
 .game-display-container {
     margin: auto;
     width: 940px;
+}
+
+.game-display-main {
     display: flex;
     align-items: center;
     display: relative;
@@ -25,10 +60,11 @@
 .game-right-display-container {
     margin-left: 14px;
     width: 308px;
-    background-color: gray;
-    height: 771px;
+    background: linear-gradient( to right, #95bbd4 5%,#859bac 95%);
+    height: 630px;
 }
 
-.game-right-display-content {
-    /* background-color: black; */
-}
+/* .game-right-display-content {
+    
+} */
+

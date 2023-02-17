@@ -11,8 +11,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* margin-left: auto;
-    margin-right: auto; */
     margin: 0px 44px;
 }
 
@@ -68,18 +66,21 @@
     
 }
 
-.loginButton {
-    color: #b8b6b4;
-    text-decoration: none;
+.login-button-home-container {
+    height: 25px;
+    width: 33.23px;
 }
 
-.logoutButton {
+.login-button-nav {
     color: #b8b6b4;
-    padding-left: 4px;
+    text-decoration: none;
+    line-height: 24px;
+    margin: auto;
+    font-size: 11px;
 }
 
 .auth-links {
-    border: solid 1px;
+    padding-top: 5px;
     color: #b8b6b4;
     font-size: 11px;
     top: 0px;

@@ -10,13 +10,8 @@ import * as sessionActions from '../../store/session';
 
 function Navigation() {
     const sessionUser = useSelector(state => state.session.user);
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
     let sessionLinks;
-
-    // const handleLogout = (e) => {
-    //     e.preventDefault();
-    //     dispatch(sessionActions.logout());
-    // };
 
     if (sessionUser) {
         sessionLinks = (
@@ -31,9 +26,9 @@ function Navigation() {
         );
     } else {
         sessionLinks = (
-            <>
-                <NavLink className="loginButton" to="/login">Log In</NavLink>
-            </>
+            <div className="login-button-home-container">
+                <NavLink className="login-button-nav" to="/login">Log In</NavLink>
+            </div>
         );
     }
 
