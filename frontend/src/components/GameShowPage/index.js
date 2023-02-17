@@ -37,12 +37,14 @@ function GameShowPage() {
 
                 <div className="game-media-and-summary">
                     <div className="highlights-carousel-container">
-                        <div className="highlights-cont">
-                            Display Image Here
-                        </div>
+                        <img className="highlights-cont" src={game.images[1]} alt=""></img>
 
                         <div className="image-carousel">
-                            Carousel Here
+                            <img className="show-page-carousel-images" src={game.images[2]} alt=""></img>
+                            <img className="show-page-carousel-images" src={game.images[3]} alt=""></img>
+                            <img className="show-page-carousel-images" src={game.images[4]} alt=""></img>
+                            <img className="show-page-carousel-images" src={game.images[5]} alt=""></img>
+                            <img className="show-page-carousel-images" src={game.images[6]} alt=""></img>
                         </div>
 
                         <div className="carousel-slider">
@@ -51,7 +53,7 @@ function GameShowPage() {
                     </div>
 
                     <div className="game-preview-container">
-                        <img className="game-show-banner" src={game.images} alt=""></img>
+                        <img className="game-show-banner" src={game.images[0]} alt=""></img>
                         <div className="game-show-summary">{game.description}</div>
                         <div className="game-stats">
                             <div className="game-show-reviews">

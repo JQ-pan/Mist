@@ -62,7 +62,6 @@ div {
     position: relative;
     height: 337px;
     width: 600px;
-    border: 1px solid;
 }
 
 .image-carousel {
@@ -72,6 +71,16 @@ div {
     width: 600px;
     margin-bottom: 4px;
     z-index: 40;
+    border: 1px solid;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.show-page-carousel-images {
+    height: 65px;
+    width: 115px;
     border: 1px solid;
 }
 

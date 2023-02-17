@@ -8,7 +8,7 @@ const GameIndexItem = (props) => {
 
     return (
         <Link className="game-div" exact to={`/${props.game.id}`}>
-            <img className="banner" src={props.game.images} alt={""}></img>
+            <img className="banner" src={props.game.images[0]} alt={""}></img>
             <div className="game-name">{props.game.title}</div>
             <div className="game-price">${props.game.price}</div>
         </Link>
