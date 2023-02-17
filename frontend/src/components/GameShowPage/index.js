@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { fetchGame } from '../../store/game'
 import { NavLink } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { createCartItem } from '../../store/cartItem';
 import './GameShowPage.css'
 
