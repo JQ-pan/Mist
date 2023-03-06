@@ -3,6 +3,7 @@
     display: flex;
     justify-content: center;
     min-width: 940px;
+    background: #171a21;
 }
 
 .navbar-content {

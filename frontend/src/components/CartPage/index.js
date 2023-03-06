@@ -10,15 +10,13 @@ import "./CartPage.css";
 const CartPage = () => {
     const dispatch = useDispatch();
     const currentUser = useSelector(state => state.session.user);
-    
+
     const cartItemsArray = useSelector(state => state.cartItems ? Object.values(state.cartItems) : []);
     const cartItems = cartItemsArray.map(cartItem => <CartItem cartItem={cartItem} key={cartItem.id} />);
     useEffect(() => {
         dispatch(fetchCartItems());
     }, [dispatch])
-    console.log(cartItems)
     const total = cartItemsArray.reduce((acc, val) => (acc + parseFloat(val.price)), 0);
-    console.log(total);
 
     const handleRemoveAll = () => {
         alert('Removing all items from cart');
@@ -28,27 +26,31 @@ const CartPage = () => {
     if (!currentUser) {
         return <Redirect to="login" />;
     } else {
-        return (<div className="cart-page">
-            <div className="cart-page-header-container">
-                <span><Link to="/">All Products</Link> {'>'} Your Shopping Cart</span>
-                <h1>YOUR SHOPPING CART</h1>
+        return (<div className="cart-page-content">
+            <div className="cart-page-header-background">
+
+                <div className="cart-page-header-container">
+                    <span className="breadcrumb"><Link className="home-link" to="/">All Products</Link> {'>'} Your Shopping Cart</span>
+                    <div className="cart-header">YOUR SHOPPING CART</div>
+                </div>
             </div>
+
             <div className="cart-page-main-container">
                 <div className="cart-page-main-left">
                     {cartItems}
 
-                    <br/>
+                    <br />
 
                     <div className="checkout-container">
                         <span>Estimated total<sup>1</sup></span>
                         <div>${total === 0 ? "FREE" : Number(total).toFixed(2)}</div>
                     </div>
 
-                    <br/>
+                    <br />
 
                     <div className="purchase-for-self-or-gift">Is this a purchase for yourself or is it a gift? Select one to continue to checkout.</div>
 
-                    <br/>
+                    <br />
 
                     <div className="checkout-buttons">
                         <button className="purchase-green-button">Purchase for myself</button>
@@ -63,7 +65,7 @@ const CartPage = () => {
                     <span onClick={handleRemoveAll} className="remove-all-items">Remove all items</span>
                 </div>
 
-                <div className="cart-page-main-right"> 
+                <div className="cart-page-main-right">
                     {/* Additional games, Spotlight, and Recommended */}
                 </div>
 
