@@ -36,7 +36,7 @@ export const fetchCartItems = () => async (dispatch) => {
 };
 
 export const createCartItem = (gameId) => async (dispatch) => {
-    // debugger
+    debugger
     const res = await csrfFetch('/api/cart_items', {
         method: 'POST',
         body: JSON.stringify({ cart_item: { game_id: gameId }}),
@@ -79,6 +79,7 @@ const cartItemsReducer = (state = {}, action) => {
         case RECEIVE_CART_ITEMS:
             return { ...state, ...action.payload.games };
         case ADD_CART_ITEM:
+            debugger
             nextState[action.payload.id] = action.payload;
             return nextState;
         case REMOVE_CART_ITEM:

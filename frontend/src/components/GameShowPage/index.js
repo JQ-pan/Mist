@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { fetchGame } from '../../store/game'
 import { NavLink } from 'react-router-dom';
 import { createCartItem } from '../../store/cartItem';
+import { Link } from 'react-router-dom';
 import './GameShowPage.css'
 
 function GameShowPage() {
@@ -16,7 +17,7 @@ function GameShowPage() {
     }, [gameId, dispatch])
 
     const handleAddToCart = () => {
-        // debugger
+        debugger
         dispatch(createCartItem(game.id))
     }
 
@@ -90,7 +91,9 @@ function GameShowPage() {
                             <div className="game-purchase-block">
                                 <div className="game-purchase-block-action">
                                     <div className="game-purchase-price">${game.price}</div>
-                                    <button onClick={handleAddToCart} className="game-purchase-button">Add to Cart</button>
+                                    <Link exact to={'/cart'}>
+                                        <button onClick={handleAddToCart} className="game-purchase-button">Add to Cart</button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
