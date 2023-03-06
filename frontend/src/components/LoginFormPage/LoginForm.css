@@ -52,6 +52,10 @@
 	text-align: center;
 }
 
+.login-errors li {
+	color: #c15755;
+}
+
 .login-labels {
 	font-size: 14px;
 	color: #b8b6b4;

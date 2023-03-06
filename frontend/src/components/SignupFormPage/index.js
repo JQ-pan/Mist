@@ -33,7 +33,7 @@ function SignupFormPage() {
                     else setErrors([res.statusText]);
                 });
         }
-        return setErrors(['Confirm Password field must be the same as the Password field']);
+        return setErrors(['Passwords do not match']);
     };
 
     return (
@@ -41,9 +41,9 @@ function SignupFormPage() {
             <div className="signup-container">
                 <div className="signup" >
                     <form onSubmit={handleSubmit}>
-                        <ul>
+                        {/* <ul>
                             {errors.map(error => <li key={error}>{error}</li>)}
-                        </ul>
+                        </ul> */}
                         <div className="title">CREATE YOUR ACCOUNT</div>
                         <div className="form-row">
 

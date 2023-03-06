@@ -2,11 +2,13 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 import './Navigation.css';
 import logo from '../../assets/steam-icon-14885.png'
 import demoIcon from '../../assets/png-transparent-robotic-process-automation-computer-icons-robotics-roboto-electronics-silhouette-black.png'
-import * as sessionActions from '../../store/session';
+// import githubIcon from '../../assets/icons8-github-50.png'
+// import linkedinIcon from '../../assets/icon8-linkedin-circled-50.png'
+// import * as sessionActions from '../../store/session/home/jiongqipan/Projects/Mist/frontend/src/assets/icons8-github-50.png';
 
 function Navigation() {
     const sessionUser = useSelector(state => state.session.user);
@@ -47,6 +49,8 @@ function Navigation() {
                         <NavLink className="navbar_menu_links" exact to="/">COMMUNITY</NavLink>
                         <NavLink className="navbar_menu_links" exact to="/">ABOUT</NavLink>
                         <NavLink className="navbar_menu_links" exact to="/">SUPPORT</NavLink>
+                        <a className="navbar_menu_links" href="https://github.com/JQ-pan/Mist.git">GITHUB</a>
+                        <a className="navbar_menu_links" href="https://www.linkedin.com/in/jiongqi/">LINKEDIN</a>
                     </div>
                 </div>
 

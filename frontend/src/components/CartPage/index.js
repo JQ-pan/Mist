@@ -16,8 +16,9 @@ const CartPage = () => {
     useEffect(() => {
         dispatch(fetchCartItems());
     }, [dispatch])
-    
-    const total = cartItemsArray.reduce((acc, val) => (acc + val.price), 0);
+    console.log(cartItems)
+    const total = cartItemsArray.reduce((acc, val) => (acc + parseFloat(val.price)), 0);
+    console.log(total);
 
     const handleRemoveAll = () => {
         alert('Removing all items from cart');
@@ -35,12 +36,19 @@ const CartPage = () => {
             <div className="cart-page-main-container">
                 <div className="cart-page-main-left">
                     {cartItems}
+
+                    <br/>
+
                     <div className="checkout-container">
                         <span>Estimated total<sup>1</sup></span>
                         <div>${total === 0 ? "FREE" : Number(total).toFixed(2)}</div>
                     </div>
 
+                    <br/>
+
                     <div className="purchase-for-self-or-gift">Is this a purchase for yourself or is it a gift? Select one to continue to checkout.</div>
+
+                    <br/>
 
                     <div className="checkout-buttons">
                         <button className="purchase-green-button">Purchase for myself</button>
