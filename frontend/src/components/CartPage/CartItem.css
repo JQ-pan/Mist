@@ -32,3 +32,13 @@
     padding: 23px 3% 0 3%;
 }
 
+.remove-from-cart {
+    color: #56707f;
+    text-decoration: underline;
+    font-size: 11px;
+}
+
+.remove-from-cart:hover {
+    color: #67c1f5;
+    cursor: pointer;
+}
