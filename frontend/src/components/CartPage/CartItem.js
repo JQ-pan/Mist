@@ -21,7 +21,7 @@ const CartItem = ({ cartItem }) => {
 
                 {/* Game Image */}
                 <Link to={`/${cartItem.gameId}`}>
-                    <img className="cart-item-image" src={cartItem.images} alt={""} />
+                    <img className="cart-item-image" src={cartItem.images[0]} alt={""} />
                 </Link>
 
                 {/* Game Title */}

@@ -47,7 +47,7 @@ const CartPage = () => {
                                         Estimated total
                                         <sup>1</sup>
                                     </div>
-                                    <span className="cart-total-price-content">${total === 0 ? "FREE" : Number(total).toFixed(2)}</span>
+                                    <span className="cart-total-price-content">{total === 0 ? "FREE" : "$" + Number(total).toFixed(2)}</span>
 
                                     {/* <span>Estimated total<sup>1</sup></span>
                                 <div>${total === 0 ? "FREE" : Number(total).toFixed(2)}</div> */}

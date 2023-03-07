@@ -8,7 +8,7 @@
 
         json.games do 
             json.set! cart_item.game.id do 
-                json.extract! cart_item.game, :id, :title, :price
+                json.extract! cart_item.game, :id, :title, :price, :images
             end
         end
     end
