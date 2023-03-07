@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, Redirect } from "react-router-dom";
 import { deleteAllCartItems } from "../../store/cartItem";
 import { fetchCartItems } from "../../store/cartItem";
+import logo from "../../assets/steam-icon-14885.png";
 import CartItem from "./CartItem";
 import "./CartPage.css";
 
@@ -87,7 +88,7 @@ const CartPage = () => {
                         <div className="deliver-container">
                             <h1>Delivery</h1>
                             <div className="notice-box">
-                                <img className="delivery-image" src="../../assets/steam-icon-14885.png" alt=""></img>
+                                <img className="delivery-image" src={logo} alt=""></img>
                                 <div className="notice-box-text">
                                     <div className="first-line">All digital goods are delivered via the Mist webpage application</div>
                                     <div className="second-line">Mist and your games will be available for download at the end of the purchase.</div>
