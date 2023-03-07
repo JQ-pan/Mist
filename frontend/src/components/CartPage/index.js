@@ -56,28 +56,30 @@ const CartPage = () => {
                         <button className="purchase-green-button">Purchase for myself</button>
                         {/* <button className="purchase-green-button">Purchase as a gift</button> */}
                     </div>
-                </div>
 
-                <div className="disclaimer-text"><sup>1</sup> Sales tax will be calculated during checkout where applicable</div>
+                    <div className="disclaimer-text"><sup>1</sup> Sales tax will be calculated during checkout where applicable</div>
 
-                <div className="continue-shopping-container">
-                    <Link to="/" className="continue-shopping-button">Continue Shopping</Link>
-                    <span onClick={handleRemoveAll} className="remove-all-items">Remove all items</span>
+                    <div className="continue-shopping-container">
+                        <Link to="/" className="continue-shopping-button">Continue Shopping</Link>
+                        <span onClick={handleRemoveAll} className="remove-all-items">Remove all items</span>
+                    </div>
+
+                    <div className="deliver-container">
+                        <h1>Delivery</h1>
+                        <div className="notice-box">
+                            <img alt=""></img>
+                            <div className="notice-box-text">
+                                <div className="first-line">All digital goods are delivered via the Mist webpage application</div>
+                                <div className="second-line">Mist and your games will be available for download at the end of the purchase.</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div className="cart-page-main-right">
+                    <h2>COMING SOON</h2>
+                    <p>This component is not yet complete.</p>
                     {/* Additional games, Spotlight, and Recommended */}
-                </div>
-
-                <div className="deliver-container">
-                    <h1>Delivery</h1>
-                    <div className="notice-box">
-                        <img alt=""></img>
-                        <div className="notice-box-text">
-                            <div className="first-line">All digital goods are delivered via the Mist webpage application</div>
-                            <div className="second-line">Mist and your games will be available for download at the end of the purchase.</div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>)

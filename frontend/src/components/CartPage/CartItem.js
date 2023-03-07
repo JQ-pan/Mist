@@ -10,18 +10,30 @@ const CartItem = ({ cartItem }) => {
     }
 
     return (
-        <>
-            <Link to={`/${cartItem.gameId}`}>
-                <img src={cartItem.images} alt={""} />
-            </Link>
-            <div>
-                <Link to={`/${cartItem.gameId}`}>{cartItem.title}</Link>
+        <div className="cart-item-background">
+            <div className="cart-item-content">
+                
+                {/* Price and Remove Button */}
                 <div className="price-and-remove-button">
                     <div className="price">{cartItem.price !== 0 ? '$' + cartItem.price : 'Free'}</div>
                     <button onClick={handleRemove} className="remove-from-cart">Remove</button>
                 </div>
+
+                {/* Game Image */}
+                <Link to={`/${cartItem.gameId}`}>
+                    <img className="cart-item-image" src={cartItem.images} alt={""} />
+                </Link>
+
+                {/* Game Title */}
+                <div className="cart-item-title">
+                    <Link to={`/${cartItem.gameId}`}>
+                        {cartItem.title}
+                    </Link>
+                </div>
+
+
             </div>
-        </>
+        </div>
     )
 }
 
