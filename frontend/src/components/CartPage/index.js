@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, Redirect } from "react-router-dom";
 import { deleteAllCartItems } from "../../store/cartItem";
 import { fetchCartItems } from "../../store/cartItem";
+import logo from "../../assets/steam-icon-14885.png";
 import CartItem from "./CartItem";
 import "./CartPage.css";
 
@@ -12,6 +13,15 @@ const CartPage = () => {
     const currentUser = useSelector(state => state.session.user);
 
     const cartItemsArray = useSelector(state => state.cartItems ? Object.values(state.cartItems) : []);
+    console.log("this")
+    console.log(cartItemsArray)
+    // temporary fix for unknown bug
+    // cartItemsArray has an extra undefined object at the end that breaks the page
+    // if(cartItemsArray.peek() === undefined){
+        
+        // cartItemsArray.pop();
+    // }
+
     const cartItems = cartItemsArray.map(cartItem => <CartItem cartItem={cartItem} key={cartItem.id} />);
     useEffect(() => {
         dispatch(fetchCartItems());
@@ -47,7 +57,7 @@ const CartPage = () => {
                                         Estimated total
                                         <sup>1</sup>
                                     </div>
-                                    <span className="cart-total-price-content">${total === 0 ? "FREE" : Number(total).toFixed(2)}</span>
+                                    <span className="cart-total-price-content">{total === 0 ? "FREE" : "$" + Number(total).toFixed(2)}</span>
 
                                     {/* <span>Estimated total<sup>1</sup></span>
                                 <div>${total === 0 ? "FREE" : Number(total).toFixed(2)}</div> */}
@@ -87,7 +97,7 @@ const CartPage = () => {
                         <div className="deliver-container">
                             <h1>Delivery</h1>
                             <div className="notice-box">
-                                <img className="delivery-image" src="../../assets/steam-icon-14885.png" alt=""></img>
+                                <img className="delivery-image" src={logo} alt=""></img>
                                 <div className="notice-box-text">
                                     <div className="first-line">All digital goods are delivered via the Mist webpage application</div>
                                     <div className="second-line">Mist and your games will be available for download at the end of the purchase.</div>
