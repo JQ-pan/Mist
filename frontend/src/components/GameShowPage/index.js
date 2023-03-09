@@ -18,7 +18,6 @@ function GameShowPage() {
     }, [gameId, dispatch])
 
     const handleAddToCart = () => {
-        debugger
         dispatch(createCartItem(game.id))
     }
 

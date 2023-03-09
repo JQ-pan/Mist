@@ -17,10 +17,8 @@ class Api::CartItemsController < ApplicationController
     end
 
     def destroy
-        # debugger
         # @cart_item = CartItem.where(buyer_id: current_user.id, game_id: cart_item_params[:game_id])
         @cart_item = CartItem.find_by(game_id: params[:id])
-        # debugger
         @cart_item.destroy
         # render 'api/cart_items/index'
     end

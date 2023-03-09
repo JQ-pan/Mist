@@ -28,7 +28,6 @@ const clearCart = () => ({
 
 // thunk action creators
 export const fetchCartItems = () => async (dispatch) => {
-    debugger
     const res = await csrfFetch('/api/cart_items');
     if (res.ok) {
         const cartItems = await res.json();
@@ -37,7 +36,6 @@ export const fetchCartItems = () => async (dispatch) => {
 };
 
 export const createCartItem = (gameId) => async (dispatch) => {
-    debugger
     const res = await csrfFetch('/api/cart_items', {
         method: 'POST',
         body: JSON.stringify({ cart_item: { game_id: gameId }}),
@@ -47,7 +45,6 @@ export const createCartItem = (gameId) => async (dispatch) => {
     });
     if (res.ok) {
         const cartItem = await res.json();
-        debugger
         dispatch(addCartItem(cartItem));
     }
 };

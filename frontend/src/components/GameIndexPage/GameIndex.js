@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 import './GameIndex.css'
 
 const GameIndex = () => {
-    // debugger
     const dispatch = useDispatch();
     const games = useSelector(state => Object.values(state.games))
     useEffect(() => { dispatch(fetchGames()) }, [dispatch])
