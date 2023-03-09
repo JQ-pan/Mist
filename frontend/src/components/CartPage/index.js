@@ -13,6 +13,15 @@ const CartPage = () => {
     const currentUser = useSelector(state => state.session.user);
 
     const cartItemsArray = useSelector(state => state.cartItems ? Object.values(state.cartItems) : []);
+    console.log("this")
+    console.log(cartItemsArray)
+    // temporary fix for unknown bug
+    // cartItemsArray has an extra undefined object at the end that breaks the page
+    // if(cartItemsArray.peek() === undefined){
+        
+        // cartItemsArray.pop();
+    // }
+
     const cartItems = cartItemsArray.map(cartItem => <CartItem cartItem={cartItem} key={cartItem.id} />);
     useEffect(() => {
         dispatch(fetchCartItems());
