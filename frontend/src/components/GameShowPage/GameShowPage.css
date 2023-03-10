@@ -21,6 +21,8 @@ div {
     margin: 0 auto;
 }
 
+/* Page header / Game Title */
+
 .top-of-show-page {
     width: 100%;
     padding-bottom: 14px;
@@ -45,6 +47,8 @@ div {
     min-height: 46px;
     font-size: 26px;
 }
+
+/* Game Display Images and Carousel */
 
 .game-media-and-summary {
     display: flex;
@@ -90,6 +94,8 @@ div {
     background-color: gray;
     width: 600px;
 }
+
+/* Game Description and Statistics */
 
 .game-preview-container {
     width: 324px;
@@ -179,30 +185,34 @@ div {
     color: #556772;
 }
 
+/* Purchase area */
+
 .game-show-main-column {
     width: 940px;
-    margin: 0;
 }
 
+/* Purchase area - Left */
+
+.game-show-main-left {
+    border: 1px solid;
+    margin-top: 14px;
+}
+
+.game-purchase-container {
+
+}
+
+/* Purchase area - Right */
+
 .game-show-main-right {
-    margin-top: 16px;
+    margin-top: 14px;
     margin-left: 16px;
     width: 308px;
     float: right;
     border: 1px solid;
 }
 
-.game-show-main-left {
-    border: 1px solid;
-}
-
-.game-purchase-container {
-    margin-top: 14px;
-}
-
-
-
-
+/* Reviews */
 
 .review-content {
     margin-bottom: 32px;

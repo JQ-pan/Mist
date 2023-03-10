@@ -83,11 +83,19 @@ function GameShowPage() {
                     </div>
                 </div>
 
+
+
+
                 <div className="game-show-main-column">
+
+
                     <div className="game-show-main-left">
-                        
+
+
+
                         <div className="game-purchase-container">
                             <div>Buy {game.title}</div>
+
                             <div className="game-purchase-block">
                                 <div className="game-purchase-block-action">
                                     <div className="game-purchase-price">${game.price}</div>
@@ -96,7 +104,10 @@ function GameShowPage() {
                                     </Link>
                                 </div>
                             </div>
+
                         </div>
+
+
 
                         <div className="game-description">
                             <div className="description-header">ABOUT THIS GAME</div>
@@ -104,11 +115,22 @@ function GameShowPage() {
 
                     </div>
 
+
+
+
                     <div className="game-show-main-right">
                         Is this game relevant to you?
                     </div>
 
+
+
+
+
                 </div>
+
+
+
+
 
                 <div className="review-content">
                     <div className="game-show-reviews-column">
