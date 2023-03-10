@@ -194,12 +194,76 @@ div {
 /* Purchase area - Left */
 
 .game-show-main-left {
-    border: 1px solid;
+    /* border: 1px solid; */
     margin-top: 14px;
 }
 
 .game-purchase-container {
+    margin-bottom: 28px;
+}
 
+.game-purchase-content {
+    position: relative;
+    background: linear-gradient( -60deg, rgba(226,244,255,0.3) 5%,rgba(84, 107, 115, 0.3) 95%);
+    border-radius: 4px;
+    color: #c6d4df;
+    padding: 16px;
+    padding-bottom: 26px;
+}
+
+.purchase-text {
+    font-size: 21px;
+    color: white;
+}
+
+.game-purchase-block {
+    position: absolute;
+    right: 16px;
+    bottom: -17px;
+    left: 16px;
+    text-align: right;
+}
+
+.game-purchase-block-background {
+    height: 34px;
+    vertical-align: bottom;
+    display: inline-block;
+    background-color: black;
+    padding: 2px 2px 2px 0px;
+    border-radius: 2px;
+}
+
+.game-purchase-price {
+    font-size: 13px;
+    position: relative;
+    padding-left: 12px;
+    padding-right: 12px;
+    height: 26px;
+    display: inline-block
+}
+
+.add-to-cart-button {
+    position: relative;
+    display: inline-block;
+    margin-left: 2px;
+    vertical-align: middle;
+    background: linear-gradient( to right, #75b022 5%, #588a1b 95%);
+    cursor: pointer;
+    border-radius: 2px;
+
+}
+
+.add-to-cart-action {
+    border-radius: 2px;
+    border: none;
+    padding: 1px;
+    text-decoration: none;
+}
+
+.add-to-cart-action span {
+    color: #d2efa9;
+    padding: 0 15px;
+    line-height: 30px;
 }
 
 /* Purchase area - Right */
