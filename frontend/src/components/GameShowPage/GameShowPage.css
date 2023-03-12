@@ -8,6 +8,7 @@ div {
 
 .show-page {
     background-color: #1B2838;
+    padding-top: 10px;
 }
 
 .show-page-content {
@@ -194,7 +195,6 @@ div {
 /* Purchase area - Left */
 
 .game-show-main-left {
-    /* border: 1px solid; */
     margin-top: 14px;
 }
 
@@ -264,6 +264,28 @@ div {
     color: #d2efa9;
     padding: 0 15px;
     line-height: 30px;
+}
+
+/* ABOUT THIS GAME + Game Description */
+
+.game-description {
+    line-height: 1.5em;
+    font-size: 14px;
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+.game-description h2 {
+    font-size: 14px;
+    text-transform: uppercase;
+    margin: 0 0 10px;
+    letter-spacing: 0.03em;
+    padding-top: 2px;
+    line-height: 26px;
+    background-image: url(https://store.cloudflare.steamstatic.com/public/images/v6/maincol_gradient_rule.png);
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    
 }
 
 /* Purchase area - Right */

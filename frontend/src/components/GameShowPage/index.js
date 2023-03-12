@@ -119,7 +119,8 @@ function GameShowPage() {
 
 
                             <div className="game-description">
-                                <div className="description-header">ABOUT THIS GAME</div>
+                                <h2>About this game</h2>
+                                <div className="description-content">{game.description}</div>
                             </div>
 
                         </div>
