@@ -17,6 +17,10 @@ function StoreNavigation() {
         setValue(e.target.value);
     }
 
+    const onMouseDown = (e) => {
+        e.preventDefault();
+    }
+
     const onSearch = (searchTerm) => {
         console.log('search', searchTerm);
     }
@@ -65,19 +69,17 @@ function StoreNavigation() {
                             onBlur={() => setFocused(false)}
                             className="navbar-search-bar"
                             placeholder="search" />
-                        <a onClick={() => onSearch(value)}> <img src="https://store.akamai.steamstatic.com/public/images/v6/search_icon_btn.png" /> </a>
+                        <a onClick={() => onSearch(value)} > <img src="https://store.akamai.steamstatic.com/public/images/v6/search_icon_btn.png" alt=""/> </a>
                     </div>
 
                     {focused && (
-                        <div className="search-results">
-                            {gameTitles.length > 0 ? (
-                                gameTitles
-                            ) : (
-                                <></>
-                            )}
+                    // {(
+                        <div
+                            className="search-results" onMouseDown={onMouseDown}>
+                            { gameTitles.length !== 0 && (gameTitles) }
                         </div>
                     )}
-                    
+
                 </div>
             </div>
         </div>
