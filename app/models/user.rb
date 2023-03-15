@@ -31,9 +31,13 @@ class User < ApplicationRecord
     foreign_key: :buyer_id,
     class_name: :CartItem
 
-  has_many :carted_games,
-    through: :cart_items,
-    source: :game
+  has_many :library_items,
+    foreign_key: :owner_id,
+    class_name: :LibraryItem
+
+  # has_many :carted_games,
+  #   through: :cart_items,
+  #   source: :game
 
   def self.find_by_credentials(credential, password)
     field = credential =~ URI::MailTo::EMAIL_REGEXP ? :email : :username
