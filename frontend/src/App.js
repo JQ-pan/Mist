@@ -7,11 +7,13 @@ import BottomBlock from "./components/BottomBlock"
 import GameIndex from "./components/GameIndexPage/GameIndex";
 import GameShowPage from "./components/GameShowPage/";
 import CartPage from "./components/CartPage/";
+import StoreNavigation from "./components/StoreNavigation/";
 
 function App() {
   return (
     <>
       <Navigation />
+      <StoreNavigation />
       <Switch>
         <Route path="/login">
           <LoginFormPage />

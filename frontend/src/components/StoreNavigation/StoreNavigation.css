@@ -1,0 +1,74 @@
+.store-navbar-container {
+    width: 940px;
+    margin: auto;
+}
+
+.cart-container {
+    display: flex;
+    margin-bottom: 4px;
+}
+
+.cart-button-background {
+    background-image : url(https://store.akamai.steamstatic.com/public/images/v6/storemenu/background_cart.jpg);
+    margin-left: auto;
+    height: 20px;
+    width: 98.06px;
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    box-shadow: 0 0 3px #000;
+}
+
+.cart-button-text {
+    display: flex;
+    margin: auto;
+    font-size: 11px;
+    color: #a4d007;
+}
+
+.cart-button-background:hover {
+    background-image: none;
+    background-color: rgba( 164, 208, 7, 0.50 );
+}
+
+.cart-button-background:hover .cart-button-text {
+    color: #111111;
+}
+
+.navbar-element {
+    padding: 0 15px;
+}
+
+.store-navbar-content {
+    height: 35px;
+    border: 1px solid;
+    background: linear-gradient(90deg, rgba(62, 103, 150, 0.919) 11.38%, rgba(58, 120, 177, 0.8) 25.23%, rgb(15, 33, 110) 100%);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.navbar-search {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+
+    position: relative;
+}
+
+.navbar-search-bar {
+    color: gray;
+}
+
+.search-results {
+    position: absolute;
+    top: 39px;
+    right: 4px;
+    width: 430px;
+    box-shadow: 0 0 12px #000000;
+    
+    display: flex;
+    flex-direction: column;
+}

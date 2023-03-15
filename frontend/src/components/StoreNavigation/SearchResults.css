@@ -1,0 +1,14 @@
+.search-game-div {
+    background-color: gray;
+    border: 1px solid;
+
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+.search-game-div .banner {
+    width: 120px;
+    height: 45px;
+}
