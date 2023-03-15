@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import GameIndexItem from './GameIndexItem'
 import { fetchGames } from '../../store/game';
-import { Link } from 'react-router-dom';
 import './GameIndex.css'
 
 const GameIndex = () => {
@@ -14,13 +13,6 @@ const GameIndex = () => {
     return (
         <div className="game-display-background">
             <div className="game-display-container">
-                <div className="cart-container">
-                    <Link className="cart-button-background" exact to={'/cart'}>
-                        <div className="cart-button-text">
-                            CART
-                        </div>
-                    </Link>
-                </div>
                 <div className="game-display-main">
                     <div className="game-left-display-container">
                         <ul id="games-list">

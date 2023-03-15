@@ -10,21 +10,21 @@
     width: 618px;
 }
 
-.banner {
+.game-div .banner {
     height: 65.92px;
     width: 175.83px;
     background-color: white;
     margin-right: 14px;
 }
 
-.game-name {
+.game-div .game-name {
     display: block;
     width: 342px;
     color: #C7D5E0;
     margin-top: 10px;
 }
 
-.game-price {
+.game-div .game-price {
     position: relative;
     margin-left: 12px;
     margin-top: 24px;
