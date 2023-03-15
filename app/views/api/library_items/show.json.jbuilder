@@ -1,0 +1,1 @@
+json.extract! @library_item, :id, :owner_id, :game_id
