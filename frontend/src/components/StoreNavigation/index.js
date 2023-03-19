@@ -60,7 +60,7 @@ function StoreNavigation() {
                 <div className="navbar-element">Labs</div>
 
                 <div className="navbar-search">
-                    <div classname="search-inner">
+                    <div className="search-inner">
                         <input
                             type="text"
                             value={value}

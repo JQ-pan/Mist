@@ -4,14 +4,18 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, Redirect } from "react-router-dom";
 import { deleteAllCartItems } from "../../store/cartItem";
 import { fetchCartItems } from "../../store/cartItem";
+import { createLibraryItem } from "../../store/libraryItem";
+import { useHistory } from "react-router-dom";
 import logo from "../../assets/steam-icon-14885.png";
 import CartItem from "./CartItem";
 import "./CartPage.css";
 
 const CartPage = () => {
     const dispatch = useDispatch();
+    const history = useHistory();
     const currentUser = useSelector(state => state.session.user);
 
+    // Fetch cart items
     const cartItemsArray = useSelector(state => state.cartItems ? Object.values(state.cartItems) : []);
 
     const cartItems = cartItemsArray.map(cartItem => <CartItem cartItem={cartItem} key={cartItem.id} />);
@@ -23,6 +27,14 @@ const CartPage = () => {
     const handleRemoveAll = () => {
         alert('Removing all items from cart');
         dispatch(deleteAllCartItems());
+    }
+
+    // Add to library
+    const HandleAddToLibrary = () => {
+        for (let game of cartItemsArray) {
+            dispatch(createLibraryItem(game.id))
+        }
+        history.push('/library')
     }
 
     if (!currentUser) {
@@ -59,7 +71,7 @@ const CartPage = () => {
                             <div className="checkout-actions">
                                 <div className="purchase-for-self-or-gift">Is this a purchase for yourself or is it a gift? Select one to continue to checkout.</div>
                                 <div className="checkout-buttons">
-                                    <button className="purchase-green-button">
+                                    <button className="purchase-green-button" onClick={HandleAddToLibrary}>
                                         <span>Purchase for myself</span>
                                     </button>
                                     <button className="purchase-green-button">
