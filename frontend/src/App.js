@@ -8,12 +8,14 @@ import GameIndex from "./components/GameIndexPage/GameIndex";
 import GameShowPage from "./components/GameShowPage/";
 import CartPage from "./components/CartPage/";
 import StoreNavigation from "./components/StoreNavigation/";
+import LibraryPage from "./components/LibraryPage";
 
 function App() {
   return (
     <>
       <Navigation />
       <StoreNavigation />
+      
       <Switch>
         <Route path="/login">
           <LoginFormPage />

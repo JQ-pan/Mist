@@ -9,12 +9,12 @@ const CLEAR_CART = 'CLEAR_CART';
 // action creators
 const receiveCartItems = (cartItems) => ({
     type: RECEIVE_CART_ITEMS,
-    payload: cartItems,
+    payload: cartItems
 });
 
 const addCartItem = (cartItem) => ({
     type: ADD_CART_ITEM,
-    payload: cartItem,
+    payload: cartItem
 });
 
 const removeCartItem = (cartItemId) => ({
