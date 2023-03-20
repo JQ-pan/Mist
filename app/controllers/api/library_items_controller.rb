@@ -7,7 +7,7 @@ class Api::LibraryItemsController < ApplicationController
     end
 
     def create
-        @library_item = LibraryItem.new(buyer_id: current_user.id, game_id: library_item_params[:game_id])
+        @library_item = LibraryItem.new(owner_id: current_user.id, game_id: library_item_params[:game_id])
 
         if @library_item.save!
             render 'api/library_items/show'

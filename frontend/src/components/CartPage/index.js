@@ -19,21 +19,23 @@ const CartPage = () => {
     const cartItemsArray = useSelector(state => state.cartItems ? Object.values(state.cartItems) : []);
 
     const cartItems = cartItemsArray.map(cartItem => <CartItem cartItem={cartItem} key={cartItem.id} />);
+    
     useEffect(() => {
         dispatch(fetchCartItems());
     }, [dispatch])
+
     const total = cartItemsArray.reduce((acc, val) => (acc + parseFloat(val.price)), 0);
 
     const handleClearCart = () => {
         alert('Removing all items from cart');
-        dispatch(deleteAllCartItems());
     }
-
+    
     // Add to library
-    const HandleAddToLibrary = () => {
+    const handleAddToLibrary = async () => {
         for (let game of cartItemsArray) {
             dispatch(createLibraryItem(game.id))
         }
+        dispatch(deleteAllCartItems());
         history.push('/library')
     }
 
@@ -71,7 +73,7 @@ const CartPage = () => {
                             <div className="checkout-actions">
                                 <div className="purchase-for-self-or-gift">Is this a purchase for yourself or is it a gift? Select one to continue to checkout.</div>
                                 <div className="checkout-buttons">
-                                    <button className="purchase-green-button" onClick={HandleAddToLibrary}>
+                                    <button className="purchase-green-button" onClick={handleAddToLibrary}>
                                         <span>Purchase for myself</span>
                                     </button>
                                     <button className="purchase-green-button">
