@@ -1,25 +1,76 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import { fetchGame } from '../../store/game'
 import { NavLink } from 'react-router-dom';
 // import { Link } from 'react-router-dom';
+import { fetchCartItems } from '../../store/cartItem';
 import { createCartItem } from '../../store/cartItem';
+import { fetchLibraryItems } from '../../store/libraryItem';
 import { Link } from 'react-router-dom';
 import './GameShowPage.css'
 
 function GameShowPage() {
     const dispatch = useDispatch();
+    const history = useHistory();
     const { gameId } = useParams();
 
     const game = useSelector(state => state.games ? state.games[gameId] : {});
     useEffect(() => {
         dispatch(fetchGame(gameId));
+        dispatch(fetchLibraryItems());
+        dispatch(fetchCartItems());
     }, [gameId, dispatch])
 
     const handleAddToCart = () => {
         dispatch(createCartItem(game.id))
+            .then(history.push('/cart'))
     }
+
+    const handleInCart = () => {
+        history.push('/cart');
+    }
+
+    // check if the game is already in the cart or in the library
+    const cartItemsArray = useSelector(state => state.cartItems ? Object.values(state.cartItems) : []);
+    const libraryItemsArray = useSelector(state => state.libraryItems ? Object.values(state.libraryItems) : []);
+
+    // if (libraryItemsArray) {
+    //     console.log(libraryItemsArray);
+    //     if (gameInLibrary) {
+    //         console.log(gameInLibrary);
+    //     }
+    // }
+    
+    let addToCartButton;
+    
+    // if (cartItemsArray) {
+        //     console.log(cartItemsArray);
+        const gameInCart = cartItemsArray.some(cartGame => cartGame.id === game.id);
+        const gameInLibrary = libraryItemsArray.some(libraryGame => libraryGame.id === game.id);
+        if (gameInCart) {
+            addToCartButton = (
+                <div className="add-to-cart-action" onClick={handleInCart}>
+                    <span>In Cart</span>
+                </div>)
+        } else if (gameInLibrary) {
+            addToCartButton = (
+                <div className="add-to-cart-action">
+                    <span>In Library</span>
+                </div>
+            )
+        } else {
+            addToCartButton = (
+                <div className="add-to-cart-action" onClick={handleAddToCart}>
+                    <span>Add to Cart</span>
+                </div>)
+        }
+    // }
+
+
+    (<div className="add-to-cart-action" onClick={handleAddToCart}>
+        <span>Add to Cart</span>
+    </div>)
 
     if (game === undefined) {
         return <>Still loading...</>
@@ -83,15 +134,9 @@ function GameShowPage() {
                         </div>
                     </div>
 
-
-
-
                     <div className="game-show-main-column">
 
-
                         <div className="game-show-main-left">
-
-
 
                             <div className="game-purchase-container">
                                 <div className="game-purchase-content">
@@ -105,9 +150,7 @@ function GameShowPage() {
                                             <div className="game-purchase-price">${game.price}</div>
 
                                             <div className="add-to-cart-button">
-                                                <Link className="add-to-cart-action" onClick={handleAddToCart} exact to={'/cart'}>
-                                                    <span>Add to Cart</span>
-                                                </Link>
+                                                {addToCartButton}
                                             </div>
 
                                         </div>
@@ -116,8 +159,6 @@ function GameShowPage() {
 
                             </div>
 
-
-
                             <div className="game-description">
                                 <h2>About this game</h2>
                                 <div className="description-content">{game.description}</div>
@@ -125,22 +166,11 @@ function GameShowPage() {
 
                         </div>
 
-
-
-
                         <div className="game-show-main-right">
                             Is this game relevant to you?
                         </div>
 
-
-
-
-
                     </div>
-
-
-
-
 
                     <div className="review-content">
                         <div className="game-show-reviews-column">

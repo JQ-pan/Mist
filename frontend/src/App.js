@@ -8,14 +8,13 @@ import GameIndex from "./components/GameIndexPage/GameIndex";
 import GameShowPage from "./components/GameShowPage/";
 import CartPage from "./components/CartPage/";
 import StoreNavigation from "./components/StoreNavigation/";
-import LibraryPage from "./components/LibraryPage";
+import LibraryPage from "./components/LibraryPage/";
 
 function App() {
   return (
     <>
       <Navigation />
-      <StoreNavigation />
-      
+
       <Switch>
         <Route path="/login">
           <LoginFormPage />
@@ -24,15 +23,25 @@ function App() {
           <SignupFormPage />
         </Route>
         <Route exact path="/">
+          <StoreNavigation />
           <GameIndex />
           <BottomBlock />
         </Route>
         <Route path="/cart">
+          <StoreNavigation />
           <CartPage />
         </Route>
+
+        <Route path="/library">
+          <LibraryPage />
+        </Route>
+        
         <Route path="/:gameId">
+          <StoreNavigation />
           <GameShowPage />
         </Route>
+
+
       </Switch>
     </>
   );

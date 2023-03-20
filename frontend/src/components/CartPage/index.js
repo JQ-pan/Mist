@@ -4,25 +4,39 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, Redirect } from "react-router-dom";
 import { deleteAllCartItems } from "../../store/cartItem";
 import { fetchCartItems } from "../../store/cartItem";
+import { createLibraryItem } from "../../store/libraryItem";
+import { useHistory } from "react-router-dom";
 import logo from "../../assets/steam-icon-14885.png";
 import CartItem from "./CartItem";
 import "./CartPage.css";
 
 const CartPage = () => {
     const dispatch = useDispatch();
+    const history = useHistory();
     const currentUser = useSelector(state => state.session.user);
 
+    // Fetch cart items
     const cartItemsArray = useSelector(state => state.cartItems ? Object.values(state.cartItems) : []);
 
     const cartItems = cartItemsArray.map(cartItem => <CartItem cartItem={cartItem} key={cartItem.id} />);
+    
     useEffect(() => {
         dispatch(fetchCartItems());
     }, [dispatch])
+
     const total = cartItemsArray.reduce((acc, val) => (acc + parseFloat(val.price)), 0);
 
-    const handleRemoveAll = () => {
+    const handleClearCart = () => {
         alert('Removing all items from cart');
+    }
+    
+    // Add to library
+    const handleAddToLibrary = async () => {
+        for (let game of cartItemsArray) {
+            dispatch(createLibraryItem(game.id))
+        }
         dispatch(deleteAllCartItems());
+        history.push('/library')
     }
 
     if (!currentUser) {
@@ -59,7 +73,7 @@ const CartPage = () => {
                             <div className="checkout-actions">
                                 <div className="purchase-for-self-or-gift">Is this a purchase for yourself or is it a gift? Select one to continue to checkout.</div>
                                 <div className="checkout-buttons">
-                                    <button className="purchase-green-button">
+                                    <button className="purchase-green-button" onClick={handleAddToLibrary}>
                                         <span>Purchase for myself</span>
                                     </button>
                                     <button className="purchase-green-button">
@@ -79,7 +93,7 @@ const CartPage = () => {
                         <div className="continue-shopping-container">
                             <Link to="/" className="continue-shopping-button"><span>Continue Shopping</span></Link>
                             <div className="remove-all-items-container">
-                                <span onClick={handleRemoveAll} className="remove-all-items">Remove all items</span>
+                                <span onClick={handleClearCart} className="remove-all-items">Remove all items</span>
                             </div>
                         </div>
 
