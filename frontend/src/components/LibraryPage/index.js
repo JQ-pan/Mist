@@ -23,6 +23,7 @@ const LibraryPage = () => {
     } else {
         return (
             <div className="library-page-content">
+                <h1>Library</h1>
                 {libraryItems}
                 <div>
                     {libraryItemsArray.title}

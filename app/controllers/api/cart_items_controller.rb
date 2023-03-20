@@ -17,9 +17,14 @@ class Api::CartItemsController < ApplicationController
     end
 
     def destroy
-        # @cart_item = CartItem.where(buyer_id: current_user.id, game_id: cart_item_params[:game_id])
-        @cart_item = CartItem.find_by(game_id: params[:id])
-        @cart_item.destroy
+        if (params[:id] == 'all')
+            @cart_items = CartItem.where(buyer_id: current_user.id)
+            @cart_items.destroy_all
+        else
+            @cart_item = CartItem.find_by(game_id: params[:id])
+            @cart_item.destroy
+        end
+        render json: { message: 'success'}
         # render 'api/cart_items/index'
     end
 

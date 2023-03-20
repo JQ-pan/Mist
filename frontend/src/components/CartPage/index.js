@@ -24,7 +24,7 @@ const CartPage = () => {
     }, [dispatch])
     const total = cartItemsArray.reduce((acc, val) => (acc + parseFloat(val.price)), 0);
 
-    const handleRemoveAll = () => {
+    const handleClearCart = () => {
         alert('Removing all items from cart');
         dispatch(deleteAllCartItems());
     }
@@ -91,7 +91,7 @@ const CartPage = () => {
                         <div className="continue-shopping-container">
                             <Link to="/" className="continue-shopping-button"><span>Continue Shopping</span></Link>
                             <div className="remove-all-items-container">
-                                <span onClick={handleRemoveAll} className="remove-all-items">Remove all items</span>
+                                <span onClick={handleClearCart} className="remove-all-items">Remove all items</span>
                             </div>
                         </div>
 

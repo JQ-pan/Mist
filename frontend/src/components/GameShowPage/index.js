@@ -5,6 +5,7 @@ import { fetchGame } from '../../store/game'
 import { NavLink } from 'react-router-dom';
 // import { Link } from 'react-router-dom';
 import { createCartItem } from '../../store/cartItem';
+import { fetchLibraryItems } from '../../store/libraryItem';
 import { Link } from 'react-router-dom';
 import './GameShowPage.css'
 
@@ -14,7 +15,8 @@ function GameShowPage() {
 
     const game = useSelector(state => state.games ? state.games[gameId] : {});
     useEffect(() => {
-        dispatch(fetchGame(gameId));
+        dispatch(fetchGame(gameId))
+        dispatch(fetchLibraryItems());
     }, [gameId, dispatch])
 
     const handleAddToCart = () => {
