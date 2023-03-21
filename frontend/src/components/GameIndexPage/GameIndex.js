@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import GameIndexItem from './GameIndexItem'
 import { fetchGames } from '../../store/game';
+import StoreNavigation from '../StoreNavigation';
 import './GameIndex.css'
 
 const GameIndex = () => {
@@ -12,6 +13,7 @@ const GameIndex = () => {
     const gameItems = games.map((game, i) => <GameIndexItem key={i} game={game} />)
     return (
         <div className="game-display-background">
+            <StoreNavigation />
             <div className="game-display-container">
                 <div className="game-display-main">
                     <div className="game-left-display-container">

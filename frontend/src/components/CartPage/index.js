@@ -8,6 +8,7 @@ import { createLibraryItem } from "../../store/libraryItem";
 import { useHistory } from "react-router-dom";
 import logo from "../../assets/steam-icon-14885.png";
 import CartItem from "./CartItem";
+import StoreNavigation from "../StoreNavigation";
 import "./CartPage.css";
 
 const CartPage = () => {
@@ -44,6 +45,7 @@ const CartPage = () => {
     } else {
         return (
             <div className="cart-page-content">
+                <StoreNavigation />
                 <div className="cart-page-header-background">
 
                     <div className="cart-page-header-container">

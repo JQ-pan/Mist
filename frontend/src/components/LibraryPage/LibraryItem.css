@@ -1,0 +1,51 @@
+.library-item-background {
+    background-color: rgba(0,0,0,.2);
+    margin-bottom: 10px;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.library-item-portrait {
+    width: 259px;
+    height: 121px;
+    cursor: pointer;
+}
+
+.library-item-content {
+    margin-left: 10px;
+}
+
+.library-item-title {
+    font-size: 19px;
+    font-weight: 400;
+    color: white;
+    height: 35.69px;
+    text-overflow: ellipsis;
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 0.14em;
+}
+
+.library-item-data {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}
+
+.column-title {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+    color: #B8BCBF;
+    margin-bottom: 3px;
+}
+
+.column-data {
+    color: rgba(184,188,191,.8);
+    font-size: 0.75rem;
+}

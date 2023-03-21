@@ -23,12 +23,10 @@ function App() {
           <SignupFormPage />
         </Route>
         <Route exact path="/">
-          <StoreNavigation />
           <GameIndex />
           <BottomBlock />
         </Route>
         <Route path="/cart">
-          <StoreNavigation />
           <CartPage />
         </Route>
 
@@ -37,7 +35,6 @@ function App() {
         </Route>
         
         <Route path="/:gameId">
-          <StoreNavigation />
           <GameShowPage />
         </Route>
 

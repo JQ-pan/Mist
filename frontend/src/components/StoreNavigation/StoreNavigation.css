@@ -1,6 +1,7 @@
 .store-navbar-container {
     width: 940px;
     margin: auto;
+    margin-bottom: 16px;
 }
 
 .cart-container {

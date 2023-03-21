@@ -8,6 +8,7 @@ import { fetchCartItems } from '../../store/cartItem';
 import { createCartItem } from '../../store/cartItem';
 import { fetchLibraryItems } from '../../store/libraryItem';
 import { Link } from 'react-router-dom';
+import StoreNavigation from '../StoreNavigation';
 import './GameShowPage.css'
 
 function GameShowPage() {
@@ -78,6 +79,7 @@ function GameShowPage() {
 
         return (
             <div className="show-page">
+                <StoreNavigation />
                 <div className="show-page-content">
                     <div className="top-of-show-page">
                         <div className="show-page-pathing">

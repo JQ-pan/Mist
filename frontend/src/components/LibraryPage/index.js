@@ -13,7 +13,7 @@ const LibraryPage = () => {
         console.log(currentUser);
     }
 
-    const libraryItemsArray= useSelector(state => state.libraryItems ? Object.values(state.libraryItems) : []);
+    const libraryItemsArray = useSelector(state => state.libraryItems ? Object.values(state.libraryItems) : []);
 
     const libraryItems = libraryItemsArray.map(libraryItem => <LibraryItem libraryItem={libraryItem} key={libraryItem.id} />);
     useEffect(() => {
@@ -24,15 +24,18 @@ const LibraryPage = () => {
         return <Redirect to="login" />;
     } else {
         return (
-            <div className="library-page-content">
-                <div className="library-header">
-                    <img className="library-profile-pic" src={demoIcon} alt=""></img>
-                    <div className="library-username">{currentUser.username}</div>
+            <div className="library-page-background">
+                <div className="library-page-content">
+                    <div className="library-header">
+                        <img className="library-profile-pic" src={demoIcon} alt=""></img>
+                        <div className="library-profile-header">
+                            <span className="profile-header-username">{currentUser.username} </span>
+                            <span className="profile-header-arrow">» </span>
+                            <a href="/" className="profile-link-to-home">Games</a>
+                        </div>
 
-                </div>
-                {libraryItems}
-                <div>
-                    {libraryItemsArray.title}
+                    </div>
+                    {libraryItems}
                 </div>
             </div>
         )
