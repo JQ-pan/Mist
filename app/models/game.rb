@@ -29,10 +29,6 @@ class Game < ApplicationRecord
         foreign_key: :game_id,
         class_name: :LibraryItem
 
-    # has_many :buyers,
-    #     through: :cart_items,
-    #     source: :user
-
     def images_not_empty
         errors.add(:images, 'must have image') if images.empty?
     end
