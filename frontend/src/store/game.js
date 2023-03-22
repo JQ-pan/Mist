@@ -1,7 +1,7 @@
 import csrfFetch from "./csrf";
 
-const RECEIVE_GAMES = 'RECEIVE_GAMES'
-const RECEIVE_GAME = 'RECEIVE_GAME'
+const RECEIVE_GAMES = 'games/RECEIVE_GAMES'
+const RECEIVE_GAME = 'games/RECEIVE_GAME'
 
 // actions
 

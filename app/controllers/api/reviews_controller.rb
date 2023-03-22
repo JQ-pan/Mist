@@ -19,7 +19,7 @@ class Api::ReviewsController < ApplicationController
         else
             render json: @review.errors, status: :unprocessable_entity
         end
-        end
+    end
     
     def update
         @review = Review.find(params[:id])
