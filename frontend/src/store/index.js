@@ -4,12 +4,16 @@ import sessionReducer from './session'
 import gamesReducer from './game';
 import cartItemsReducer from './cartItem';
 import libraryItemsReducer from './libraryItem';
+import reviewsReducer from './review';
+import userReducer from './users';
 
 export const rootReducer = combineReducers({
   session: sessionReducer,
+  users: userReducer,
   games: gamesReducer,
   cartItems: cartItemsReducer,
-  libraryItems: libraryItemsReducer
+  libraryItems: libraryItemsReducer,
+  reviews: reviewsReducer
 });
 
 let enhancer;

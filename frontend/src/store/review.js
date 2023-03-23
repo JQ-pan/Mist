@@ -4,6 +4,7 @@ import csrfFetch from "./csrf";
 const RECEIVE_REVIEWS = "reviews/RECEIVE_REVIEWS";
 const ADD_REVIEW = "reviews/ADD_REVIEW";
 const REMOVE_REVIEW = "reviews/REMOVE_REVIEW";
+const EDIT_REVIEW = "reviews/EDIT_REVIEW";
 
 // Action Creators
 const receiveReviews = (reviews) => ({
@@ -20,6 +21,11 @@ const removeReview = (reviewId) => ({
     type: REMOVE_REVIEW,
     payload: reviewId
 })
+
+const editReview = (review) => ({
+    type: EDIT_REVIEW,
+    payload: review
+});
 
 // Thunk action creators
 export const fetchReviews = () => async dispatch => {
@@ -44,8 +50,22 @@ export const createReview = (data, gameId) => async dispatch => {
     }
 }
 
+export const updateReview = (reviewId, data) => async dispatch => {
+    const res = await csrfFetch(`/api/reviews/${reviewId}`, {
+        method: "PUT", 
+        headers: {
+            "Content-type": "application/json",
+        },
+        body: JSON.stringify(data)
+    });
+    if (res.ok) {
+        const updatedReview = await res.json();
+        dispatch(editReview(updatedReview));
+    }
+}
+
 export const deleteReview = (reviewId) => async dispatch => {
-    const res = await csrfFetch('/api/reviews', {
+    const res = await csrfFetch(`/api/reviews/${reviewId}`, {
         method: 'DELETE',
     });
     if (res.ok) {
