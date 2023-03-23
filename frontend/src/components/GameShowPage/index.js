@@ -9,6 +9,8 @@ import { createCartItem } from '../../store/cartItem';
 import { fetchLibraryItems } from '../../store/libraryItem';
 import { Link } from 'react-router-dom';
 import StoreNavigation from '../StoreNavigation';
+import Reviews from '../Reviews';
+import ReviewForm from '../Reviews/ReviewForm';
 import './GameShowPage.css'
 
 function GameShowPage() {
@@ -36,36 +38,27 @@ function GameShowPage() {
     const cartItemsArray = useSelector(state => state.cartItems ? Object.values(state.cartItems) : []);
     const libraryItemsArray = useSelector(state => state.libraryItems ? Object.values(state.libraryItems) : []);
 
-    // if (libraryItemsArray) {
-    //     console.log(libraryItemsArray);
-    //     if (gameInLibrary) {
-    //         console.log(gameInLibrary);
-    //     }
-    // }
-    
     let addToCartButton;
-    
-    // if (cartItemsArray) {
-        //     console.log(cartItemsArray);
-        const gameInCart = cartItemsArray.some(cartGame => cartGame.id === game.id);
-        const gameInLibrary = libraryItemsArray.some(libraryGame => libraryGame.id === game.id);
-        if (gameInCart) {
-            addToCartButton = (
-                <div className="add-to-cart-action" onClick={handleInCart}>
-                    <span>In Cart</span>
-                </div>)
-        } else if (gameInLibrary) {
-            addToCartButton = (
-                <div className="add-to-cart-action">
-                    <span>In Library</span>
-                </div>
-            )
-        } else {
-            addToCartButton = (
-                <div className="add-to-cart-action" onClick={handleAddToCart}>
-                    <span>Add to Cart</span>
-                </div>)
-        }
+
+    const gameInCart = cartItemsArray.some(cartGame => cartGame.id === game.id);
+    const gameInLibrary = libraryItemsArray.some(libraryGame => libraryGame.id === game.id);
+    if (gameInCart) {
+        addToCartButton = (
+            <div className="add-to-cart-action" onClick={handleInCart}>
+                <span>In Cart</span>
+            </div>)
+    } else if (gameInLibrary) {
+        addToCartButton = (
+            <div className="add-to-cart-action">
+                <span>In Library</span>
+            </div>
+        )
+    } else {
+        addToCartButton = (
+            <div className="add-to-cart-action" onClick={handleAddToCart}>
+                <span>Add to Cart</span>
+            </div>)
+    }
     // }
 
 
@@ -139,7 +132,7 @@ function GameShowPage() {
                     <div className="game-show-main-column">
 
                         <div className="game-show-main-left">
-
+                            <ReviewForm game={game}/>
                             <div className="game-purchase-container">
                                 <div className="game-purchase-content">
 
@@ -180,7 +173,12 @@ function GameShowPage() {
                                 <div className="game-show-average-reviews">Overall Reviews</div>
                                 <div className="game-show-reviews-listed">
                                     <div className="game-show-review-owner">Bob</div>
-                                    <div className="game-show-review-content">Review</div>
+                                    <br/>
+                                    <br/>
+                                    <div className="game-show-review-content">
+                                        <Reviews game={game}/>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>

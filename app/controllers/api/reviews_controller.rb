@@ -5,11 +5,6 @@ class Api::ReviewsController < ApplicationController
         @reviews = Review.all
         render json: @reviews
     end
-    
-    # def show
-    #     @review = Review.find(params[:id])
-    #     render json: @review
-    # end
 
     def create
         @review = Review.new(review_params)
@@ -40,6 +35,6 @@ class Api::ReviewsController < ApplicationController
     private
 
     def review_params
-        params.require(:review).permit(:body, :recommended, :created_at)
+        params.require(:review).permit(:author_id, :game_id, :body, :recommended)
     end
 end

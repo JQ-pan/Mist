@@ -36,27 +36,27 @@ export const fetchReviews = () => async dispatch => {
     }
 }
 
-export const createReview = (data, gameId) => async dispatch => {
+export const createReview = (body, gameId) => async dispatch => {
     const res = await csrfFetch('/api/reviews', {
         method: 'POST',
         headers: {
             "Content-type": "application/json",
         },
-        body: JSON.stringify(data)
+        body: JSON.stringify(body)
     })
     if (res.ok) {
         const review = await res.json();
-        dispatch(receiveReviews(review));
+        dispatch(addReview(review));
     }
 }
 
-export const updateReview = (reviewId, data) => async dispatch => {
+export const updateReview = (reviewId, body) => async dispatch => {
     const res = await csrfFetch(`/api/reviews/${reviewId}`, {
-        method: "PUT", 
+        method: "PUT",
         headers: {
             "Content-type": "application/json",
         },
-        body: JSON.stringify(data)
+        body: JSON.stringify(body)
     });
     if (res.ok) {
         const updatedReview = await res.json();
@@ -80,6 +80,7 @@ const reviewsReducer = (state = {}, action) => {
         case RECEIVE_REVIEWS:
             return { ...state, ...action.payload };
         case ADD_REVIEW:
+            nextState[action.payload._id] = action.payload;
             return nextState;
         case REMOVE_REVIEW:
             delete nextState[action.reviewId];
