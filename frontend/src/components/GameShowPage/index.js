@@ -61,6 +61,7 @@ function GameShowPage() {
     }
     // }
 
+    const reviewBox = gameInLibrary ? <ReviewForm game={game} /> : null;
 
     (<div className="add-to-cart-action" onClick={handleAddToCart}>
         <span>Add to Cart</span>
@@ -129,10 +130,11 @@ function GameShowPage() {
                         </div>
                     </div>
 
+                    {reviewBox}
+
                     <div className="game-show-main-column">
 
                         <div className="game-show-main-left">
-                            <ReviewForm game={game}/>
                             <div className="game-purchase-container">
                                 <div className="game-purchase-content">
 
@@ -173,10 +175,10 @@ function GameShowPage() {
                                 <div className="game-show-average-reviews">Overall Reviews</div>
                                 <div className="game-show-reviews-listed">
                                     <div className="game-show-review-owner">Bob</div>
-                                    <br/>
-                                    <br/>
+                                    <br />
+                                    <br />
                                     <div className="game-show-review-content">
-                                        <Reviews game={game}/>
+                                        <Reviews game={game} />
                                     </div>
 
                                 </div>
