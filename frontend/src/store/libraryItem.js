@@ -1,8 +1,8 @@
 import csrfFetch from "./csrf";
 import { REMOVE_CURRENT_USER } from "./session";
 
-const RECEIVE_LIBRARY_ITEMS = 'RECEIVE_LIBRARY_ITEMS';
-const ADD_LIBRARY_ITEM = 'ADD_LIBRARY_ITEM';
+const RECEIVE_LIBRARY_ITEMS = 'libraryItems/RECEIVE_LIBRARY_ITEMS';
+const ADD_LIBRARY_ITEM = 'libraryItems/ADD_LIBRARY_ITEM';
 
 // action creators
 const receiveLibraryItems = (libraryItems) => ({

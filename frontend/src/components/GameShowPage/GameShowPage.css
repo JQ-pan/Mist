@@ -1,14 +1,7 @@
-* {
-    color: white;
-}
-
-div {
-    display: block;
-}
-
 .show-page {
     background-color: #1B2838;
     padding-top: 10px;
+    color: white;
 }
 
 .show-page-content {
@@ -47,6 +40,7 @@ div {
     padding-top: 7px;
     min-height: 46px;
     font-size: 26px;
+    color: white;
 }
 
 /* Game Display Images and Carousel */
@@ -54,6 +48,10 @@ div {
 .game-media-and-summary {
     display: flex;
     margin-bottom: 20px;
+    background: url(https://store.akamai.steamstatic.com/public/images/v6/app/game_page_background_shadow.png?v=2);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    padding-bottom: 12px;
 }
 
 .highlights-carousel-container {
@@ -116,6 +114,7 @@ div {
     font-size: 13px;
     line-height: 18px;
     padding-right: 16px;
+    color: #c6d4df;
     /* webkit takes care of overflow text */
     display: -webkit-box;
     -webkit-line-clamp: 6;
@@ -304,6 +303,7 @@ div {
     margin-bottom: 32px;
     border-top: 1px solid black;
     width: 100%;
+    margin-top: 20px;
 }
 
 /* .reviews-area {

@@ -4,12 +4,9 @@ class Api::ReviewsController < ApplicationController
     def index 
         @reviews = Review.all
         render json: @reviews
+#         @reviews = Review.includes(:user).all
+#   render json: @reviews.to_json(include: { user: { only: [:id, :name, :email] } })
     end
-    
-    # def show
-    #     @review = Review.find(params[:id])
-    #     render json: @review
-    # end
 
     def create
         @review = Review.new(review_params)
@@ -19,7 +16,7 @@ class Api::ReviewsController < ApplicationController
         else
             render json: @review.errors, status: :unprocessable_entity
         end
-        end
+    end
     
     def update
         @review = Review.find(params[:id])
@@ -40,6 +37,6 @@ class Api::ReviewsController < ApplicationController
     private
 
     def review_params
-        params.require(:review).permit(:body, :recommended, :created_at)
+        params.require(:review).permit(:author_id, :game_id, :body, :recommended)
     end
 end

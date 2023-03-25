@@ -1,10 +1,10 @@
 import csrfFetch from "./csrf";
 import { REMOVE_CURRENT_USER } from "./session";
 
-const RECEIVE_CART_ITEMS = 'RECEIVE_CART_ITEMS';
-const ADD_CART_ITEM = 'ADD_CART_ITEM';
-const REMOVE_CART_ITEM = 'REMOVE_CART_ITEM';
-const CLEAR_CART = 'CLEAR_CART';
+const RECEIVE_CART_ITEMS = 'cartItems/RECEIVE_CART_ITEMS';
+const ADD_CART_ITEM = 'cartItems/ADD_CART_ITEM';
+const REMOVE_CART_ITEM = 'cartItems/REMOVE_CART_ITEM';
+const CLEAR_CART = 'cartItems/CLEAR_CART';
 
 // action creators
 const receiveCartItems = (cartItems) => ({
