@@ -5,8 +5,8 @@ import './ReviewItem.css';
 
 const ReviewItem = ({ reviewItem }) => {
     const dispatch = useDispatch();
-    const users = useSelector(state => state.users)
-    console.log(users);
+    // const users = useSelector(state => state.users)
+    // console.log(users);
 
     useEffect(() => {
         dispatch(fetchUsers());
