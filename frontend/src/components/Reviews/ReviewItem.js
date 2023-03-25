@@ -8,9 +8,9 @@ const ReviewItem = ({ reviewItem }) => {
     // const users = useSelector(state => state.users)
     // console.log(users);
 
-    useEffect(() => {
-        dispatch(fetchUsers());
-    }, [dispatch])
+    // useEffect(() => {
+    //     dispatch(fetchUsers());
+    // }, [dispatch])
 
     return (
         <div className="review-item-background">

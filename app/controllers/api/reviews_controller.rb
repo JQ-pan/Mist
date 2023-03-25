@@ -4,6 +4,8 @@ class Api::ReviewsController < ApplicationController
     def index 
         @reviews = Review.all
         render json: @reviews
+#         @reviews = Review.includes(:user).all
+#   render json: @reviews.to_json(include: { user: { only: [:id, :name, :email] } })
     end
 
     def create

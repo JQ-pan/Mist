@@ -10,13 +10,13 @@ function Reviews({game}) {
     const currentUser = useSelector((state) => state.session.user);
     const users = useSelector((state) => state.users?.users);
     const reviewsArray = useSelector(state => state.reviews ? Object.values(state.reviews): []);
+
     const reviewItems = reviewsArray.map(reviewItems => <ReviewItem reviewItem={reviewItems} key={reviewItems.id}/>)
     // const game = useSelector(state => state.games ? state.games : {});
     // const [editing, setEditing] = useState({
     //     body: ""
     // });
     // const [editingReviewId, setEditingReviewId] = useState(null);
-
 
     useEffect(() => {
         dispatch(fetchReviews())
