@@ -11,7 +11,7 @@ input {
     padding: 0px 15px 0px 0px;
     position: relative;
     font-size: 18px;
-    background: linear-gradient(to right,  rgba(163,207,6,0.6) 0%,rgba(75,106,33,0.6) 100%);
+    background: linear-gradient(to right, rgba(163, 207, 6, 0.6) 0%, rgba(75, 106, 33, 0.6) 100%);
     margin-bottom: 1px;
 }
 
@@ -35,11 +35,11 @@ input {
     font-weight: 300;
     line-height: 40px;
     color: #a3cf06;
-    
+
 }
 
 .review-background {
-    background: linear-gradient(135deg, rgba(97,100,101,0.3) 0%,rgba(226,244,255,0.3) 100%);
+    background: linear-gradient(135deg, rgba(97, 100, 101, 0.3) 0%, rgba(226, 244, 255, 0.3) 100%);
 }
 
 .review-block {
@@ -68,7 +68,7 @@ input {
 .avatar-icon {
     width: 94px;
     height: 94px;
-    background: linear-gradient( to bottom, rgba(106,106,106,1) 5%, rgba(85,85,85,1) 95%);
+    background: linear-gradient(to bottom, rgba(106, 106, 106, 1) 5%, rgba(85, 85, 85, 1) 95%);
     float: left;
     padding: 1px;
     margin-right: 16px;
@@ -84,31 +84,116 @@ input {
     font-size: 12px;
 }
 
-.input-review input {
+.input-review textarea {
+    /* resize: none; */
     border: 1px solid #233c51;
     border-radius: 3px;
-    height: 132px;
+    min-height: 102px;
     width: 764px;
+    max-width: 764px;
     background-color: #222b35;
     color: #d6d7d8;
-    padding: 10px 11pxx;
+    padding: 10px 11px;
     font-size: 13px;
-    box-shadow: inset 0px 0px 7px rgba( 0, 0, 0, 0.5 );
+    box-shadow: inset 0px 0px 7px rgba(0, 0, 0, 0.5);
 }
 
 .input-review p {
     margin-left: 110px;
+    margin-top: 10px;
+    margin-bottom: 4px;
+    color: #c6d4df;
 }
 
 .review-buttons {
-    margin: 0px 29px 0px 110px;
+    margin: 0px 12px 0px 110px;
     display: flex;
     justify-content: space-between;
+    padding-bottom: 24px;
 }
 
 .recommend-buttons {
-    /* float: right;
     display: flex;
-    justify-content: center;
-    align-items: center; */
+    gap: 4px;
+}
+
+.recommend-buttons button {
+    border-radius: 2px;
+    border: none;
+    padding: 1px;
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    color: #67c1f5;
+    background: rgba(103, 193, 245, 0.2);
+}
+
+.recommend-buttons button:hover {
+    background: linear-gradient(-60deg, #417a9b 5%, #67c1f5 95%);
+    color: #fff;
+}
+
+.thumb-icon.thumbs-up {
+    background-position: 0px 0px;
+}
+
+.thumb-icon.thumbs-down {
+    background-position: -18px 0px;
+}
+
+.recommend-buttons button:hover .thumbs-up {
+    background-position: -72px 0px;
+}
+
+.recommend-buttons button:hover .thumbs-down {
+    background-position: -90px 0px;
+}
+
+.recommend-buttons button span {
+    padding: 0 15px;
+    font-size: 15px;
+    line-height: 30px;
+}
+
+.thumb-icon {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin: 0 0px;
+
+    position: relative;
+    bottom: -2px;
+    background: url(https://store.akamai.steamstatic.com/public/shared/images/buttons/icons_18.png?v=3);
+}
+
+.recommend-buttons button:hover .thumbs-up.selected-icon {
+    background-position: -36px 0px;
+}
+
+.recommend-buttons button:hover .thumbs-down.selected-icon {
+    background-position: -54px 0px;
+}
+
+.thumbs-up.selected-icon {
+    background-position: -36px 0px;
+}
+
+.thumbs-down.selected-icon {
+    background-position: -54px 0px;
+}
+
+.recommend-buttons button.selected {
+    background: rgba( 103, 193, 245, 0.6 );
+    color: #67c1f5;
+}
+
+.post-review {
+    padding: 0 15px;
+    font-size: 15px;
+    line-height: 30px;
+
+    border-radius: 4px;
+    border: 2px solid #17202f;
+    background: linear-gradient(to bottom, rgba(193, 228, 249, 1) 5%, rgba(148, 183, 202, 1) 95%);
+    cursor: pointer;
 }

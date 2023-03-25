@@ -74,10 +74,10 @@ function ReviewForm({ game }) {
 
                         <form className="input-review" onSubmit={handleSubmit}>
 
-                            <input
+                            <textarea
                                 type="review"
                                 value={review.body}
-                                placeholder="Write a review"
+                                placeholder=""
                                 onChange={handleChange}
                             />
                             <p>Do you recommend this game?</p>
@@ -87,16 +87,23 @@ function ReviewForm({ game }) {
                                     <button
                                         type="button"
                                         onClick={() => handleRecommend(true)}
-                                        className={review.recommended === true ? "selected" : ""}
+                                        className={review.recommended === true ? "selected thumbs-up-button" : "thumbs-up-button"}
                                     >
-                                        Yes
+                                        <span>
+                                            <i className={review.recommended === true ? "thumbs-up thumb-icon selected-icon" : "thumbs-up thumb-icon"}></i>
+                                            &nbsp;Yes
+
+                                        </span>
                                     </button>
                                     <button
                                         type="button"
                                         onClick={() => handleRecommend(false)}
-                                        className={review.recommended === false ? "selected" : ""}
+                                        className={review.recommended === false ? "selected thumbs-down-button" : "thumbs-down-button"}
                                     >
-                                        No
+                                        <span>
+                                            <i className={review.recommended === false ? "thumbs-down thumb-icon selected-icon" : "thumbs-down thumb-icon"}></i>
+                                            &nbsp;No
+                                        </span>
                                     </button>
                                 </div>
 

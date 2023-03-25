@@ -172,11 +172,8 @@ function GameShowPage() {
                     <div className="review-content">
                         <div className="game-show-reviews-column">
                             <div className="reviews-area">
-                                <div className="game-show-average-reviews">Overall Reviews</div>
+                                <div className="game-show-average-reviews">Customer Reviews</div>
                                 <div className="game-show-reviews-listed">
-                                    <div className="game-show-review-owner">Bob</div>
-                                    <br />
-                                    <br />
                                     <div className="game-show-review-content">
                                         <Reviews game={game} />
                                     </div>

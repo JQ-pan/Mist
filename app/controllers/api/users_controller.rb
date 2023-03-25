@@ -2,6 +2,11 @@ class Api::UsersController < ApplicationController
 
     wrap_parameters include: User.attribute_names + ['password']
 
+    def index
+      @users = User.all
+      render json: @users
+    end
+
     def create
         @user = User.new(user_params)
 
@@ -12,6 +17,15 @@ class Api::UsersController < ApplicationController
           render json: { errors: @user.errors.full_messages }, status: :unprocessable_entity
         end
 
+    end
+
+    def show
+      if @params[:user_id]
+        @user = User.find(params[:user_id])
+      else
+        @user = User.find_by(username: params[:username])
+      end
+      render json: @user
     end
 
     private 

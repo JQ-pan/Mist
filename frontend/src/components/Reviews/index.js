@@ -3,12 +3,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchReviews, updateReview } from "../../store/review";
 import { fetchUsers } from "../../store/users";
 import ReviewItem from "./ReviewItem";
+import './Reviews.css'
 
 function Reviews({game}) {
     const dispatch = useDispatch();
     const currentUser = useSelector((state) => state.session.user);
     const users = useSelector((state) => state.users?.users);
-
     const reviewsArray = useSelector(state => state.reviews ? Object.values(state.reviews): []);
     const reviewItems = reviewsArray.map(reviewItems => <ReviewItem reviewItem={reviewItems} key={reviewItems.id}/>)
     // const game = useSelector(state => state.games ? state.games : {});
@@ -46,6 +46,7 @@ function Reviews({game}) {
 
     return (
         <div className="reviews-container">
+            <div className="reviews-title">MOST HELPFUL REVIEWS</div>
             {reviewItems}
         </div>
     )
