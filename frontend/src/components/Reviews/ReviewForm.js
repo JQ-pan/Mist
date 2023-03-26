@@ -10,10 +10,8 @@ import './ReviewForm.css'
 
 function ReviewForm({ game }) {
     const dispatch = useDispatch();
-    // const { gameId } = useParams();
     const currentUser = useSelector((state) => state.session.user);
     const users = useSelector((state) => state.users?.users);
-    // const game = useSelector(state => state.games ? state.games[gameId] : {});
     const [review, setReview] = useState({
         body: ""
     });
@@ -31,9 +29,10 @@ function ReviewForm({ game }) {
             author_id: currentUser.id,
             game_id: game.id,
             body: review.body,
-            recommended: review.recommended
+            recommended: review.recommended === null ? true : review.recommended
         };
-        dispatch(createReview(finalReview, game.id));
+        console.log(finalReview, "Game ID: ", game.id);
+        dispatch(createReview(finalReview));
     }
 
     const handleChange = (e) => {
