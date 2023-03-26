@@ -35,6 +35,10 @@ class User < ApplicationRecord
     foreign_key: :owner_id,
     class_name: :LibraryItem
 
+  has_many :reviews,
+    foreign_key: :author_id,
+    class_name: :Review
+
   # has_many :carted_games,
   #   through: :cart_items,
   #   source: :game

@@ -1,9 +1,11 @@
 .reviews-container {
     margin-top: 20px;
+    width: 616px;
+    float: left;
 }
 
 .reviews-title {
     font-size: 14px;
-    padding-bottom: 5px;
+    padding-bottom: 8px;
     letter-spacing: 2px;
 }

@@ -33,10 +33,12 @@ export const fetchReviews = () => async dispatch => {
     if (res.ok) {
         const reviews = await res.json();
         dispatch(receiveReviews(reviews))
+    } else {
+        throw new Error('Failed to fetch reviews');
     }
 }
 
-export const createReview = (body, gameId) => async dispatch => {
+export const createReview = (body) => async dispatch => {
     const res = await csrfFetch('/api/reviews', {
         method: 'POST',
         headers: {
@@ -44,9 +46,12 @@ export const createReview = (body, gameId) => async dispatch => {
         },
         body: JSON.stringify(body)
     })
+    console.log("Create Review");
     if (res.ok) {
         const review = await res.json();
         dispatch(addReview(review));
+    } else {
+        throw new Error('Failed to create review');
     }
 }
 
@@ -61,6 +66,8 @@ export const updateReview = (reviewId, body) => async dispatch => {
     if (res.ok) {
         const updatedReview = await res.json();
         dispatch(editReview(updatedReview));
+    } else {
+        throw new Error('Failed to update review');
     }
 }
 
@@ -70,6 +77,8 @@ export const deleteReview = (reviewId) => async dispatch => {
     });
     if (res.ok) {
         dispatch(removeReview(reviewId));
+    } else {
+        throw new Error('Failed to delete review');
     }
 }
 

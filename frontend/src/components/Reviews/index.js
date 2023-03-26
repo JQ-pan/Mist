@@ -5,13 +5,23 @@ import { fetchUsers } from "../../store/users";
 import ReviewItem from "./ReviewItem";
 import './Reviews.css'
 
-function Reviews({game}) {
+function Reviews({ game }) {
     const dispatch = useDispatch();
     const currentUser = useSelector((state) => state.session.user);
     const users = useSelector((state) => state.users?.users);
-    const reviewsArray = useSelector(state => state.reviews ? Object.values(state.reviews): []);
+    const reviewsArray = useSelector(state => state.reviews ? Object.values(state.reviews) : []);
 
-    const reviewItems = reviewsArray.map(reviewItems => <ReviewItem reviewItem={reviewItems} key={reviewItems.id}/>)
+    // console.log(users);
+
+    const getUser = (authorId) => {
+        const user = users?.find(user => user.id === authorId);
+        return user ? user : 'Unknown User';
+    }
+
+    const reviewItems = reviewsArray.map(reviewItem => {
+        const user = getUser(reviewItem.author_id);
+        return <ReviewItem reviewItem={reviewItem} user={user}key={reviewItem.id} />
+    })
     // const game = useSelector(state => state.games ? state.games : {});
     // const [editing, setEditing] = useState({
     //     body: ""
