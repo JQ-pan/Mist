@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { createReview } from "../../store/review";
-import { useParams } from "react-router-dom";
-import { fetchUsers } from "../../store/users";
 import { fetchGame } from "../../store/game";
 import { fetchReviews } from "../../store/review";
 import demoIcon from '../../assets/png-transparent-robotic-process-automation-computer-icons-robotics-roboto-electronics-silhouette-black.png';
@@ -11,27 +9,24 @@ import './ReviewForm.css'
 function ReviewForm({ game }) {
     const dispatch = useDispatch();
     const currentUser = useSelector((state) => state.session.user);
-    const users = useSelector((state) => state.users?.users);
     const [review, setReview] = useState({
         body: ""
     });
 
     useEffect(() => {
         dispatch(fetchReviews())
-        dispatch(fetchUsers())
-        dispatch(fetchGame(game.id))
-    }, [])
+        // dispatch(fetchGame(game.id))
+    }, [dispatch, game.id])
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
         const finalReview = {
             author_id: currentUser.id,
             game_id: game.id,
             body: review.body,
             recommended: review.recommended === null ? true : review.recommended
         };
-        console.log(finalReview, "Game ID: ", game.id);
+        // console.log(finalReview, "Game ID: ", game.id);
         dispatch(createReview(finalReview));
     }
 
