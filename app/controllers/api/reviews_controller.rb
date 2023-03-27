@@ -10,9 +10,18 @@ class Api::ReviewsController < ApplicationController
 
     def create
         @review = Review.new(review_params)
+
+        # puts review_params
+        # puts @review.author_id
+        # puts @review.game_id
+        # puts @review.body
+        # puts @review.recommended
+
         if @review.save
+            puts "saved"
             render json: @review, status: :created
         else
+            puts "not saved"
             render json: @review.errors, status: :unprocessable_entity
         end
     end
@@ -30,12 +39,11 @@ class Api::ReviewsController < ApplicationController
     def destroy
         @review = Review.find(params[:id])
         @review.destroy
-        head :no_content
     end
 
     private
 
     def review_params
-        params.require(:review).permit(:author_id, :game_id, :body, :recommended)
+        params.require(:review).permit(:body, :recommended, :author_id, :game_id)
     end
 end
