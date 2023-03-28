@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchReviews, updateReview } from "../../store/review";
 import { fetchUsers } from "../../store/users";
+import { fetchLibraryItems } from "../../store/libraryItem";
 import ReviewItem from "./ReviewItem";
 import './Reviews.css'
 
@@ -10,7 +11,8 @@ function Reviews({ game }) {
     const currentUser = useSelector((state) => state.session.user);
     const users = useSelector((state) => state.users?.users);
     const reviewsArray = useSelector(state => state.reviews ? Object.values(state.reviews) : []);
-
+    const libraryItems = useSelector((state) => state.libraryItems)
+    console.log(libraryItems);
     // console.log(users);
 
     const getUser = (authorId) => {
@@ -31,6 +33,7 @@ function Reviews({ game }) {
     useEffect(() => {
         dispatch(fetchReviews())
         dispatch(fetchUsers())
+        dispatch(fetchLibraryItems)
     }, [])
 
     // const handleChange = (e) => {
