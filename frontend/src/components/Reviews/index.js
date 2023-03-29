@@ -12,7 +12,7 @@ function Reviews({ game }) {
     const users = useSelector((state) => state.users?.users);
     const reviewsArray = useSelector(state => state.reviews ? Object.values(state.reviews) : []);
     const libraryItems = useSelector((state) => state.libraryItems)
-    console.log(libraryItems);
+    // console.log(libraryItems);
     // console.log(users);
 
     const getUser = (authorId) => {

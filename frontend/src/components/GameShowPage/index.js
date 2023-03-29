@@ -19,11 +19,12 @@ function GameShowPage() {
     const { gameId } = useParams();
 
     const game = useSelector(state => state.games ? state.games[gameId] : {});
+    // const game = useSelector(state => state.game ? state.game : {} )
     useEffect(() => {
         dispatch(fetchGame(gameId));
         dispatch(fetchLibraryItems());
         dispatch(fetchCartItems());
-    }, [gameId, dispatch])
+    }, [dispatch])
 
     const handleAddToCart = () => {
         dispatch(createCartItem(game.id))
@@ -40,8 +41,10 @@ function GameShowPage() {
 
     let addToCartButton;
 
-    const gameInCart = cartItemsArray.some(cartGame => cartGame.id === game.id);
-    const gameInLibrary = libraryItemsArray.some(libraryGame => libraryGame.id === game.id);
+    const gameInCart = cartItemsArray?.some(cartGame => cartGame.id === game.id);
+
+    const gameInLibrary = libraryItemsArray?.some(libraryGame => libraryGame.id === game.id);
+
     if (gameInCart) {
         addToCartButton = (
             <div className="add-to-cart-action" onClick={handleInCart}>
@@ -70,7 +73,6 @@ function GameShowPage() {
     if (game === undefined) {
         return <>Still loading...</>
     } else {
-
         return (
             <div className="show-page">
                 <StoreNavigation />
