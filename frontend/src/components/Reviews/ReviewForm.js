@@ -26,7 +26,7 @@ function ReviewForm({ game }) {
             body: review.body,
             recommended: review.recommended === null ? true : review.recommended
         };
-        // console.log(finalReview, "Game ID: ", game.id);
+        console.log(finalReview);
         dispatch(createReview(finalReview));
     }
 
