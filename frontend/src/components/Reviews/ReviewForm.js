@@ -26,8 +26,8 @@ function ReviewForm({ game }) {
             body: review.body,
             recommended: review.recommended === null ? true : review.recommended
         };
-        console.log(finalReview);
-        dispatch(createReview(finalReview));
+        dispatch(createReview(finalReview))
+            .then(dispatch(fetchReviews()));
     }
 
     const handleChange = (e) => {
