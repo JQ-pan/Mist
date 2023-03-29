@@ -92,7 +92,7 @@ const reviewsReducer = (state = {}, action) => {
             return { ...state, ...action.payload };
         case ADD_REVIEW:
             debugger
-            return { nextState };
+            return { nextState, [action.payload.id]: action.payload };
         case REMOVE_REVIEW:
             delete nextState[action.payload];
             return nextState;
