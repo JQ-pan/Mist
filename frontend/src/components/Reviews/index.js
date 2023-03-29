@@ -22,7 +22,7 @@ function Reviews({ game }) {
 
     const reviewItems = reviewsArray.map(reviewItem => {
         const user = getUser(reviewItem.author_id);
-        return <ReviewItem reviewItem={reviewItem} user={user}key={reviewItem.id} />
+        return <ReviewItem reviewItem={reviewItem} user={user} key={reviewItem.id} />
     })
     // const game = useSelector(state => state.games ? state.games : {});
     // const [editing, setEditing] = useState({
