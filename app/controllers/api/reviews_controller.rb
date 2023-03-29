@@ -9,13 +9,24 @@ class Api::ReviewsController < ApplicationController
     end
 
     def create
+
         @review = Review.new(review_params)
 
-        # puts review_params
-        # puts @review.author_id
-        # puts @review.game_id
-        # puts @review.body
-        # puts @review.recommended
+        puts @review
+        puts @review.body
+        puts @review.recommended
+        puts @review.author_id
+        puts @review.game_id
+        # if @review.recommended == "true" 
+        #     @review.recommended = true
+        # else
+        #     @review.recommended = false
+        # end
+
+        # @review.game_id = params[:game_id]
+        # @review.author_id = current_user.id
+        
+
 
         if @review.save
             puts "saved"
