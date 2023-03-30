@@ -35,7 +35,6 @@ input {
     font-weight: 300;
     line-height: 40px;
     color: #a3cf06;
-
 }
 
 .review-background {
@@ -44,10 +43,11 @@ input {
 
 .review-block {
     position: relative;
-    overflow: visible;
+    overflow: auto;
     padding-top: 16px;
     width: 908px;
     margin: auto;
+    padding-bottom: 10px;
 }
 
 .input-header h2 {
@@ -196,4 +196,16 @@ input {
     border: 2px solid #17202f;
     background: linear-gradient(to bottom, rgba(193, 228, 249, 1) 5%, rgba(148, 183, 202, 1) 95%);
     cursor: pointer;
+}
+
+/* Review Exists Styling*/
+
+.thumb {
+    margin: 12px 8px 12px 12px;
+    float: left;
+}
+
+.review-description p {
+    font-size: 14px;
+    margin: 16px 16px 8px 0px;
 }
