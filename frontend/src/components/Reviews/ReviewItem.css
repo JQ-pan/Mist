@@ -1,5 +1,5 @@
 .review-item {
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(0, 0, 0, 0.2);
     margin-bottom: 26px;
     background-image: url(https://store.akamai.steamstatic.com/public/images/v6/maincol_gradient_rule.png);
     background-repeat: no-repeat;
@@ -10,28 +10,21 @@
     display: flex;
 }
 
-.review-item > .left-col {
+.review-item>.left-col {
     width: 200px;
     float: left;
     padding: 8px;
     opacity: 0.6;
 }
 
-.review-item > .right-col {
-    float: left;
-    width: 400px;
-    position: relative;
-    margin-left: 14px;
-}
-
-.left-col > .profile-icon-container {
+.left-col>.profile-icon-container {
     float: left;
     padding-right: 8px;
     display: block;
 }
 
 .profile-icon {
-    background: linear-gradient( to bottom, rgba(106,106,106,1) 5%, rgba(85,85,85,1) 95%);
+    background: linear-gradient(to bottom, rgba(106, 106, 106, 1) 5%, rgba(85, 85, 85, 1) 95%);
     width: 34px;
     height: 34px;
     position: relative;
@@ -51,4 +44,11 @@
     color: #c1dbf4;
     font-size: 13px;
     font-weight: bold;
+}
+
+.review-item>.right-col {
+    float: left;
+    width: 400px;
+    position: relative;
+    margin-left: 14px;
 }

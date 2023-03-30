@@ -17,7 +17,7 @@ function ReviewForm({ game }) {
     });
 
     const reviewsArray = useSelector(state => state.reviews ? Object.values(state.reviews).filter(
-        (review) => review.game_id === game.id
+        (review) => review.gameId === game.id
     ) : []);
 
     
@@ -41,11 +41,9 @@ function ReviewForm({ game }) {
     }
 
 
-
-
     // Check if user already has left a review on this game and grab the date
-    const reviewExists = reviewsArray.find(review => review.author_id === currentUser.id);
-    const reviewDate = reviewExists ? new Date(reviewExists.created_at) : "";
+    const reviewExists = reviewsArray.find(review => review.authorId === currentUser.id);
+    const reviewDate = reviewExists ? new Date(reviewExists.createdAt) : "";
     const month = reviewDate.toLocaleString('default', { month: 'long' });
     const day = reviewDate.toLocaleString('default', { day: 'numeric' });
     
