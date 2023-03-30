@@ -15,10 +15,6 @@ function Reviews({ game }) {
     ) : []);
     const libraryItems = useSelector((state) => state.libraryItems ? Object.values(state.libraryItems) : []);
 
-    // console.log(libraryItems)
-
-    // console.log(users);
-
     const getUser = (authorId) => {
         const user = users?.find(user => user.id === authorId);
         return user ? user : 'Unknown User';
@@ -35,38 +31,11 @@ function Reviews({ game }) {
             <p>You can write your own review for this game to share your experience with the community. Use the area above the purchase buttons on this page to write your review.</p>
         </div>
     )
-    // const game = useSelector(state => state.games ? state.games : {});
-    // const [editing, setEditing] = useState({
-    //     body: ""
-    // });
-    // const [editingReviewId, setEditingReviewId] = useState(null);
-
     useEffect(() => {
         dispatch(fetchReviews())
         dispatch(fetchUsers())
         dispatch(fetchLibraryItems)
     }, [])
-
-    // const handleChange = (e) => {
-    //     setEditing({ ...editing, body: e.target.value });
-    // };
-
-    // const handleEditSubmit = (e, reviewId) => {
-    //     e.preventDefault();
-    //     const updateEditing = {
-    //         author: currentUser._id,
-    //         game: game._id,
-    //         body: editing.body
-
-    //     };
-    //     dispatch(updateReview(reviewId, updateEditing));
-    //     setEditingReviewId(null);
-    // }
-
-    // const handleEdit = (review) => {
-    //     setEditing({ ...editing, body: review.body });
-    //     setEditingReviewId(review._id);
-    // }
 
     return (
         <div className="reviews-container">
