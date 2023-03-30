@@ -2,15 +2,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { fetchUsers } from "../../store/users";
 import defaultProfileIcon from "../../assets/png-transparent-robotic-process-automation-computer-icons-robotics-roboto-electronics-silhouette-black.png"
-import { fetchReviews, updateReview } from "../../store/review";
+import { fetchReviews, updateReview, deleteReview } from "../../store/review";
 import './ReviewItem.css';
 
 const ReviewItem = ({ reviewItem, user }) => {
     const dispatch = useDispatch();
     const [editedReview, setEditedReview] = useState(reviewItem.body);
+    const [editedRecommendation, setEditedRecommendation] = useState();
     const [isEditing, setIsEditing] = useState(false);
-    const [text, setText] = useState("");
-    
+
     // Check if currentUser is the author of the review
     const isAuthor = reviewItem.author_id === user.id;
 
@@ -31,6 +31,10 @@ const ReviewItem = ({ reviewItem, user }) => {
     const handleCancelClick = () => {
         setEditedReview(reviewItem.body);
         setIsEditing(false);
+    }
+
+    const handleDeleteClick = () => {
+        dispatch(deleteReview(reviewItem.id));
     }
 
     return (
@@ -61,7 +65,10 @@ const ReviewItem = ({ reviewItem, user }) => {
                     <>
                         <div className="review-body">{reviewItem.body}</div>
                         {isAuthor && (
-                            <button className="edit-button" onClick={handleEditClick}>Edit</button>
+                            <>
+                                <button className="edit-button" onClick={handleEditClick}>Edit</button>
+                                <button className="delete-button" onClick={handleDeleteClick}>Delete</button>
+                            </>
                         )}
                     </>
                 )}
