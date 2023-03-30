@@ -12,7 +12,7 @@
 #
 class Review < ApplicationRecord
     validates :author_id, :game_id, presence: true
-    # validates :author_id, uniqueness: {scope: :game_id}
+    validates :author_id, uniqueness: {scope: :game_id, message: "has already reviewed this game"}
     validates :body, presence: true
     validates :recommended, inclusion: { in: [true, false] }
 
