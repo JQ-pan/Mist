@@ -1,22 +1,43 @@
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { fetchUsers } from "../../store/users";
 import defaultProfileIcon from "../../assets/png-transparent-robotic-process-automation-computer-icons-robotics-roboto-electronics-silhouette-black.png"
+import { fetchReviews, updateReview } from "../../store/review";
 import './ReviewItem.css';
 
 const ReviewItem = ({ reviewItem, user }) => {
     const dispatch = useDispatch();
+    const [editedReview, setEditedReview] = useState(reviewItem.body);
+    const [isEditing, setIsEditing] = useState(false);
+    const [text, setText] = useState("");
+    
+    // Check if currentUser is the author of the review
+    const isAuthor = reviewItem.author_id === user.id;
 
-    // useEffect(() => {
-    //     dispatch(fetchUsers());
-    // }, [dispatch])
-    // console.log(reviewItem);
-    // console.log({user});
+    const handleEditClick = () => {
+        setIsEditing(true);
+    }
+
+    const handleSaveClick = () => {
+        dispatch(updateReview(reviewItem.id, {
+            reviewId: reviewItem.id,
+            body: editedReview,
+        })).then(() => {
+            dispatch(fetchReviews());
+            setIsEditing(false);
+        })
+    }
+
+    const handleCancelClick = () => {
+        setEditedReview(reviewItem.body);
+        setIsEditing(false);
+    }
+
     return (
         <div className="review-item">
             <div className="left-col">
                 <div className="profile-icon-container">
-                    <img className="profile-icon"src={defaultProfileIcon} default=""></img>
+                    <img className="profile-icon" src={defaultProfileIcon} alt=""></img>
                 </div>
                 <div className="review-username">
                     <span>{user.username}</span>
@@ -24,7 +45,26 @@ const ReviewItem = ({ reviewItem, user }) => {
             </div>
 
             <div className="right-col">
-                {reviewItem.body}
+                {isEditing ? (
+                    <div className="edit-container">
+                        <textarea
+                            className="edit-textarea"
+                            value={editedReview}
+                            onChange={(e) => setEditedReview(e.target.value)}
+                        />
+                        <div className="edit-buttons">
+                            <button className="save-button" onClick={handleSaveClick}>Save</button>
+                            <button className="cancel-button" onClick={handleCancelClick}>Cancel</button>
+                        </div>
+                    </div>
+                ) : (
+                    <>
+                        <div className="review-body">{reviewItem.body}</div>
+                        {isAuthor && (
+                            <button className="edit-button" onClick={handleEditClick}>Edit</button>
+                        )}
+                    </>
+                )}
             </div>
         </div>
     )

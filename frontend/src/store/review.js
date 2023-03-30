@@ -22,11 +22,6 @@ const removeReview = (reviewId) => ({
     payload: reviewId
 })
 
-const editReview = (review) => ({
-    type: EDIT_REVIEW,
-    payload: review
-});
-
 // Thunk action creators
 export const fetchReviews = () => async dispatch => {
     const res = await csrfFetch('/api/reviews');
@@ -67,7 +62,7 @@ export const updateReview = (reviewId, review) => async dispatch => {
     });
     if (res.ok) {
         const updatedReview = await res.json();
-        dispatch(editReview(updatedReview));
+        dispatch(receiveReviews(updatedReview));
     } else {
         throw new Error('Failed to update review');
     }

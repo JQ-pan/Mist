@@ -9,25 +9,7 @@ class Api::ReviewsController < ApplicationController
     end
 
     def create
-
         @review = Review.new(review_params)
-
-        puts @review
-        puts @review.body
-        puts @review.recommended
-        puts @review.author_id
-        puts @review.game_id
-        # if @review.recommended == "true" 
-        #     @review.recommended = true
-        # else
-        #     @review.recommended = false
-        # end
-
-        # @review.game_id = params[:game_id]
-        # @review.author_id = current_user.id
-        
-
-
         if @review.save
             puts "saved"
             render json: @review, status: :created
@@ -39,6 +21,9 @@ class Api::ReviewsController < ApplicationController
     
     def update
         @review = Review.find(params[:id])
+
+        puts "review_params: "
+        puts review_params
 
         if @review.update(review_params)
             render json: @review, status: :ok
