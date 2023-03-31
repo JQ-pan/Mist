@@ -4,14 +4,14 @@ import { fetchReviews, updateReview } from "../../store/review";
 import { fetchUsers } from "../../store/users";
 import { fetchLibraryItems } from "../../store/libraryItem";
 import ReviewItem from "./ReviewItem";
-import './Reviews.css'
+import './Reviews.css';
 
 function Reviews({ game }) {
     const dispatch = useDispatch();
     const currentUser = useSelector((state) => state.session.user);
     const users = useSelector((state) => state.users?.users);
     const reviewsArray = useSelector(state => state.reviews ? Object.values(state.reviews).filter(
-        (review) => review.game_id === game.id
+        (review) => review.gameId === game.id
     ) : []);
     const libraryItems = useSelector((state) => state.libraryItems ? Object.values(state.libraryItems) : []);
 
@@ -22,7 +22,7 @@ function Reviews({ game }) {
 
     const reviewItems = reviewsArray.length > 0 ? (
         reviewsArray.map(reviewItem => {
-            const user = getUser(reviewItem.author_id);
+            const user = getUser(reviewItem.authorId);
             return <ReviewItem reviewItem={reviewItem} user={user} key={reviewItem.id} />
         })
     ) : (

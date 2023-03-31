@@ -1,5 +1,5 @@
 .review-item {
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(0, 0, 0, 0.2);
     margin-bottom: 26px;
     background-image: url(https://store.akamai.steamstatic.com/public/images/v6/maincol_gradient_rule.png);
     background-repeat: no-repeat;
@@ -10,28 +10,23 @@
     display: flex;
 }
 
-.review-item > .left-col {
+/* Review Left Column Start */
+
+.review-item>.left-col {
     width: 200px;
     float: left;
     padding: 8px;
     opacity: 0.6;
 }
 
-.review-item > .right-col {
-    float: left;
-    width: 400px;
-    position: relative;
-    margin-left: 14px;
-}
-
-.left-col > .profile-icon-container {
+.left-col>.profile-icon-container {
     float: left;
     padding-right: 8px;
     display: block;
 }
 
 .profile-icon {
-    background: linear-gradient( to bottom, rgba(106,106,106,1) 5%, rgba(85,85,85,1) 95%);
+    background: linear-gradient(to bottom, rgba(106, 106, 106, 1) 5%, rgba(85, 85, 85, 1) 95%);
     width: 34px;
     height: 34px;
     position: relative;
@@ -52,3 +47,188 @@
     font-size: 13px;
     font-weight: bold;
 }
+
+/* Review Left Column End */
+
+/* Review Right Column Start*/
+
+.review-item>.right-col {
+    float: left;
+    width: 400px;
+    position: relative;
+    margin-left: 14px;
+    padding-bottom: 4px;
+}
+
+.review-item-header {
+    margin: 8px 0 13px;
+    background: rgba(0,0,0,0.2);
+    height: 40px;
+}
+
+.review-thumb {
+    float: left;
+    margin-right: 10px;
+}
+
+.review-item-header h2 {
+    font-size: 16px;
+    color: #d6d7d8;
+    padding-top: 3px;
+    line-height: 19px;
+}
+
+.review-date {
+    margin: 0px 0px 8px;
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #8091a2;
+    display: inline-block;
+    opacity: 0.6;
+}
+
+.review-body {
+    max-height: 225px;
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #363f4c;
+}
+
+.edit-and-delete-buttons {
+    display: flex;
+    gap: 6px;
+}
+
+.buttonIcon {
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.select-edit-button, .select-delete-button {
+    color: #EBEBEB;
+    padding: 5px 8px 5px 8px;
+    cursor: pointer;
+}
+
+.select-edit-button:hover, .select-delete-button:hover {
+    color: #AAAAAA;
+}
+
+/* Review Right Column End*/
+
+/* Edit Form Start*/
+
+.edit-container > textarea {
+    margin-top: 4px;
+    max-width: calc(100% - 25px);
+    border: 1px solid #233c51;
+    border-radius: 3px;
+    background-color: #222b35;
+    color: #d6d7d8;
+    padding: 10px 11px;
+    font-size: 13px;
+    box-shadow: inset 0px 0px 7px rgba( 0, 0, 0, 0.5 );
+
+    margin-bottom: 10px;
+}
+
+.edit-buttons-container {
+    margin-top: 10px;
+}
+
+.edit-recommendation {
+    float: left;
+    display: flex;
+    gap: 6px;
+}
+
+.edit-recommend {
+    border-radius: 2px;
+    padding: 1px;
+    cursor: pointer;
+    color: #67c1f5;
+    background: rgba( 103, 193, 245, 0.2);
+}
+
+.edit-recommend > span {
+    padding: 0 5px;
+    font-size: 12px;
+    line-height: 20px;
+
+}
+
+.edit-recommend:hover {
+    background: linear-gradient( -60deg, #417a9b 5%,#67c1f5 95%);
+}
+
+
+.recommendation-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url(https://community.akamai.steamstatic.com/public/shared/images/buttons/icons_16.png?v=5);
+    position: relative;
+    top: 4px;
+}
+
+#thumbs-up {
+    background-position: -80px 0px;
+}
+
+.edit-recommend:hover > span > #thumbs-up:not(.selected-rec) {
+    background-position: -112px 0px;
+}
+
+.edit-recommend > span > #thumbs-up.selected-rec {
+    background-position: -96px 0px;
+}
+
+#thumbs-down {
+    background-position: -32px 0px;
+}
+
+.edit-recommend:hover > span > #thumbs-down:not(.selected-rec) {
+    background-position: -48px 0px;
+}
+
+.edit-recommend > span > #thumbs-down.selected-rec {
+    background-position: -64px 0px;
+}
+
+.save-cancel-container {
+    float: right;
+}
+
+.edit-buttons {
+    border-radius: 2px;
+    border: none;
+    padding: 1px;
+    display: inline-block;
+    cursor: pointer;
+    color: white;
+    margin: 0px 2px;
+}
+
+.edit-buttons span {
+    padding: 0 5px;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.cancel-button {
+    background: linear-gradient( to bottom, #acb5bd 5%, #414a52 95%);
+}
+
+.cancel-button:hover {
+    background: linear-gradient( to bottom, #cfd8e0 5%, #565f67 95%);
+}
+
+.save-button {
+    background: linear-gradient( to bottom, #aaceff 5%, #3c6091 95%);
+}
+
+.save-button:hover {
+    background: linear-gradient( to bottom, #bbd8ff 5%, #4873a7 95%);
+}
+/* Edit Form End*/

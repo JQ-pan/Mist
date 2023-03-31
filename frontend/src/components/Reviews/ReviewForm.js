@@ -17,18 +17,10 @@ function ReviewForm({ game }) {
     });
 
     const reviewsArray = useSelector(state => state.reviews ? Object.values(state.reviews).filter(
-        (review) => review.game_id === game.id
+        (review) => review.gameId === game.id
     ) : []);
 
-    // Check if user already has left a review on this game and grab the date
-    const reviewExists = reviewsArray.find(review => review.author_id === currentUser.id);
-    const reviewDate = reviewExists ? new Date(reviewExists.created_at) : "";
-    const month = reviewDate.toLocaleString('default', { month: 'long' });
-    const day = reviewDate.toLocaleString('default', { day: 'numeric' });
     
-    // Check the rating on the review
-    const reviewRecommended = reviewExists ? reviewExists.recommended : null;
-
     const handleSubmit = (e) => {
         e.preventDefault();
         const finalReview = {
@@ -37,17 +29,26 @@ function ReviewForm({ game }) {
             body: review.body,
             recommended: review.recommended === null ? true : review.recommended
         };
-        dispatch(createReview(finalReview))
-            .then(dispatch(fetchReviews()));
+        dispatch(createReview(finalReview));
     }
 
     const handleChange = (e) => {
         setReview({ ...review, body: e.target.value });
     };
-
+    
     const handleRecommend = (value) => {
         setReview({ ...review, recommended: value });
     }
+
+
+    // Check if user already has left a review on this game and grab the date
+    const reviewExists = reviewsArray.find(review => review.authorId === currentUser.id);
+    const reviewDate = reviewExists ? new Date(reviewExists.createdAt) : "";
+    const month = reviewDate.toLocaleString('default', { month: 'long' });
+    const day = reviewDate.toLocaleString('default', { day: 'numeric' });
+    
+    // Check the rating on the review if one exists
+    const reviewRecommended = reviewExists ? reviewExists.recommended : null;
 
     return (
         <div className="input-review-container">

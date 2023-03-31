@@ -3,7 +3,7 @@ class Api::ReviewsController < ApplicationController
 
     def index 
         @reviews = Review.all
-        render json: @reviews
+        render :index
 #         @reviews = Review.includes(:user).all
 #   render json: @reviews.to_json(include: { user: { only: [:id, :name, :email] } })
     end
@@ -12,7 +12,8 @@ class Api::ReviewsController < ApplicationController
         @review = Review.new(review_params)
         if @review.save
             puts "saved"
-            render json: @review, status: :created
+            # render json: @review, status: :created
+            render :show, status: :created
         else
             puts "not saved"
             render json: @review.errors, status: :unprocessable_entity
@@ -26,7 +27,7 @@ class Api::ReviewsController < ApplicationController
         puts review_params
 
         if @review.update(review_params)
-            render json: @review, status: :ok
+            render :show, status: :ok
         else
             render json: @review.errors, status: :unprocessable_entity
         end
