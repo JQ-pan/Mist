@@ -22,7 +22,7 @@ function Reviews({ game }) {
 
     const reviewItems = reviewsArray.length > 0 ? (
         reviewsArray.map(reviewItem => {
-            const user = getUser(reviewItem.author_id);
+            const user = getUser(reviewItem.authorId);
             return <ReviewItem reviewItem={reviewItem} user={user} key={reviewItem.id} />
         })
     ) : (
