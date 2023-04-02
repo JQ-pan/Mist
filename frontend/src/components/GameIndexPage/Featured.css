@@ -1,0 +1,73 @@
+.carousel {
+    overflow: hidden;
+}
+
+.carousel .left {
+    left: 31px;
+    top: 243px;
+    position: absolute;
+    width: 23px;
+    height: 36px;
+    padding: 36px 11px;
+    cursor: pointer;
+    z-index: 3;
+    background-color: gray;
+}
+
+.carousel .right {
+    right: 31px;
+    top: 243px;
+    position: absolute;
+    width: 23px;
+    height: 36px;
+    padding: 36px 11px;
+    cursor: pointer;
+    z-index: 3;
+    background-color: gray;
+}
+
+.inner {
+    position: relative;
+    height: 40vh;
+    background-color: lightgrey;
+    /* transition: transform 1s ease-in-out; */
+    transition: transform 0.5s ease-out;
+}
+
+.show {
+    position: absolute;
+    width: 940px;
+    height: 353px;
+    background-color: darkgray;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* Slide change animation */
+    opacity: 1;
+    transition: opacity 400ms ease-in-out;
+}
+
+.not-show {
+    /* Slide change animation */
+    opacity: 0;
+    transition: opacity 400ms ease-in-out;
+}
+
+.show>div {
+    width: 100%;
+    height: 100%
+}
+
+@keyframes fade {
+    from {
+        opacity: 0.1;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.not-show {
+    display: none;
+}
