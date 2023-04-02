@@ -15,9 +15,11 @@
 .game-display-main {
     display: flex;
     align-items: center;
-    display: relative;
     height: 100%;
     flex-direction: row;
+
+    /* Testing Carousel */
+    /* margin-top: 370px; */
 }
 
 .game-left-display-container {
