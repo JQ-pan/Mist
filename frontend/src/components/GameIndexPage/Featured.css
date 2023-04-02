@@ -1,5 +1,6 @@
 .carousel {
     overflow: hidden;
+    height: 353px;
 }
 
 .carousel .left {
@@ -28,10 +29,10 @@
 
 .inner {
     position: relative;
-    height: 40vh;
     background-color: lightgrey;
+    /* Slide change animation */
     /* transition: transform 1s ease-in-out; */
-    transition: transform 0.5s ease-out;
+    transition: opacity 0.5s ease-out;
 }
 
 .show {
