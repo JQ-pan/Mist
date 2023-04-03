@@ -1,5 +1,6 @@
 .carousel {
     overflow: hidden;
+    height: 353px;
 }
 
 .carousel .left {
@@ -28,10 +29,7 @@
 
 .inner {
     position: relative;
-    height: 40vh;
     background-color: lightgrey;
-    /* transition: transform 1s ease-in-out; */
-    transition: transform 0.5s ease-out;
 }
 
 .show {
@@ -44,13 +42,19 @@
     text-align: center;
     /* Slide change animation */
     opacity: 1;
-    transition: opacity 400ms ease-in-out;
+    transition: 400ms ease-in-out;
 }
 
 .not-show {
+    position: absolute;
+    width: 940px;
+    height: 353px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     /* Slide change animation */
     opacity: 0;
-    transition: opacity 400ms ease-in-out;
+    transition: 400ms ease-in-out;
 }
 
 .show>div {
@@ -58,7 +62,7 @@
     height: 100%
 }
 
-@keyframes fade {
+/* @keyframes fade {
     from {
         opacity: 0.1;
     }
@@ -68,6 +72,12 @@
     }
 }
 
-.not-show {
-    display: none;
-}
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0.1;
+    }
+} */
