@@ -3,11 +3,12 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchGames } from "../../store/game";
 import SearchResults from "./SearchResults";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useHistory } from "react-router-dom";
 import "./StoreNavigation.css"
 
 function StoreNavigation() {
     const dispatch = useDispatch();
+    const history = useHistory();
     const games = useSelector(state => Object.values(state.games));
 
     const [value, setValue] = useState('');
@@ -22,7 +23,9 @@ function StoreNavigation() {
     }
 
     const onSearch = (searchTerm) => {
-        console.log('search', searchTerm);
+        if (gameTitles.length === 1) {
+            history.push(`/${gameTitles[0].id}`)
+        }
     }
 
     // Array of search results
@@ -30,7 +33,8 @@ function StoreNavigation() {
         const searchTerm = value.toLowerCase();
         const fullTitle = game.title.toLowerCase();
         return searchTerm && fullTitle.includes(searchTerm)
-    }).slice(0, 5).map((game, i) => <SearchResults key={i} game={game} />);
+    })
+    const searchResults = gameTitles.slice(0, 5).map((game, i) => <SearchResults key={i} game={game} />);
 
     // Clears the search input when a new page is rendered
     const location = useLocation();
@@ -67,16 +71,21 @@ function StoreNavigation() {
                             onChange={onChange}
                             onFocus={() => setFocused(true)}
                             onBlur={() => setFocused(false)}
+                            onKeyDown={(e) => {
+                                if (e.keyCode == 13) {
+                                    onSearch(value)
+                                }
+                            }}
                             className="navbar-search-bar"
                             placeholder="search" />
-                        <a onClick={() => onSearch(value)} > <img src="https://store.akamai.steamstatic.com/public/images/v6/search_icon_btn.png" alt=""/> </a>
+                        <a onClick={() => onSearch(value)} > <img src="https://store.akamai.steamstatic.com/public/images/v6/search_icon_btn.png" alt="" /> </a>
                     </div>
 
                     {focused && (
-                    // {(
+                        // {(
                         <div
                             className="search-results" onMouseDown={onMouseDown}>
-                            { gameTitles.length !== 0 && (gameTitles) }
+                            {searchResults.length !== 0 && (searchResults)}
                         </div>
                     )}
 
