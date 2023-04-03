@@ -7,7 +7,6 @@ const Featured = ({ games }) => {
     const [pause, setPause] = useState(false);
 
     const handleNext = () => {
-        console.log("next: ", counter)
         if (counter !== games.length) {
             setCounter(counter + 1);
         } else {
@@ -16,7 +15,6 @@ const Featured = ({ games }) => {
     };
 
     const handlePre = () => {
-        console.log("pre: ", counter)
         if (counter !== 1) {
             setCounter(counter - 1);
         } else {
@@ -39,7 +37,7 @@ const Featured = ({ games }) => {
             } else {
                 clearInterval(interval);
             }
-        }, 3000);
+        }, 6000);
         return () => clearInterval(interval);
     })
 

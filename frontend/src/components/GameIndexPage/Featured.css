@@ -30,9 +30,6 @@
 .inner {
     position: relative;
     background-color: lightgrey;
-    /* Slide change animation */
-    /* transition: transform 1s ease-in-out; */
-    /* transition: opacity 0.5s ease-in-out; */
 }
 
 .show {
@@ -46,20 +43,18 @@
     /* Slide change animation */
     opacity: 1;
     transition: 400ms ease-in-out;
-    /* animation-name: fade; */
 }
 
 .not-show {
-    /* Slide change animation */
     position: absolute;
     width: 940px;
     height: 353px;
     justify-content: center;
     align-items: center;
     text-align: center;
-    transition: 400ms ease-in-out;
+    /* Slide change animation */
     opacity: 0;
-    /* animation-name: fade-out; */
+    transition: 400ms ease-in-out;
 }
 
 .show>div {

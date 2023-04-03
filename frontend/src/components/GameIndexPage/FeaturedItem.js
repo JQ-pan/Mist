@@ -1,8 +1,9 @@
-const FeaturedItem = ({ game, i }) => {
+const FeaturedItem = ({ game }) => {
     return (
-        // <div>
+        <div>
+            <img src={game.images[0]} />
             <h3>{game.title}</h3>
-        // </div>A/*  */
+        </div>
     )
 }
 
