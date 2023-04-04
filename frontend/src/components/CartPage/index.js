@@ -20,7 +20,7 @@ const CartPage = () => {
     const cartItemsArray = useSelector(state => state.cartItems ? Object.values(state.cartItems) : []);
 
     const cartItems = cartItemsArray.map(cartItem => <CartItem cartItem={cartItem} key={cartItem.id} />);
-    
+
     useEffect(() => {
         dispatch(fetchCartItems());
     }, [dispatch])
@@ -30,7 +30,7 @@ const CartPage = () => {
     const handleClearCart = () => {
         alert('Removing all items from cart');
     }
-    
+
     // Add to library
     const handleAddToLibrary = async () => {
         for (let game of cartItemsArray) {
@@ -44,83 +44,86 @@ const CartPage = () => {
         return <Redirect to="login" />;
     } else {
         return (
-            <div className="cart-page-content">
-                <StoreNavigation />
-                <div className="cart-page-header-background">
+            <div className="cart-page-background">
 
-                    <div className="cart-page-header-container">
-                        <span className="breadcrumb"><Link className="home-link" to="/">All Products</Link> {'>'} Your Shopping Cart</span>
-                        <div className="cart-header">YOUR SHOPPING CART</div>
+
+                <div className="cart-page-content">
+                    <StoreNavigation />
+                    <div className="cart-page-header-background">
+
+                        <div className="cart-page-header-container">
+                            <span className="breadcrumb"><Link className="home-link" to="/">All Products</Link> {'>'} Your Shopping Cart</span>
+                            <div className="cart-header">YOUR SHOPPING CART</div>
+                        </div>
                     </div>
-                </div>
 
-                <div className="cart-page-main-container">
-                    <div className="cart-page-main-left">
-                        {cartItems}
+                    <div className="cart-page-main-container">
+                        <div className="cart-page-main-left">
+                            {cartItems}
 
-                        <div className="checkout-background">
-                            <div className="cart-totals-container">
-                                <div className="cart-totals-content">
-                                    <div className="estimated-total-text">
-                                        Estimated total
-                                        <sup>1</sup>
-                                    </div>
-                                    <span className="cart-total-price-content">{total === 0 ? "FREE" : "$" + Number(total).toFixed(2)}</span>
+                            <div className="checkout-background">
+                                <div className="cart-totals-container">
+                                    <div className="cart-totals-content">
+                                        <div className="estimated-total-text">
+                                            Estimated total
+                                            <sup>1</sup>
+                                        </div>
+                                        <span className="cart-total-price-content">{total === 0 ? "FREE" : "$" + Number(total).toFixed(2)}</span>
 
-                                    {/* <span>Estimated total<sup>1</sup></span>
+                                        {/* <span>Estimated total<sup>1</sup></span>
                                 <div>${total === 0 ? "FREE" : Number(total).toFixed(2)}</div> */}
+                                    </div>
+                                </div>
+
+                                <div className="checkout-actions">
+                                    <div className="purchase-for-self-or-gift">Is this a purchase for yourself or is it a gift? Select one to continue to checkout.</div>
+                                    <div className="checkout-buttons">
+                                        <button className="purchase-green-button" onClick={handleAddToLibrary}>
+                                            <span>Purchase for myself</span>
+                                        </button>
+                                        <button className="purchase-green-button">
+                                            <span>Purchase as a gift</span>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div className="checkout-actions">
-                                <div className="purchase-for-self-or-gift">Is this a purchase for yourself or is it a gift? Select one to continue to checkout.</div>
-                                <div className="checkout-buttons">
-                                    <button className="purchase-green-button" onClick={handleAddToLibrary}>
-                                        <span>Purchase for myself</span>
-                                    </button>
-                                    <button className="purchase-green-button">
-                                        <span>Purchase as a gift</span>
-                                    </button>
+                            <div className="disclaimer-text-container">
+                                <div className="sales-tax-tag">
+                                    <sup>1</sup>
+                                </div>
+                                <div className="disclaimer-text">Sales tax will be calculated during checkout where applicable</div>
+                            </div>
+
+                            <div className="continue-shopping-container">
+                                <Link to="/" className="continue-shopping-button"><span>Continue Shopping</span></Link>
+                                <div className="remove-all-items-container">
+                                    <span onClick={handleClearCart} className="remove-all-items">Remove all items</span>
+                                </div>
+                            </div>
+
+                            <br />
+                            <br />
+
+                            <div className="deliver-container">
+                                <h1>Delivery</h1>
+                                <div className="notice-box">
+                                    <img className="delivery-image" src={logo} alt=""></img>
+                                    <div className="notice-box-text">
+                                        <div className="first-line">All digital goods are delivered via the Mist webpage application</div>
+                                        <div className="second-line">Mist and your games will be available for download at the end of the purchase.</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="disclaimer-text-container">
-                            <div className="sales-tax-tag">
-                                <sup>1</sup>
-                            </div>
-                            <div className="disclaimer-text">Sales tax will be calculated during checkout where applicable</div>
+                        <div className="cart-page-main-right">
+                            <h2>COMING SOON</h2>
+                            <p>This component is not yet complete.</p>
+                            {/* Additional games, Spotlight, and Recommended */}
                         </div>
-
-                        <div className="continue-shopping-container">
-                            <Link to="/" className="continue-shopping-button"><span>Continue Shopping</span></Link>
-                            <div className="remove-all-items-container">
-                                <span onClick={handleClearCart} className="remove-all-items">Remove all items</span>
-                            </div>
-                        </div>
-
-                        <br/>
-                        <br/>
-
-                        <div className="deliver-container">
-                            <h1>Delivery</h1>
-                            <div className="notice-box">
-                                <img className="delivery-image" src={logo} alt=""></img>
-                                <div className="notice-box-text">
-                                    <div className="first-line">All digital goods are delivered via the Mist webpage application</div>
-                                    <div className="second-line">Mist and your games will be available for download at the end of the purchase.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="cart-page-main-right">
-                        <h2>COMING SOON</h2>
-                        <p>This component is not yet complete.</p>
-                        {/* Additional games, Spotlight, and Recommended */}
                     </div>
                 </div>
-
             </div>)
     }
 }

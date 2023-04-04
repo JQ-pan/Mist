@@ -1,7 +1,7 @@
 const FeaturedItem = ({ game }) => {
     return (
         <div>
-            <img src={game.images[0]} />
+            <img src={game.images[0]} alt="" />
             <h3>{game.title}</h3>
         </div>
     )
