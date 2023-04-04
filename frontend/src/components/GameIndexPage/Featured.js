@@ -44,36 +44,38 @@ const Featured = ({ games }) => {
 
 
     return (
-        <div className="carousel">
-            <button className="left" onClick={handlePre}>
-                <span>&#10094;</span>
-            </button>
-            <button className="right" onClick={handleNext}>
-                <span>&#10095;</span>
-            </button>
+        <div className="carousel-background">
+            <div className="carousel">
+                <button className="left" onClick={handlePre}>
+                    <span>&#10094;</span>
+                </button>
+                <button className="right" onClick={handleNext}>
+                    <span>&#10095;</span>
+                </button>
 
-            <div className="inner"
-                onMouseEnter={handleMouse}
-                onMouseLeave={handleMouse}
-            >
-                {games.map((game, i) =>
-                    <div className={counter - 1 === i ? "show" : "not-show"}>
-                        <FeaturedItem
-                            game={game}
+                <div className="inner"
+                    onMouseEnter={handleMouse}
+                    onMouseLeave={handleMouse}
+                >
+                    {games.map((game, i) =>
+                        <div className={counter - 1 === i ? "show" : "not-show"}>
+                            <FeaturedItem
+                                game={game}
+                                key={i}
+                            />
+                        </div>
+                    )}
+                </div>
+
+                <div className="page">
+                    {games.map((game, i) => (
+                        <span
+                            className={counter - 1 === i ? "dot active" : "dot"}
+                            onClick={() => handlePage(i + 1)}
                             key={i}
                         />
-                    </div>
-                )}
-            </div>
-
-            <div className="page">
-                {games.map((game, i) => (
-                    <span
-                        className={counter - 1 === i ? "dot active" : "dot"}
-                        onClick={() => handlePage(i + 1)}
-                        key={i}
-                    />
-                ))}
+                    ))}
+                </div>
             </div>
         </div>
     )
