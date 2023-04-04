@@ -40,7 +40,7 @@
 
 .show {
     position: absolute;
-    margin-left: 41px;
+    margin-left: 35px;
     width: 940px;
     height: 353px;
     /* overflow: hidden; */
@@ -55,7 +55,7 @@
 
 .not-show {
     position: absolute;
-    margin-left: 41px;
+    margin-left: 35px;
     width: 940px;
     height: 353px;
     /* justify-content: center;
