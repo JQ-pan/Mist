@@ -50,6 +50,7 @@
 .profile-link-to-home {
     cursor: pointer;
     text-decoration: none;
+    color: #ebebeb;
 }
 
 .profile-link-to-home:hover {

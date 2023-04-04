@@ -10,7 +10,7 @@ function StoreNavigation() {
     const dispatch = useDispatch();
     const history = useHistory();
     const games = useSelector(state => Object.values(state.games));
-
+    const cartLength = useSelector(state => Object.values(state.cartItems).length)
     const [value, setValue] = useState('');
     const [focused, setFocused] = useState(false);
 
@@ -50,7 +50,7 @@ function StoreNavigation() {
             <div className="cart-container">
                 <Link className="cart-button-background" exact to={'/cart'}>
                     <div className="cart-button-text">
-                        CART
+                        CART ({cartLength})
                     </div>
                 </Link>
             </div>
@@ -72,13 +72,13 @@ function StoreNavigation() {
                             onFocus={() => setFocused(true)}
                             onBlur={() => setFocused(false)}
                             onKeyDown={(e) => {
-                                if (e.keyCode == 13) {
+                                if (e.keyCode === 13) {
                                     onSearch(value)
                                 }
                             }}
                             className="navbar-search-bar"
                             placeholder="search" />
-                        <a onClick={() => onSearch(value)} > <img src="https://store.akamai.steamstatic.com/public/images/v6/search_icon_btn.png" alt="" /> </a>
+                        <span onClick={() => onSearch(value)} > <img src="https://store.akamai.steamstatic.com/public/images/v6/search_icon_btn.png" alt="" /> </span>
                     </div>
 
                     {focused && (
