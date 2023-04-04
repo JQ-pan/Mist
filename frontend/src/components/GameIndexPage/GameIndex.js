@@ -10,6 +10,7 @@ const GameIndex = () => {
     const dispatch = useDispatch();
     const games = useSelector(state => Object.values(state.games))
     useEffect(() => { dispatch(fetchGames()) }, [dispatch])
+    console.log(games);
     const gameItems = games.map((game, i) => <GameIndexItem key={i} game={game} />)
     return (
         <div className="game-display-background">

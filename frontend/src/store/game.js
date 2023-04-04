@@ -36,7 +36,9 @@ export const fetchGames = () => async dispatch => {
 }
 
 export const fetchGame = (gameId) => async dispatch => {
+    debugger
     const res = await csrfFetch(`/api/games/${gameId}`)
+    debugger
     if (res.ok) {
         const game = await res.json();
         dispatch(receiveGame(game))

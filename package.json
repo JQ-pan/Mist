@@ -22,6 +22,5 @@
   "homepage": "https://github.com/JQ-pan/Mist#readme",
   "engines": {
     "node": "16.18.1"
-  },
-  "main": "index.js"
+  }
 }
