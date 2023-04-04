@@ -3,12 +3,11 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchGames } from "../../store/game";
 import SearchResults from "./SearchResults";
-import { Link, useLocation, useHistory } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./StoreNavigation.css"
 
 function StoreNavigation() {
     const dispatch = useDispatch();
-    const history = useHistory();
     const games = useSelector(state => Object.values(state.games));
     const cartLength = useSelector(state => Object.values(state.cartItems).length)
     const [value, setValue] = useState('');
@@ -23,9 +22,7 @@ function StoreNavigation() {
     }
 
     const onSearch = (searchTerm) => {
-        if (gameTitles.length === 1) {
-            history.push(`/${gameTitles[0].id}`)
-        }
+        console.log('search', searchTerm);
     }
 
     // Array of search results
@@ -33,8 +30,7 @@ function StoreNavigation() {
         const searchTerm = value.toLowerCase();
         const fullTitle = game.title.toLowerCase();
         return searchTerm && fullTitle.includes(searchTerm)
-    })
-    const searchResults = gameTitles.slice(0, 5).map((game, i) => <SearchResults key={i} game={game} />);
+    }).slice(0, 5).map((game, i) => <SearchResults key={i} game={game} />);
 
     // Clears the search input when a new page is rendered
     const location = useLocation();
@@ -82,10 +78,10 @@ function StoreNavigation() {
                     </div>
 
                     {focused && (
-                        // {(
+                    // {(
                         <div
                             className="search-results" onMouseDown={onMouseDown}>
-                            {searchResults.length !== 0 && (searchResults)}
+                            { gameTitles.length !== 0 && (gameTitles) }
                         </div>
                     )}
 
