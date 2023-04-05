@@ -7,40 +7,51 @@
 
 .carousel {
     height: 353px;
-}
-
-.carousel .left {
-    left: 31px;
-    top: 243px;
-    position: absolute;
-    width: 23px;
-    height: 36px;
-    padding: 36px 11px;
-    cursor: pointer;
-    z-index: 3;
-    background-color: gray;
-}
-
-.carousel .right {
-    right: 31px;
-    top: 243px;
-    position: absolute;
-    width: 23px;
-    height: 36px;
-    padding: 36px 11px;
-    cursor: pointer;
-    z-index: 3;
-    background-color: gray;
+    width: 940px;
+    margin: 0 auto;
 }
 
 .inner {
-    position: relative;
+    margin: 0 auto;
     background-color: lightgrey;
+    width: 940px;
+    height: 353px;
+    position: relative;
+}
+
+.arrow {
+    padding: 36px 11px;
+    cursor: pointer;
+    z-index: 3;
+    background-color: gray;
+}
+
+.arrow > div {
+    background-image: url(https://store.akamai.steamstatic.com/public/images/v6/arrows.png);
+    height: 36px;
+    width: 23px;
+}
+
+.left {
+    left: -46px;
+    top: 122px;
+    background: linear-gradient( to right, rgba( 0, 0, 0, 0.3) 5%,rgba( 0, 0, 0, 0) 95%);
+    position: absolute;
+}
+
+.left > div {
+    background-position-x: 23px;
+}
+
+.right {
+    right: -46px;
+    top: 122px;
+    background: linear-gradient( to right, rgba( 0, 0, 0, 0) 5%,rgba( 0, 0, 0, 0.3) 95%);
+    position: absolute;
 }
 
 .show {
     position: absolute;
-    margin-left: 35px;
     width: 940px;
     height: 353px;
     /* overflow: hidden; */
@@ -55,7 +66,6 @@
 
 .not-show {
     position: absolute;
-    margin-left: 35px;
     width: 940px;
     height: 353px;
     /* justify-content: center;
@@ -91,10 +101,3 @@
         opacity: 0.1;
     }
 } */
-
-.featured-info {
-    position: relative;
-    display: inline-block;
-    height: 100%;
-    
-}
