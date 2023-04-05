@@ -1,6 +1,7 @@
 .featured-container {
     box-shadow: 0 0 7px 0px #000;
     height: 353px;
+    overflow: hidden;
 }
 
 .main-image {
@@ -12,4 +13,10 @@
     background-position: center center;
     background-size: cover;
     box-shadow: 0 0 10px 5px #000;
+}
+
+.featured-info {
+    position: relative;
+    display: inline-block;
+    height: 100%;
 }

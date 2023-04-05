@@ -46,17 +46,17 @@ const Featured = ({ games }) => {
     return (
         <div className="carousel-background">
             <div className="carousel">
-                <button className="left" onClick={handlePre}>
-                    <span>&#10094;</span>
-                </button>
-                <button className="right" onClick={handleNext}>
-                    <span>&#10095;</span>
-                </button>
 
                 <div className="inner"
                     onMouseEnter={handleMouse}
                     onMouseLeave={handleMouse}
                 >
+                    <button className="arrow left" onClick={handlePre}>
+                        <div></div>
+                    </button>
+                    <button className="arrow right" onClick={handleNext}>
+                        <div></div>
+                    </button>
                     {games.map((game, i) =>
                         <div className={counter - 1 === i ? "show" : "not-show"}>
                             <FeaturedItem
