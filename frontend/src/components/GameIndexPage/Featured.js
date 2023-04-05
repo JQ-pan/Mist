@@ -30,16 +30,16 @@ const Featured = ({ games }) => {
         setPause(!pause);
     }
 
-    useEffect(() => {
-        let interval = setInterval(() => {
-            if (!pause) {
-                handleNext();
-            } else {
-                clearInterval(interval);
-            }
-        }, 6000);
-        return () => clearInterval(interval);
-    })
+    // useEffect(() => {
+    //     let interval = setInterval(() => {
+    //         if (!pause) {
+    //             handleNext();
+    //         } else {
+    //             clearInterval(interval);
+    //         }
+    //     }, 6000);
+    //     return () => clearInterval(interval);
+    // })
 
 
 
@@ -70,7 +70,7 @@ const Featured = ({ games }) => {
                 <div className="page">
                     {games.map((game, i) => (
                         <span
-                            className={counter - 1 === i ? "dot active" : "dot"}
+                            className={counter - 1 === i ? "dot displayed" : "dot"}
                             onClick={() => handlePage(i + 1)}
                             key={i}
                         />
