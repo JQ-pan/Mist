@@ -8,6 +8,9 @@ This is a full stack web application that is a clone of the popular game library
 - CSS
 - onRender
 
+## Index Carousel
+![Carousel gif](/readme_assets/Carousel-gif.gif)
+
 ## Shopping cart
 ![Library Screenshot](/readme_assets/library_screenshot.PNG "Library")
 

@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require "open-uri"
 
 ApplicationRecord.transaction do 
     puts "Destroying tables..."
@@ -39,6 +40,13 @@ ApplicationRecord.transaction do
     #   }) 
     # end
     
+    puts "Seeding images..."
+
+    super_mario_bros_images = []
+    5.times do |i|
+      super_mario_bros_images << "https://mist-seeds.s3.amazonaws.com/super-mario-bros/super-mario-bros-#{i+1}.jpg"
+    end
+
     puts "Creating games..."
 
     Game.create!([
@@ -50,7 +58,8 @@ ApplicationRecord.transaction do
         price: 49.99,
         release_date: "September 13, 1985",
         featured: true,
-        images: ["https://mario.wiki.gallery/images/c/c1/SMB_Logo_EN.png", "https://townsquare.media/site/295/files/2020/09/super-mario-bros.jpg?", "https://m.media-amazon.com/images/M/MV5BNDQzMDgwYTktNTYyOC00OThkLTkyMTgtOTI3ZjQzMGUzYmE0XkEyXkFqcGdeQXVyMTM0NjI3MTc0._V1_.jpg", "https://charactersdb.com/wp-content/uploads/nes-super-mario-game-characters.jpg", "https://m.media-amazon.com/images/M/MV5BMjEyZTBhM2MtMDE1NS00MzhiLWJjMTUtYjMwNGYxYTZiYWFkL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNjg3MTAzODM@._V1_.jpg", "https://www.bestoldgames.net/img/games/super-mario-bros/super-mario-bros-05.png", "https://static.wikia.nocookie.net/mario/images/4/44/SMB_Warpzone.png/revision/latest/scale-to-width-down/250?cb=20200331123731"]
+        # images: ["https://mario.wiki.gallery/images/c/c1/SMB_Logo_EN.png", "https://townsquare.media/site/295/files/2020/09/super-mario-bros.jpg?", "https://m.media-amazon.com/images/M/MV5BNDQzMDgwYTktNTYyOC00OThkLTkyMTgtOTI3ZjQzMGUzYmE0XkEyXkFqcGdeQXVyMTM0NjI3MTc0._V1_.jpg", "https://charactersdb.com/wp-content/uploads/nes-super-mario-game-characters.jpg", "https://m.media-amazon.com/images/M/MV5BMjEyZTBhM2MtMDE1NS00MzhiLWJjMTUtYjMwNGYxYTZiYWFkL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNjg3MTAzODM@._V1_.jpg", "https://www.bestoldgames.net/img/games/super-mario-bros/super-mario-bros-05.png", "https://static.wikia.nocookie.net/mario/images/4/44/SMB_Warpzone.png/revision/latest/scale-to-width-down/250?cb=20200331123731"]
+        images: super_mario_bros_images
       },
       {
         title: "The Legend of Zelda",
