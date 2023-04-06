@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require "open-uri"
 
 ApplicationRecord.transaction do 
     puts "Destroying tables..."
@@ -39,6 +40,18 @@ ApplicationRecord.transaction do
     #   }) 
     # end
     
+    puts "Seeding images..."
+
+    super_mario_bros_images = []
+    7.times do |i|
+      super_mario_bros_images << "https://mist-seeds.s3.amazonaws.com/super-mario-bros/super-mario-bros-#{i+1}.jpg"
+    end
+
+    legend_of_zelda_images = []
+    7.times do |i|
+      legend_of_zelda_images << "https://mist-seeds.s3.amazonaws.com/legend-of-zelda/legend-of-zelda-#{i+1}.jpg"
+    end
+
     puts "Creating games..."
 
     Game.create!([
@@ -50,7 +63,7 @@ ApplicationRecord.transaction do
         price: 49.99,
         release_date: "September 13, 1985",
         featured: true,
-        images: ["https://mario.wiki.gallery/images/c/c1/SMB_Logo_EN.png", "https://townsquare.media/site/295/files/2020/09/super-mario-bros.jpg?", "https://m.media-amazon.com/images/M/MV5BNDQzMDgwYTktNTYyOC00OThkLTkyMTgtOTI3ZjQzMGUzYmE0XkEyXkFqcGdeQXVyMTM0NjI3MTc0._V1_.jpg", "https://charactersdb.com/wp-content/uploads/nes-super-mario-game-characters.jpg", "https://m.media-amazon.com/images/M/MV5BMjEyZTBhM2MtMDE1NS00MzhiLWJjMTUtYjMwNGYxYTZiYWFkL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNjg3MTAzODM@._V1_.jpg", "https://www.bestoldgames.net/img/games/super-mario-bros/super-mario-bros-05.png", "https://static.wikia.nocookie.net/mario/images/4/44/SMB_Warpzone.png/revision/latest/scale-to-width-down/250?cb=20200331123731"]
+        images: super_mario_bros_images
       },
       {
         title: "The Legend of Zelda",
@@ -60,7 +73,8 @@ ApplicationRecord.transaction do
         price: 49.99,
         release_date: "February 21, 1986",
         featured: true,
-        images: ["https://oyster.ignimgs.com/mediawiki/apis.ign.com/the-legend-of-zelda/2/28/Ign_loz_main_logo.jpg?width=960", "https://cdn.wallpapersafari.com/5/7/PFBQnm.jpg", "http://images6.fanpop.com/image/photos/34500000/The-Legend-of-Zelda-1986-the-legend-of-zelda-34558538-640-480.jpg", "https://upload.wikimedia.org/wikipedia/en/thumb/3/3a/Legend_of_Zelda_NES.PNG/220px-Legend_of_Zelda_NES.PNG", "https://www.zeldadungeon.net/Zelda01/Walkthrough/01/001.png", "https://i0.wp.com/www.thexboxhub.com/wp-content/uploads/2021/02/the-legend-of-zelda-3.png", "https://oyster.ignimgs.com/mediawiki/apis.ign.com/the-legend-of-zelda/1/10/Link_triforce.png"]
+        # images: ["https://oyster.ignimgs.com/mediawiki/apis.ign.com/the-legend-of-zelda/2/28/Ign_loz_main_logo.jpg?width=960", "https://cdn.wallpapersafari.com/5/7/PFBQnm.jpg", "http://images6.fanpop.com/image/photos/34500000/The-Legend-of-Zelda-1986-the-legend-of-zelda-34558538-640-480.jpg", "https://upload.wikimedia.org/wikipedia/en/thumb/3/3a/Legend_of_Zelda_NES.PNG/220px-Legend_of_Zelda_NES.PNG", "https://www.zeldadungeon.net/Zelda01/Walkthrough/01/001.png", "https://i0.wp.com/www.thexboxhub.com/wp-content/uploads/2021/02/the-legend-of-zelda-3.png", "https://oyster.ignimgs.com/mediawiki/apis.ign.com/the-legend-of-zelda/1/10/Link_triforce.png"]
+        images: legend_of_zelda_images
       },
       {
         title: "Contra",

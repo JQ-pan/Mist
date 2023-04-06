@@ -13,7 +13,6 @@
 
 .inner {
     margin: 0 auto;
-    background-color: lightgrey;
     width: 940px;
     height: 353px;
     position: relative;
@@ -26,7 +25,7 @@
     background-color: gray;
 }
 
-.arrow > div {
+.arrow>div {
     background-image: url(https://store.akamai.steamstatic.com/public/images/v6/arrows.png);
     height: 36px;
     width: 23px;
@@ -35,19 +34,27 @@
 .left {
     left: -46px;
     top: 122px;
-    background: linear-gradient( to right, rgba( 0, 0, 0, 0.3) 5%,rgba( 0, 0, 0, 0) 95%);
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.3) 5%, rgba(0, 0, 0, 0) 95%);
     position: absolute;
 }
 
-.left > div {
+.left:hover {
+    background: linear-gradient(to right, rgba(171, 218, 244, 0.3) 5%, rgba(171, 218, 244, 0) 95%);
+}
+
+.left>div {
     background-position-x: 23px;
 }
 
 .right {
     right: -46px;
     top: 122px;
-    background: linear-gradient( to right, rgba( 0, 0, 0, 0) 5%,rgba( 0, 0, 0, 0.3) 95%);
+    background: linear-gradient(to right, rgba(0, 0, 0, 0) 5%, rgba(0, 0, 0, 0.3) 95%);
     position: absolute;
+}
+
+.right:hover {
+    background: linear-gradient(to right, rgba(171, 218, 244, 0) 5%, rgba(171, 218, 244, 0.3) 95%);
 }
 
 .show {
@@ -101,3 +108,28 @@
         opacity: 0.1;
     }
 } */
+
+/* Bottom navigation buttons */
+
+.page {
+    text-align: center;
+}
+
+.dot {
+    display: inline-block;
+    margin: 12px 2px;
+    height: 9px;
+    width: 15px;
+    border-radius: 2px;
+    background-color: hsla(202,60%,100%,0.2);
+    transition: background-color 0.2s;
+    cursor: pointer;
+}
+
+.dot:hover {
+    background-color: hsla(202,60%,100%,0.3);
+}
+
+.displayed {
+    background-color: hsla(202,60%,100%,0.4);
+}

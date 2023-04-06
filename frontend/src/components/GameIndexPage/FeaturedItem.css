@@ -2,21 +2,78 @@
     box-shadow: 0 0 7px 0px #000;
     height: 353px;
     overflow: hidden;
+    display: flex;
+    background: url(https://store.akamai.steamstatic.com/public/images/v6/home/background_maincap_2.jpg);
+    background-repeat: no-repeat;
+    background-position: right;
+    color: #fff;
 }
 
 .main-image {
     background-color: #000;
-    position: relative;
+    /* position: relative; */
+    display: inline-block;
     margin-right: 10px;
     width: 616px;
     height: 353px;
     background-position: center center;
     background-size: cover;
     box-shadow: 0 0 10px 5px #000;
+    z-index: 1;
 }
 
 .featured-info {
-    position: relative;
     display: inline-block;
     height: 100%;
+}
+
+.featured-game-title {
+    padding-top: 0px;
+    font-family: "Motiva Sans", Sans-serif;
+    font-weight: 300;
+    height: 69px;
+    padding-left: 6px;
+    padding-right: 6px;
+    display: flex;
+    align-items: center;
+}
+
+.featured-game-title > h3 {
+    max-height: 62px;
+    overflow: hidden;
+    font-size: 24px;
+    padding-bottom: 4px;
+    padding-top: 4px;
+    line-height: 26px;
+}
+
+.featured-image-container {
+    width: 344px;
+    max-height: 176px;
+    display: inline-block;
+    margin-left: -30px;
+}
+
+.featured-image-container > div {
+    padding: 10px 10px 0 0;
+    display: inline-block;
+}
+
+.side-image {
+    background-position: center center;
+    background-size: cover;
+    width: 162px;
+    height: 69px;
+    opacity: 0.6;
+}
+
+.side-image:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.featured-price {
+    position: absolute;
+    bottom: 10px;
+    left: 632px;
 }
