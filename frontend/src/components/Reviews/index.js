@@ -23,7 +23,7 @@ function Reviews({ game }) {
     const reviewItems = reviewsArray.length > 0 ? (
         reviewsArray.map(reviewItem => {
             const user = getUser(reviewItem.authorId);
-            return <ReviewItem reviewItem={reviewItem} user={user} key={reviewItem.id} />
+            return <ReviewItem reviewItem={reviewItem} user={user} currentUser={currentUser} key={reviewItem.id} />
         })
     ) : (
         <div className="no-reviews">

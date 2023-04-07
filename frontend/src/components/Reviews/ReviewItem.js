@@ -7,14 +7,14 @@ import thumbsDown from '../../assets/icon_thumbsDown.png';
 import thumbsUp from '../../assets/icon_thumbsUp.png';
 import './ReviewItem.css';
 
-const ReviewItem = ({ reviewItem, user }) => {
+const ReviewItem = ({ reviewItem, user, currentUser }) => {
     const dispatch = useDispatch();
     const [editedReview, setEditedReview] = useState(reviewItem.body);
     const [editedRecommendation, setEditedRecommendation] = useState(reviewItem.recommended);
     const [isEditing, setIsEditing] = useState();
 
     // Check if currentUser is the author of the review
-    const isAuthor = reviewItem.authorId === user.id;
+    const isAuthor = reviewItem.authorId === currentUser.id;
     const handleEditClick = () => {
         setIsEditing(true);
     }
