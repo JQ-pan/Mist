@@ -49,7 +49,6 @@ function Reviews({ game }) {
     }, { trueCount: 0, falseCount: 0 });
 
     const ratio = count.trueCount / reviewsArray.length;
-    console.log(ratio);
 
     let averageRating;
     if (ratio < 0.19) {

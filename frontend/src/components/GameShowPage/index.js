@@ -3,15 +3,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams, useHistory } from 'react-router-dom';
 import { fetchGame } from '../../store/game'
 import { NavLink } from 'react-router-dom';
-// import { Link } from 'react-router-dom';
 import { fetchCartItems } from '../../store/cartItem';
 import { createCartItem } from '../../store/cartItem';
 import { fetchLibraryItems } from '../../store/libraryItem';
-import { Link } from 'react-router-dom';
+import { fetchReviews } from '../../store/review';
 import StoreNavigation from '../StoreNavigation';
 import Reviews from '../Reviews';
 import ReviewForm from '../Reviews/ReviewForm';
-import './GameShowPage.css'
+import './GameShowPage.css';
 
 function GameShowPage() {
     const dispatch = useDispatch();
@@ -19,12 +18,43 @@ function GameShowPage() {
     const { gameId } = useParams();
 
     const game = useSelector(state => state.games ? state.games[gameId] : {});
-    // const game = useSelector(state => state.game ? state.game : {} )
     useEffect(() => {
         dispatch(fetchGame(gameId));
+        dispatch(fetchReviews());
         dispatch(fetchLibraryItems());
         dispatch(fetchCartItems());
     }, [dispatch])
+
+    const reviewsArray = useSelector(state => state.reviews ? Object.values(state.reviews).filter(
+        (review) => review.gameId === game.id
+    ) : []);
+
+    const count = reviewsArray.reduce((acc, review) => {
+        if (review.recommended) {
+            acc.trueCount++;
+        } else {
+            acc.falseCount++;
+        }
+        return acc;
+    }, { trueCount: 0, falseCount: 0 });
+
+    const ratio = count.trueCount / reviewsArray.length;
+
+    let averageRating;
+    if (ratio < 0.19) {
+        averageRating = "Negative";
+        // const color="#c35c2c"
+    } else if (ratio < 0.39) {
+        averageRating = "Mostly Negative";
+    } else if (ratio < 0.69) {
+        averageRating = "Mixed";
+        // const color="#a8926a"
+    } else if (ratio < 0.79) {
+        averageRating = "Mostly Positive";
+    } else {
+        averageRating = "Positive";
+        // const color="#66C0F4"
+    }
 
     const handleAddToCart = () => {
         dispatch(createCartItem(game.id))
@@ -109,8 +139,14 @@ function GameShowPage() {
                                 <div className="game-show-reviews">
                                     <div className="subcolumn-title">ALL REVIEWS:</div>
                                     <div className="subcolumn-content">
-                                        <span className="rating-summary">Very Positive </span>
-                                        <span className="total-reviews">(10)</span>
+                                        <span className="rating-summary" style={{
+                                            color:
+                                                averageRating === "Negative" ? "#c35c2c" :
+                                                averageRating === "Mostly Negative" ? "#c35c2c" :
+                                                averageRating === "Mixed" ? "#a8926a" :
+                                                averageRating === "Mostly Positive" ? "#66C0F4" : "#66C0F4"
+                                        }}>{averageRating}</span>
+                                        <span className="total-reviews"> ({reviewsArray.length})</span>
                                     </div>
                                 </div>
 
@@ -178,7 +214,6 @@ function GameShowPage() {
                                     <div className="game-show-review-content">
                                         <Reviews game={game} />
                                     </div>
-
                                 </div>
                             </div>
                         </div>
