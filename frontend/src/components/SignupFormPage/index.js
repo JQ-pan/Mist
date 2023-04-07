@@ -44,12 +44,12 @@ function SignupFormPage() {
                         {/* <ul>
                             {errors.map(error => <li key={error}>{error}</li>)}
                         </ul> */}
-                        <div className="title">CREATE YOUR ACCOUNT</div>
+                        <div className="signup-title">CREATE YOUR ACCOUNT</div>
                         <div className="form-row">
 
-                            <label className="labels">Email Address</label>
+                            <label className="signup-labels">Email Address</label>
                             <input
-                                className="input"
+                                className="signup-input"
                                 type="text"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
@@ -64,9 +64,9 @@ function SignupFormPage() {
                         </div>
 
                         <div className="form-row">
-                            <label className="labels">Username</label>
+                            <label className="signup-labels">Username</label>
                             <input
-                                className="input"
+                                className="signup-input"
                                 type="text"
                                 value={username}
                                 onChange={(e) => setUsername(e.target.value)}
@@ -81,9 +81,9 @@ function SignupFormPage() {
                         </div>
 
                         <div className="form-row">
-                            <label className="labels">Password</label>
+                            <label className="signup-labels">Password</label>
                             <input
-                                className="input"
+                                className="signup-input"
                                 type="password"
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
@@ -98,9 +98,9 @@ function SignupFormPage() {
                         </div>
 
                         <div className="form-row">
-                            <label className="labels">Confirm Password</label>
+                            <label className="signup-labels">Confirm Password</label>
                             <input
-                                className="input"
+                                className="signup-input"
                                 type="password"
                                 value={confirmPassword}
                                 onChange={(e) => setConfirmPassword(e.target.value)}

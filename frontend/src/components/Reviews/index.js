@@ -37,8 +37,49 @@ function Reviews({ game }) {
         dispatch(fetchLibraryItems)
     }, [])
 
+    console.log(reviewsArray);
+
+    const count = reviewsArray.reduce((acc, review) => {
+        if (review.recommended) {
+            acc.trueCount++;
+        } else {
+            acc.falseCount++;
+        }
+        return acc;
+    }, { trueCount: 0, falseCount: 0 });
+
+    const ratio = count.trueCount / reviewsArray.length;
+    console.log(ratio);
+
+    let averageRating;
+    if (ratio < 0.19) {
+        averageRating = "Negative";
+        // const color="#c35c2c"
+    } else if (ratio < 0.39) {
+        averageRating = "Mostly Negative";
+    } else if (ratio < 0.69) {
+        averageRating = "Mixed";
+        // const color="#a8926a"
+    } else if (ratio < 0.79) {
+        averageRating = "Mostly Positive";
+    } else {
+        averageRating = "Positive";
+        // const color="#66C0F4"
+    }
+
     return (
         <div className="reviews-container">
+            <div className="game-show-average-reviews">CUSTOMER REVIEWS</div>
+            <div className="average-reviews-background">
+                <div id="average-review-title">Overall Reviews:</div>
+                <div id="average-review-value" style={{
+                    color:
+                        averageRating === "Negative" ? "#c35c2c" :
+                        averageRating === "Mostly Negative" ? "#c35c2c" :
+                        averageRating === "Mixed" ? "#a8926a" :
+                        averageRating === "Mostly Positive" ? "#66C0F4" : "#66C0F4"
+                }}>{averageRating} <span>({reviewsArray.length} reviews)</span></div>
+            </div>
             <div className="reviews-title">MOST HELPFUL REVIEWS</div>
             {reviewItems}
         </div>

@@ -4,6 +4,35 @@
     float: left;
 }
 
+.game-show-average-reviews {
+    font-size: 14px;
+    margin: 0 0 10px;
+}
+
+.average-reviews-background {
+    background-color: #2a475e;
+    box-shadow: 0 0 5px #000;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+#average-review-title {
+    font-size: 15px;
+    margin-bottom: 5px;
+    color: #e5e5e5;
+}
+
+#average-review-value {
+    font-weight: bold;
+    font-size: 17px;
+    text-shadow: 1px 1px rgb(0 0 0 / 20%);
+}
+
+#average-review-value > span {
+    color: #8ba6b6;
+    font-size: 12px;
+}
+
 .reviews-title {
     font-size: 14px;
     padding-bottom: 8px;

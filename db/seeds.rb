@@ -12,6 +12,8 @@ ApplicationRecord.transaction do
     # Unnecessary if using `rails db:seed:replant`
     User.destroy_all
     Game.destroy_all
+    LibraryItem.destroy_all
+    Review.destroy_all
     
     puts "Resetting primary keys..."
     # For easy testing, so that after seeding, the first `User` has `id` of 1
@@ -183,22 +185,18 @@ ApplicationRecord.transaction do
 
     # Creates library items"
     puts "Creating library items..."
-    User.all.each do |user|
+    User.all[2..-1].each do |user|
       Game.all.each do |game|
         unless LibraryItem.exists?(owner_id: user.id, game_id: game.id)
-          puts "Creating library item #"
           LibraryItem.create(owner_id: user.id, game_id: game.id)
         end
       end
     end
-  
+    
+    # Creates reviews
     puts "Creating reviews..."
-  
-    User.all.each do |user|
-      puts "review-user"
+    User.all[2..-1].each do |user|
       Game.all.each do |game|
-        puts "review-game"
-        puts "review-create"
         Review.create(
           author_id: user.id,
           game_id: game.id,
