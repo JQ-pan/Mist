@@ -1,14 +1,22 @@
 .search-game-div {
-    background-color: gray;
-    border: 1px solid;
-
+    border-top: 1px solid #13242e;
     display: flex;
     flex-direction: row;
+    padding: 5px 6px;
+    cursor: pointer;
+    text-decoration: none;
+}
 
-    z-index: 6;
+.search-game-div:hover {
+    background-color: #212d3d;
 }
 
 .search-game-div .banner {
     width: 120px;
     height: 45px;
+}
+
+.search-game-div .game-info {
+    color: #D8D8D8;
+    padding: 5px 6px;
 }

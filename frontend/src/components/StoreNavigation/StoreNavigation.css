@@ -118,4 +118,7 @@
     
     display: flex;
     flex-direction: column;
+    background: linear-gradient(90deg, rgba(33, 162, 255, 0.1) 1.89%, rgba(50, 50, 51, 0) 50%), linear-gradient(180deg, #575860 11.6%, #3A4852 54.73%, #2C2D34 100%);
+    z-index: 6;
+    padding: 14px 6px 6px 6px;
 }

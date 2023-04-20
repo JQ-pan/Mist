@@ -76,12 +76,11 @@ function StoreNavigation() {
                             placeholder="search" />
                         <span onClick={() => onSearch(value)} > <img src="https://store.akamai.steamstatic.com/public/images/v6/search_icon_btn.png" alt="" /> </span>
                     </div>
-
-                    {focused && (
-                    // {(
-                        <div
-                            className="search-results" onMouseDown={onMouseDown}>
-                            { gameTitles.length !== 0 && (gameTitles) }
+                    {/* focused &&  */}
+                    {gameTitles.length !== 0 && value !== '' && (
+                    
+                        <div className="search-results" onMouseDown={onMouseDown}>
+                            {gameTitles}
                         </div>
                     )}
 
