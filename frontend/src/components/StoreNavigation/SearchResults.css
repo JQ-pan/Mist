@@ -4,9 +4,9 @@
 
     display: flex;
     flex-direction: row;
+
+    z-index: 6;
 }
-
-
 
 .search-game-div .banner {
     width: 120px;
