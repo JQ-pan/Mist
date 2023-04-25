@@ -13,6 +13,24 @@ function Reviews({ game }) {
     const reviewsArray = useSelector(state => state.reviews ? Object.values(state.reviews).filter(
         (review) => review.gameId === game.id
     ) : []);
+    // console.log(currentUser)
+    // console.log(reviewsArray);
+
+    const currentUserReviews = reviewsArray.find(review => {
+        return review.authorId == currentUser.id
+    });
+
+    console.log(currentUserReviews)
+
+    const otherUserReviews = reviewsArray.filter(review => {
+        return review.authorId !== currentUser.id
+    });
+
+    console.log(otherUserReviews)
+
+    const sortedReviews = [currentUserReviews, ...otherUserReviews]
+
+
     const libraryItems = useSelector((state) => state.libraryItems ? Object.values(state.libraryItems) : []);
 
     const getUser = (authorId) => {
@@ -20,8 +38,8 @@ function Reviews({ game }) {
         return user ? user : 'Unknown User';
     }
 
-    const reviewItems = reviewsArray.length > 0 ? (
-        reviewsArray.map(reviewItem => {
+    const reviewItems = sortedReviews.length > 0 ? (
+        sortedReviews.map(reviewItem => {
             const user = getUser(reviewItem.authorId);
             return <ReviewItem reviewItem={reviewItem} user={user} currentUser={currentUser} key={reviewItem.id} />
         })
@@ -72,9 +90,9 @@ function Reviews({ game }) {
                 <div id="average-review-value" style={{
                     color:
                         averageRating === "Negative" ? "#c35c2c" :
-                        averageRating === "Mostly Negative" ? "#c35c2c" :
-                        averageRating === "Mixed" ? "#a8926a" :
-                        averageRating === "Mostly Positive" ? "#66C0F4" : "#66C0F4"
+                            averageRating === "Mostly Negative" ? "#c35c2c" :
+                                averageRating === "Mixed" ? "#a8926a" :
+                                    averageRating === "Mostly Positive" ? "#66C0F4" : "#66C0F4"
                 }}>{averageRating} <span>({reviewsArray.length} reviews)</span></div>
             </div>
             <div className="reviews-title">MOST HELPFUL REVIEWS</div>
