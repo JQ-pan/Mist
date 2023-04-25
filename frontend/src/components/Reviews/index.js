@@ -37,8 +37,6 @@ function Reviews({ game }) {
         dispatch(fetchLibraryItems)
     }, [])
 
-    console.log(reviewsArray);
-
     const count = reviewsArray.reduce((acc, review) => {
         if (review.recommended) {
             acc.trueCount++;

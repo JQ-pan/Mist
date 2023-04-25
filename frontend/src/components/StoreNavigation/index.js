@@ -23,7 +23,7 @@ function StoreNavigation() {
     }
 
     const onSearch = (searchTerm) => {
-        console.log('search', searchTerm);
+        
     }
 
     // Cart Button

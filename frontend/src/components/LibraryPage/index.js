@@ -9,9 +9,6 @@ import "./LibraryPage.css"
 const LibraryPage = () => {
     const dispatch = useDispatch();
     const currentUser = useSelector(state => state.session.user);
-    if (currentUser) {
-        console.log(currentUser);
-    }
 
     const libraryItemsArray = useSelector(state => state.libraryItems ? Object.values(state.libraryItems) : []);
 

@@ -14,7 +14,8 @@ const ReviewItem = ({ reviewItem, user, currentUser }) => {
     const [isEditing, setIsEditing] = useState();
 
     // Check if currentUser is the author of the review
-    const isAuthor = reviewItem.authorId === currentUser.id;
+    const isAuthor = currentUser ? reviewItem.authorId === currentUser.id : null;
+
     const handleEditClick = () => {
         setIsEditing(true);
     }
