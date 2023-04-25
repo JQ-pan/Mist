@@ -18,6 +18,8 @@ function GameShowPage() {
     const { gameId } = useParams();
 
     const game = useSelector(state => state.games ? state.games[gameId] : {});
+    const currentUser = useSelector(state => state.session.user);
+
     useEffect(() => {
         dispatch(fetchGame(gameId));
         dispatch(fetchReviews());
