@@ -9,7 +9,8 @@ import "./StoreNavigation.css"
 function StoreNavigation() {
     const dispatch = useDispatch();
     const games = useSelector(state => Object.values(state.games));
-    const cartLength = useSelector(state => Object.values(state.cartItems).length)
+    const cartLength = useSelector(state => Object.values(state.cartItems).length);
+    const currentUser = useSelector(state => state.session.user)
     const [value, setValue] = useState('');
     const [focused, setFocused] = useState(false);
 
@@ -22,7 +23,25 @@ function StoreNavigation() {
     }
 
     const onSearch = (searchTerm) => {
-        console.log('search', searchTerm);
+        
+    }
+
+    // Cart Button
+    let cartButton
+    if (currentUser) {
+        cartButton = (
+            <div className={`cart-container`}>
+                <Link className="cart-button-background" exact to={'/cart'}>
+                    <div className="cart-button-text">
+                        CART ({cartLength})
+                    </div>
+                </Link>
+            </div>
+        )
+    } else {
+        cartButton = (
+            <div className={'no-cart'} />
+        )
     }
 
     // Array of search results
@@ -43,21 +62,15 @@ function StoreNavigation() {
     return (
         <div className="store-navbar-container">
 
-            <div className="cart-container">
-                <Link className="cart-button-background" exact to={'/cart'}>
-                    <div className="cart-button-text">
-                        CART ({cartLength})
-                    </div>
-                </Link>
-            </div>
+            {cartButton}
 
             <div className="store-navbar-content">
                 <div className="navbar-element">Your Store</div>
-                <div className="navbar-element">New & Noteworthy</div>
+                {/* <div className="navbar-element">New & Noteworthy</div>
                 <div className="navbar-element">Categories</div>
                 <div className="navbar-element">Points Shop</div>
                 <div className="navbar-element">News</div>
-                <div className="navbar-element">Labs</div>
+                <div className="navbar-element">Labs</div> */}
 
                 <div className="navbar-search">
                     <div className="search-inner">
@@ -76,12 +89,11 @@ function StoreNavigation() {
                             placeholder="search" />
                         <span onClick={() => onSearch(value)} > <img src="https://store.akamai.steamstatic.com/public/images/v6/search_icon_btn.png" alt="" /> </span>
                     </div>
+                    {/* focused &&  */}
+                    {focused && gameTitles.length !== 0 && value !== '' && (
 
-                    {focused && (
-                    // {(
-                        <div
-                            className="search-results" onMouseDown={onMouseDown}>
-                            { gameTitles.length !== 0 && (gameTitles) }
+                        <div className="search-results" onMouseDown={onMouseDown}>
+                            {gameTitles}
                         </div>
                     )}
 

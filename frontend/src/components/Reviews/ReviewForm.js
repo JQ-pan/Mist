@@ -1,8 +1,6 @@
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { createReview } from "../../store/review";
-import { fetchGame } from "../../store/game";
-import { fetchReviews } from "../../store/review";
 import demoIcon from '../../assets/png-transparent-robotic-process-automation-computer-icons-robotics-roboto-electronics-silhouette-black.png';
 import thumbsDown from '../../assets/icon_thumbsDown.png';
 import thumbsUp from '../../assets/icon_thumbsUp.png';

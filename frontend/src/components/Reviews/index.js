@@ -1,29 +1,37 @@
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchReviews, updateReview } from "../../store/review";
-import { fetchUsers } from "../../store/users";
-import { fetchLibraryItems } from "../../store/libraryItem";
+import { useSelector } from "react-redux";
 import ReviewItem from "./ReviewItem";
 import './Reviews.css';
 
 function Reviews({ game }) {
-    const dispatch = useDispatch();
     const currentUser = useSelector((state) => state.session.user);
     const users = useSelector((state) => state.users?.users);
-    const reviewsArray = useSelector(state => state.reviews ? Object.values(state.reviews).filter(
+    let reviewsArray = useSelector(state => state.reviews ? Object.values(state.reviews).filter(
         (review) => review.gameId === game.id
     ) : []);
-    const libraryItems = useSelector((state) => state.libraryItems ? Object.values(state.libraryItems) : []);
 
-    const getUser = (authorId) => {
-        const user = users?.find(user => user.id === authorId);
+    if (reviewsArray.length > 0) {
+        const currentUserReviews = reviewsArray.find(review => {
+            return currentUser.id === review.authorId
+        });
+
+        const otherUserReviews = reviewsArray.filter(review => {
+            return currentUser.id !== review.authorId 
+        });
+
+        reviewsArray = [currentUserReviews, ...otherUserReviews]
+    }
+
+    // const libraryItems = useSelector((state) => state.libraryItems ? Object.values(state.libraryItems) : []);
+
+    const getUser = (reviewAuthorId) => {
+        const user = users?.find(user => user.id === reviewAuthorId);
         return user ? user : 'Unknown User';
     }
 
     const reviewItems = reviewsArray.length > 0 ? (
         reviewsArray.map(reviewItem => {
             const user = getUser(reviewItem.authorId);
-            return <ReviewItem reviewItem={reviewItem} user={user} currentUser={currentUser} key={reviewItem.id} />
+            return <ReviewItem reviewItem={reviewItem} user={user} currentUser={currentUser} game={game} key={reviewItem.id} />
         })
     ) : (
         <div className="no-reviews">
@@ -31,13 +39,6 @@ function Reviews({ game }) {
             <p>You can write your own review for this game to share your experience with the community. Use the area above the purchase buttons on this page to write your review.</p>
         </div>
     )
-    useEffect(() => {
-        dispatch(fetchReviews())
-        dispatch(fetchUsers())
-        dispatch(fetchLibraryItems)
-    }, [])
-
-    console.log(reviewsArray);
 
     const count = reviewsArray.reduce((acc, review) => {
         if (review.recommended) {
@@ -74,9 +75,9 @@ function Reviews({ game }) {
                 <div id="average-review-value" style={{
                     color:
                         averageRating === "Negative" ? "#c35c2c" :
-                        averageRating === "Mostly Negative" ? "#c35c2c" :
-                        averageRating === "Mixed" ? "#a8926a" :
-                        averageRating === "Mostly Positive" ? "#66C0F4" : "#66C0F4"
+                            averageRating === "Mostly Negative" ? "#c35c2c" :
+                                averageRating === "Mixed" ? "#a8926a" :
+                                    averageRating === "Mostly Positive" ? "#66C0F4" : "#66C0F4"
                 }}>{averageRating} <span>({reviewsArray.length} reviews)</span></div>
             </div>
             <div className="reviews-title">MOST HELPFUL REVIEWS</div>

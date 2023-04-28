@@ -2,20 +2,15 @@ class Api::ReviewsController < ApplicationController
     before_action :require_logged_in, only: [:create, :update, :destroy]
 
     def index 
-        @reviews = Review.all
-        render :index
-#         @reviews = Review.includes(:user).all
-#   render json: @reviews.to_json(include: { user: { only: [:id, :name, :email] } })
+        @reviews = Review.where(game_id: params[:game_id])
+        render 'api/reviews/index'
     end
 
     def create
         @review = Review.new(review_params)
         if @review.save
-            puts "saved"
-            # render json: @review, status: :created
-            render :show, status: :created
+            render 'api/reviews/index'
         else
-            puts "not saved"
             render json: @review.errors, status: :unprocessable_entity
         end
     end
@@ -23,11 +18,8 @@ class Api::ReviewsController < ApplicationController
     def update
         @review = Review.find(params[:id])
 
-        puts "review_params: "
-        puts review_params
-
         if @review.update(review_params)
-            render :show, status: :ok
+            render 'api/reviews/index'
         else
             render json: @review.errors, status: :unprocessable_entity
         end

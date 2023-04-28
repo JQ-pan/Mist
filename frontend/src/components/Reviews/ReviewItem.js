@@ -1,20 +1,20 @@
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
-import { fetchUsers } from "../../store/users";
+import { useDispatch } from "react-redux";
+import {  useState } from "react";
 import defaultProfileIcon from "../../assets/png-transparent-robotic-process-automation-computer-icons-robotics-roboto-electronics-silhouette-black.png"
 import { fetchReviews, updateReview, deleteReview } from "../../store/review";
 import thumbsDown from '../../assets/icon_thumbsDown.png';
 import thumbsUp from '../../assets/icon_thumbsUp.png';
 import './ReviewItem.css';
 
-const ReviewItem = ({ reviewItem, user, currentUser }) => {
+const ReviewItem = ({ reviewItem, user, currentUser, game }) => {
     const dispatch = useDispatch();
     const [editedReview, setEditedReview] = useState(reviewItem.body);
     const [editedRecommendation, setEditedRecommendation] = useState(reviewItem.recommended);
     const [isEditing, setIsEditing] = useState();
 
     // Check if currentUser is the author of the review
-    const isAuthor = reviewItem.authorId === currentUser.id;
+    const isAuthor = currentUser ? user.id === currentUser.id : null;
+
     const handleEditClick = () => {
         setIsEditing(true);
     }
@@ -25,7 +25,7 @@ const ReviewItem = ({ reviewItem, user, currentUser }) => {
             body: editedReview,
             recommended: editedRecommendation,
         })).then(() => {
-            dispatch(fetchReviews());
+            dispatch(fetchReviews(game.id));
             setIsEditing(false);
         })
     }
@@ -116,11 +116,11 @@ const ReviewItem = ({ reviewItem, user, currentUser }) => {
                         {isAuthor && (
                             <div className="edit-and-delete-buttons">
                                 <button className="select-edit-button" onClick={handleEditClick}>
-                                    <img className="buttonIcon" src="https://community.akamai.steamstatic.com/public/images//sharedfiles/icons/icon_edit.png" />
+                                    <img className="buttonIcon" src="https://community.akamai.steamstatic.com/public/images//sharedfiles/icons/icon_edit.png" alt=""/>
                                     Edit Review
                                 </button>
                                 <button className="select-delete-button" onClick={handleDeleteClick}>
-                                    <img className="buttonIcon" src="https://community.akamai.steamstatic.com/public/images//sharedfiles/icons/icon_delete.png" />
+                                    <img className="buttonIcon" src="https://community.akamai.steamstatic.com/public/images//sharedfiles/icons/icon_delete.png" alt=""/>
                                     Delete
                                 </button>
                             </div>

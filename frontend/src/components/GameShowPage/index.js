@@ -3,10 +3,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams, useHistory } from 'react-router-dom';
 import { fetchGame } from '../../store/game'
 import { NavLink } from 'react-router-dom';
-import { fetchCartItems } from '../../store/cartItem';
-import { createCartItem } from '../../store/cartItem';
+import { fetchCartItems, createCartItem } from '../../store/cartItem';
 import { fetchLibraryItems } from '../../store/libraryItem';
 import { fetchReviews } from '../../store/review';
+import { fetchUsers } from "../../store/users";
 import StoreNavigation from '../StoreNavigation';
 import Reviews from '../Reviews';
 import ReviewForm from '../Reviews/ReviewForm';
@@ -18,17 +18,19 @@ function GameShowPage() {
     const { gameId } = useParams();
 
     const game = useSelector(state => state.games ? state.games[gameId] : {});
+
     useEffect(() => {
         dispatch(fetchGame(gameId));
-        dispatch(fetchReviews());
+        dispatch(fetchReviews(gameId));
+        dispatch(fetchUsers());
         dispatch(fetchLibraryItems());
         dispatch(fetchCartItems());
-    }, [dispatch])
+    }, [gameId, dispatch])
 
     const reviewsArray = useSelector(state => state.reviews ? Object.values(state.reviews).filter(
         (review) => review.gameId === game.id
     ) : []);
-
+    
     const count = reviewsArray.reduce((acc, review) => {
         if (review.recommended) {
             acc.trueCount++;
@@ -66,14 +68,13 @@ function GameShowPage() {
     }
 
     // check if the game is already in the cart or in the library
+
     const cartItemsArray = useSelector(state => state.cartItems ? Object.values(state.cartItems) : []);
     const libraryItemsArray = useSelector(state => state.libraryItems ? Object.values(state.libraryItems) : []);
 
-    let addToCartButton;
-
     const gameInCart = cartItemsArray?.some(cartGame => cartGame.id === game.id);
-
     const gameInLibrary = libraryItemsArray?.some(libraryGame => libraryGame.id === game.id);
+    let addToCartButton;
 
     if (gameInCart) {
         addToCartButton = (
@@ -142,9 +143,9 @@ function GameShowPage() {
                                         <span className="rating-summary" style={{
                                             color:
                                                 averageRating === "Negative" ? "#c35c2c" :
-                                                averageRating === "Mostly Negative" ? "#c35c2c" :
-                                                averageRating === "Mixed" ? "#a8926a" :
-                                                averageRating === "Mostly Positive" ? "#66C0F4" : "#66C0F4"
+                                                    averageRating === "Mostly Negative" ? "#c35c2c" :
+                                                        averageRating === "Mixed" ? "#a8926a" :
+                                                            averageRating === "Mostly Positive" ? "#66C0F4" : "#66C0F4"
                                         }}>{averageRating}</span>
                                         <span className="total-reviews"> ({reviewsArray.length})</span>
                                     </div>
