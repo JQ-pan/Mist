@@ -46,9 +46,9 @@ function Navigation() {
 
                     <div className="navbar_menu">
                         <NavLink className="navbar_menu_links" exact to="/">STORE</NavLink>
-                        <NavLink className="navbar_menu_links" exact to="/">COMMUNITY</NavLink>
+                        {/* <NavLink className="navbar_menu_links" exact to="/">COMMUNITY</NavLink>
                         <NavLink className="navbar_menu_links" exact to="/">ABOUT</NavLink>
-                        <NavLink className="navbar_menu_links" exact to="/">SUPPORT</NavLink>
+                        <NavLink className="navbar_menu_links" exact to="/">SUPPORT</NavLink> */}
                         <a className="navbar_menu_links" href="https://github.com/JQ-pan/Mist.git">GITHUB</a>
                         <a className="navbar_menu_links" href="https://www.linkedin.com/in/jiongqi/">LINKEDIN</a>
                     </div>

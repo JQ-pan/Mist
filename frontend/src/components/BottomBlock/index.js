@@ -15,8 +15,8 @@ function BottomBlock() {
                 <div className="loggedin-content">
                     <div className="loggedin-home-content">
                         <img className="img" src={logo} alt=""></img>
-                        <div className="text1">Keep scrolling for more recommendations</div>
-                        <div className="text2">Below, you'll find a variety of titles that you may be interested in from categories across Mist</div>
+                        {/* <div className="text1">Keep scrolling for more recommendations</div>
+                        <div className="text2">Below, you'll find a variety of titles that you may be interested in from categories across Mist</div> */}
                     </div>
                 </div>
             </>
@@ -25,9 +25,9 @@ function BottomBlock() {
         homeContent = (
             <>
                 <div className="loggedout-content">
-                    <div className="home-content">
+                    {/* <div className="home-content">
                         <div className="content-title">Looking for recommendations?</div>
-                    </div>
+                    </div> */}
 
                     <div className="home-content">
                         <div className="sign-in-content">
