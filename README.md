@@ -1,10 +1,11 @@
 # Welcome to **Mist**
-This is a full stack web application that is a clone of the popular game library, Steam. Users are able to browse games and 
+This is a full stack web application that is a clone of the popular game library, Steam.
 
 ## Technologies used
 - React with Redux
 - Ruby on Rails
 - PostgresQL
+- AWS
 - CSS
 - onRender
 
@@ -19,7 +20,7 @@ This is a full stack web application that is a clone of the popular game library
 
 # To do / future features
 - Carousel for index and show page
-- Index page game previwes
+- Index page game previews
 - Rating other user's reviews
 - User profile page, adding friends, user search
 - Video game categories and tags
