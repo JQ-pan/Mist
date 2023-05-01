@@ -21,8 +21,6 @@ function Reviews({ game }) {
         }
     }
 
-    // const libraryItems = useSelector((state) => state.libraryItems ? Object.values(state.libraryItems) : []);
-
     const getUser = (reviewAuthorId) => {
         const user = users?.find(user => user.id === reviewAuthorId);
         return user ? user : 'Unknown User';
