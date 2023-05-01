@@ -15,18 +15,7 @@ const receiveGame = game => ({
     payload: game
 })
 
-// selectors
-
-// export const getGames = state => {
-//     return state?.games ? Object.values(state.games) : []
-// }
-
-// export const getGame = (gameId) => state => {
-//     return state?.game ? state.game[gameId] : null
-// }
-
-//thunk methods
-
+//thunk action creators
 export const fetchGames = () => async dispatch => {
     const res = await csrfFetch('/api/games')
     if (res.ok) {

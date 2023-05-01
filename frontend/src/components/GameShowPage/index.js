@@ -93,7 +93,6 @@ function GameShowPage() {
                 <span>Add to Cart</span>
             </div>)
     }
-    // }
 
     const reviewBox = gameInLibrary ? <ReviewForm game={game} /> : null;
 
