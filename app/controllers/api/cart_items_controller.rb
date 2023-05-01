@@ -10,7 +10,7 @@ class Api::CartItemsController < ApplicationController
         @cart_item = CartItem.new(buyer_id: current_user.id, game_id: cart_item_params[:game_id])
         
         if @cart_item.save!
-            render 'api/cart_items/show'
+            render 'api/cart_items/index'
         else
             render json: { errors: @cart_item.errors.full_messages }, status: :unprocessable_entity
         end
