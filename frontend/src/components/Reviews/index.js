@@ -5,9 +5,7 @@ import './Reviews.css';
 function Reviews({ game }) {
     const currentUser = useSelector((state) => state.session.user);
     const users = useSelector((state) => state.users?.users);
-    let reviewsArray = useSelector(state => state.reviews ? Object.values(state.reviews).filter(
-        (review) => review.gameId === game.id
-    ) : []);
+    let reviewsArray = useSelector(state => state.reviews ? Object.values(state.reviews) : []);
 
     if (reviewsArray.length > 0) {
         const currentUserReviews = reviewsArray.find(review => {
@@ -17,8 +15,10 @@ function Reviews({ game }) {
         const otherUserReviews = reviewsArray.filter(review => {
             return currentUser.id !== review.authorId 
         });
-
-        reviewsArray = [currentUserReviews, ...otherUserReviews]
+        
+        if (currentUserReviews) {
+            reviewsArray = [currentUserReviews, ...otherUserReviews]
+        }
     }
 
     // const libraryItems = useSelector((state) => state.libraryItems ? Object.values(state.libraryItems) : []);
@@ -28,6 +28,7 @@ function Reviews({ game }) {
         return user ? user : 'Unknown User';
     }
 
+    console.log(reviewsArray)
     const reviewItems = reviewsArray.length > 0 ? (
         reviewsArray.map(reviewItem => {
             const user = getUser(reviewItem.authorId);
