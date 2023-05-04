@@ -8,6 +8,7 @@ class Api::ReviewsController < ApplicationController
 
     def create
         @review = Review.new(review_params)
+        @reviews = Review.where(game_id: params[:game_id])
         if @review.save
             render 'api/reviews/index'
         else
