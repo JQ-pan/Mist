@@ -33,6 +33,7 @@ export const fetchReviews = (gameId) => async dispatch => {
 }
 
 export const createReview = (review) => async dispatch => {
+    console.log("before res")
     const res = await csrfFetch('/api/reviews', {
         method: 'POST',
         headers: {
@@ -40,8 +41,12 @@ export const createReview = (review) => async dispatch => {
         },
         body: JSON.stringify(review),
     })
+    console.log("after res")
+    console.log(res);
     if (res.ok) {
         const review = await res.json();
+        console.log("review");
+        console.log(review);
         dispatch(addReview(review));
     } else {
         throw new Error('Failed to create review');
@@ -76,7 +81,7 @@ export const deleteReview = (reviewId) => async dispatch => {
 }
 
 const reviewsReducer = (state = {}, action) => {
-    const nextState = { ...state };
+    let nextState = { ...state };
 
     switch (action.type) {
         case RECEIVE_REVIEWS:
@@ -86,7 +91,7 @@ const reviewsReducer = (state = {}, action) => {
         case ADD_REVIEW:
             // debugger
             // return Object.assign(nextState, action.payload);
-            nextState[action.payload.id] = action.payload;
+            nextState = action.payload;
             return nextState;
         case REMOVE_REVIEW:
             delete nextState[action.payload];
