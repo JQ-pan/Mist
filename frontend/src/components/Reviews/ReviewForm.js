@@ -17,7 +17,10 @@ function ReviewForm({ game }) {
     const reviewsArray = useSelector(state => state.reviews ? Object.values(state.reviews).filter(
         (review) => review.gameId === game.id
     ) : []);
-
+    
+    if (game === undefined) {
+        return <></>
+    }
     
     const handleSubmit = (e) => {
         e.preventDefault();

@@ -24,7 +24,7 @@ const GameIndex = () => {
                     </div>
                     <div className="game-right-display-container">
                         <div className="game-right-display-content">
-                            Here goes game previews
+                            Coming Soon...
                         </div>
                     </div>
                 </div>

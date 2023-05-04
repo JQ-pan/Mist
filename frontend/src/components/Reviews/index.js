@@ -3,19 +3,24 @@ import ReviewItem from "./ReviewItem";
 import './Reviews.css';
 
 function Reviews({ game }) {
+
     const currentUser = useSelector((state) => state.session.user);
     const users = useSelector((state) => state.users?.users);
     let reviewsArray = useSelector(state => state.reviews ? Object.values(state.reviews) : []);
+    
+    if (game === undefined) {
+        return <></>
+    }
 
-    if (reviewsArray.length > 0) {
+    if (reviewsArray.length > 0 && currentUser) {
         const currentUserReviews = reviewsArray.find(review => {
             return currentUser.id === review.authorId
         });
 
         const otherUserReviews = reviewsArray.filter(review => {
-            return currentUser.id !== review.authorId 
+            return currentUser.id !== review.authorId
         });
-        
+
         if (currentUserReviews) {
             reviewsArray = [currentUserReviews, ...otherUserReviews]
         }
@@ -26,7 +31,6 @@ function Reviews({ game }) {
         return user ? user : 'Unknown User';
     }
 
-    console.log(reviewsArray)
     const reviewItems = reviewsArray.length > 0 ? (
         reviewsArray.map(reviewItem => {
             const user = getUser(reviewItem.authorId);
