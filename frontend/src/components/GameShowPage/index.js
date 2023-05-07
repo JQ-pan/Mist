@@ -202,7 +202,7 @@ function GameShowPage() {
                         </div>
 
                         <div className="game-show-main-right">
-                            <div className="languages">
+                            <div className="right-block languages">
                                 Is this game relevant to you?
                             </div>
                         </div>

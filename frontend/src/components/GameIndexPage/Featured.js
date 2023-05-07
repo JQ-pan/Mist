@@ -30,16 +30,16 @@ const Featured = ({ games }) => {
         setPause(!pause);
     }
 
-    // useEffect(() => {
-    //     let interval = setInterval(() => {
-    //         if (!pause) {
-    //             handleNext();
-    //         } else {
-    //             clearInterval(interval);
-    //         }
-    //     }, 6000);
-    //     return () => clearInterval(interval);
-    // })
+    useEffect(() => {
+        let interval = setInterval(() => {
+            if (!pause) {
+                handleNext();
+            } else {
+                clearInterval(interval);
+            }
+        }, 6000);
+        return () => clearInterval(interval);
+    })
 
 
 
