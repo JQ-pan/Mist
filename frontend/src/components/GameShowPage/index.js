@@ -30,7 +30,7 @@ function GameShowPage() {
     const reviewsArray = useSelector(state => state.reviews ? Object.values(state.reviews).filter(
         (review) => review.gameId === game.id
     ) : []);
-    
+
     const count = reviewsArray.reduce((acc, review) => {
         if (review.recommended) {
             acc.trueCount++;
@@ -203,7 +203,40 @@ function GameShowPage() {
 
                         <div className="game-show-main-right">
                             <div className="right-block languages">
-                                Is this game relevant to you?
+                                <div id="language-header">
+                                    Languages:
+                                </div>
+                                <div id="language-table">
+                                    <table class="game_language_options" cellpadding="0" cellspacing="0">
+                                        <tbody><tr>
+                                            <th style={{width: '94px'}}></th>
+                                            <th class="checkcol">Interface</th>
+                                            <th class="checkcol">Full Audio</th>
+                                            <th class="checkcol">Subtitles</th>
+                                        </tr>
+
+                                            <tr style={{}} class="">
+                                                <td style={{width: '94px', textAlign: 'left'}} class="ellipsis">
+                                                    English			</td>
+                                                <td class="checkcol">
+                                                    <span>✔</span> 				</td>
+                                                <td class="checkcol">
+                                                </td>
+                                                <td class="checkcol">
+                                                    <span>✔</span> 				</td>
+                                            </tr>
+                                            <tr style={{}} class="">
+                                                <td style={{width: '94px', textAlign: 'left'}} class="ellipsis">
+                                                    Simplified Chinese			</td>
+                                                <td class="checkcol">
+                                                    <span>✔</span> 				</td>
+                                                <td class="checkcol">
+                                                    <span>✔</span> 				</td>
+                                                <td class="checkcol">
+                                                    <span>✔</span> 				</td>
+                                            </tr>
+                                        </tbody></table>
+                                </div>
                             </div>
                         </div>
 

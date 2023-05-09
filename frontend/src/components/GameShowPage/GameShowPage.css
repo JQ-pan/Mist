@@ -293,7 +293,38 @@
 
 .right-block {
     background: linear-gradient(to right,  rgba(0,0,0,0.2) 0%,rgba(0,0,0,0.5) 100%);
-    padding: 15px;
+    padding: 16px;
+}
+
+#language-header {
+    font-size: 12px;
+    color: #8f98a0;
+    margin-bottom: 2px;
+}
+
+table.game_language_options {
+    border-collapse: collapse;
+}
+
+.game_language_options tr {
+    border-bottom: 1px solid #626366;
+}
+
+.game_language_options th {
+    font-size: 12px;
+    color: #b0aeac;
+    font-weight: normal;
+}
+
+.game_language_options th.checkcol {
+    width: 62px;
+}
+
+.game_language_options td {
+    color: #8f98a0;
+    padding: 3px 0px 3px 0px;
+    text-align: center;
+    font-size: 12px;
 }
 
 /* Reviews */
