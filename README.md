@@ -12,10 +12,10 @@ This is a full stack web application that is a clone of the popular game library
 ## Index Carousel
 ![Carousel gif](/readme_assets/Carousel-gif.gif "Carousel")
 
-## Shopping cart
+## Library
 ![Library Screenshot](/readme_assets/library_screenshot.PNG "Library")
 
-## Library
+## Shopping cart
 ![Shopping cart](/readme_assets/shopping_cart_screenshot.PNG "Shopping Cart")
 
 # To do / future features
