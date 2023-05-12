@@ -8,6 +8,7 @@ import { fetchLibraryItems } from '../../store/libraryItem';
 import { fetchReviews } from '../../store/review';
 import { fetchUsers } from "../../store/users";
 import StoreNavigation from '../StoreNavigation';
+import GameShowCarousel from './GameShowCarousel';
 import Reviews from '../Reviews';
 import ReviewForm from '../Reviews/ReviewForm';
 import './GameShowPage.css';
@@ -117,7 +118,8 @@ function GameShowPage() {
 
                     <div className="game-media-and-summary">
                         <div className="highlights-carousel-container">
-                            <img className="highlights-cont" src={game.images[1]} alt=""></img>
+                            <GameShowCarousel game={game} key={game.id}/>
+                            {/* <img className="highlights-cont" src={game.images[1]} alt=""></img>
 
                             <div className="image-carousel">
                                 <img className="show-page-carousel-images" src={game.images[2]} alt=""></img>
@@ -129,7 +131,7 @@ function GameShowPage() {
 
                             <div className="carousel-slider">
                                 Slider Here
-                            </div>
+                            </div> */}
                         </div>
 
                         <div className="game-preview-container">
@@ -207,32 +209,32 @@ function GameShowPage() {
                                     Languages:
                                 </div>
                                 <div id="language-table">
-                                    <table class="game_language_options" cellpadding="0" cellspacing="0">
+                                    <table className="game_language_options" cellPadding="0" cellSpacing="0">
                                         <tbody><tr>
                                             <th style={{width: '94px'}}></th>
-                                            <th class="checkcol">Interface</th>
-                                            <th class="checkcol">Full Audio</th>
-                                            <th class="checkcol">Subtitles</th>
+                                            <th className="checkcol">Interface</th>
+                                            <th className="checkcol">Full Audio</th>
+                                            <th className="checkcol">Subtitles</th>
                                         </tr>
 
-                                            <tr style={{}} class="">
-                                                <td style={{width: '94px', textAlign: 'left'}} class="ellipsis">
+                                            <tr style={{}} className="">
+                                                <td style={{width: '94px', textAlign: 'left'}} className="ellipsis">
                                                     English			</td>
-                                                <td class="checkcol">
+                                                <td className="checkcol">
                                                     <span>✔</span> 				</td>
-                                                <td class="checkcol">
+                                                <td className="checkcol">
                                                 </td>
-                                                <td class="checkcol">
+                                                <td className="checkcol">
                                                     <span>✔</span> 				</td>
                                             </tr>
-                                            <tr style={{}} class="">
-                                                <td style={{width: '94px', textAlign: 'left'}} class="ellipsis">
+                                            <tr style={{}} className="">
+                                                <td style={{width: '94px', textAlign: 'left'}} className="ellipsis">
                                                     Simplified Chinese			</td>
-                                                <td class="checkcol">
+                                                <td className="checkcol">
                                                     <span>✔</span> 				</td>
-                                                <td class="checkcol">
+                                                <td className="checkcol">
                                                     <span>✔</span> 				</td>
-                                                <td class="checkcol">
+                                                <td className="checkcol">
                                                     <span>✔</span> 				</td>
                                             </tr>
                                         </tbody></table>

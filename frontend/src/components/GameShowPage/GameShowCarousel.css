@@ -1,0 +1,48 @@
+.game-show-carousel-wrapper {
+    width: 600px;
+    height: 432px;
+    position: relative;
+}
+
+.game-show-carousel-slides-wrapper {
+    width: 100%;
+    height: 337px;
+}
+
+.game-show-carousel-image {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    transition: 500ms;
+
+    /* height: 100%; */
+    height: 337px;
+    width: 100%;
+}
+
+.show-slide-selected {
+    visibility: visible;
+    opacity: 1;
+}
+
+.game-show-carousel-thumbs-wrapper {
+    width: 100%;
+    height: 90x;
+    margin: 4px 0;
+    display: flex;
+    flex-wrap: no-wrap;
+    overflow: auto;
+}
+
+.game-show-carousel-thumb {
+    height: 65px;
+    margin: 2px;
+    border: 2px solid transparent;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.show-thumb-selected {
+    opacity: 1;
+    border: 2px solid white;
+}
