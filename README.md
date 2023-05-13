@@ -12,6 +12,9 @@ This is a full stack web application that is a clone of the popular game library
 ## Index Carousel
 ![Carousel gif](/readme_assets/Carousel-gif.gif "Carousel")
 
+## Game Show Carousel
+![Game Carousel](/readme_assets/Game-show-page-carousel.gif "Game Carousel")
+
 ## Library
 ![Library Screenshot](/readme_assets/library_screenshot.PNG "Library")
 
