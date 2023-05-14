@@ -19,7 +19,7 @@ function GameShowPage() {
     const { gameId } = useParams();
 
     const game = useSelector(state => state.games ? state.games[gameId] : {});
-
+    console.log(game);
     useEffect(() => {
         dispatch(fetchGame(gameId));
         dispatch(fetchReviews(gameId));
@@ -198,7 +198,7 @@ function GameShowPage() {
 
                             <div className="game-description">
                                 <h2>About this game</h2>
-                                <div className="description-content">{game.description}</div>
+                                <div className="description-content">{game.longDescription}</div>
                             </div>
 
                         </div>

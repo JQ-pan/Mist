@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_21_224212) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_14_204421) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -35,6 +35,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_21_224212) do
     t.string "images", default: [], null: false, array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "long_description", null: false
     t.index ["featured"], name: "index_games_on_featured"
     t.index ["title"], name: "index_games_on_title"
   end

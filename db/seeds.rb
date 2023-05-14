@@ -91,6 +91,7 @@ ApplicationRecord.transaction do
       {
         title: "Super Mario Bros.",
         description: "Super Mario Bros. is a classic side-scrolling platform game developed and published by Nintendo. Players control Mario as he tries to rescue Princess Toadstool from the evil Bowser.",
+        long_description: "Temporary long description",
         developer: "Nintendo R&D4",
         publisher: "Nintendo",
         price: 49.99,
@@ -101,6 +102,7 @@ ApplicationRecord.transaction do
       {
         title: "The Legend of Zelda",
         description: "The Legend of Zelda is an action-adventure game developed and published by Nintendo. Players control a young hero named Link as he travels through the land of Hyrule to rescue Princess Zelda and defeat the evil Ganon.",
+        long_description: "Temporary long description",
         developer: "Nintendo R&D4",
         publisher: "Nintendo",
         price: 49.99,
@@ -111,6 +113,7 @@ ApplicationRecord.transaction do
       {
         title: "Contra",
         description: "Contra is a run and gun action game developed and published by Konami. Players control soldiers Bill Rizer and Lance Bean as they battle against alien forces and save the world from destruction.",
+        long_description: "Temporary long description",
         developer: "Konami",
         publisher: "Konami",
         price: 49.99,
@@ -121,6 +124,7 @@ ApplicationRecord.transaction do
       {
         title: "Metroid",
         description: "Metroid is a sci-fi action-adventure game developed and published by Nintendo. Players control Samus Aran, a female bounty hunter, as she explores the mysterious planet Zebes, battles enemies, and uncovers secrets.",
+        long_description: "Temporary long description",
         developer: "Nintendo R&D1",
         publisher: "Nintendo",
         price: 49.99,
@@ -131,6 +135,7 @@ ApplicationRecord.transaction do
       {
         title: "Castlevania",
         description: "Castlevania is a platformer-style action game developed and published by Konami. Players control Simon Belmont as he battles against the forces of evil, including the legendary vampire Dracula, in a quest to save Transylvania.",
+        long_description: "Temporary long description",
         developer: "Konami",
         publisher: "Konami",
         price: 49.99,
@@ -141,6 +146,7 @@ ApplicationRecord.transaction do
       {
         title: "Final Fantasy",
         description: "Final Fantasy is a role-playing game developed and published by Square. Players control a group of heroes as they embark on a quest to save the world from destruction, battling against evil forces and discovering hidden secrets along the way.",
+        long_description: "Temporary long description",
         developer: "Square",
         publisher: "Square",
         price: 49.99,
@@ -151,6 +157,7 @@ ApplicationRecord.transaction do
       {
         title: "Double Dragon",
         description: "Double Dragon is a side-scrolling beat 'em up game developed and published by Technos Japan. Players control brothers Billy and Jimmy Lee as they battle against street gangs and other enemies in a quest to rescue Billy's girlfriend Marian.",
+        long_description: "Temporary long description",
         developer: "Technos Japan",
         publisher: "Technos Japan",
         price: 49.99,
@@ -161,6 +168,7 @@ ApplicationRecord.transaction do
       {
         title: "Mega Man",
         description: "Mega Man is a side-scrolling action game developed and published by Capcom. Players control the robot hero Mega Man as he battles against Dr. Wily and his army of robot masters, using their unique abilities to overcome challenges and save the world.",
+        long_description: "Temporary long description",
         developer: "Capcom",
         publisher: "Capcom",
         price: 49.99,
@@ -171,6 +179,7 @@ ApplicationRecord.transaction do
       {
         title: "Duck Hunt",
         description: "Duck Hunt is a light gun shooter game developed and published by Nintendo. Players use the NES Zapper to shoot ducks as they fly across the screen, with a hunting dog retrieving any that are hit. A classic of the NES era, Duck Hunt is best known for its charming gameplay and memorable sound effects.",
+        long_description: "Temporary long description",
         developer: "Nintendo R&D1",
         publisher: "Nintendo",
         price: 29.99,
