@@ -286,7 +286,10 @@
     background-image: url(https://store.cloudflare.steamstatic.com/public/images/v6/maincol_gradient_rule.png);
     background-repeat: no-repeat;
     background-position: bottom left;
-    
+}
+
+.description-content {
+    color: #acb2b8;
 }
 
 /* Purchase area - Right */
