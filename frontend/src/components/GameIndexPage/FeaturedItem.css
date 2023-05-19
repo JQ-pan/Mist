@@ -10,6 +10,7 @@
 }
 
 .main-image {
+    position: absolute;
     background-color: #000;
     /* position: relative; */
     display: inline-block;
@@ -22,9 +23,18 @@
     z-index: 1;
 }
 
+.show-slide {
+    opacity: 1;
+}
+
+.not-show-slide {
+    opacity: 0;
+}
+
 .featured-info {
     display: inline-block;
     height: 100%;
+    margin-left: 626px;
 }
 
 .featured-game-title {
