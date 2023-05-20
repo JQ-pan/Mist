@@ -4,12 +4,16 @@ import './FeaturedItem.css';
 const FeaturedItem = ({ game, isActive }) => {
     const [index, setIndex] = useState(0);
     const imageUrls = game.images.slice(1) || [];
-    
+
     const handleMouseEnter = index => {
-        setIndex(index);
+        if (isActive) {
+            setIndex(index);
+        }
     }
     const handleMouseLeave = () => {
-        setIndex(0)
+        if (isActive) {
+            setIndex(0);
+        }
     }
 
     const mainImage = imageUrls.map((img, i) => {

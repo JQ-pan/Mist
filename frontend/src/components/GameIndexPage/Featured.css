@@ -66,6 +66,7 @@
     /* justify-content: center;
     align-items: center;
     text-align: center; */
+    z-index: 1;
     /* Slide change animation */
     opacity: 1;
     transition: 400ms ease-in-out;
@@ -80,6 +81,7 @@
     text-align: center; */
     overflow: hidden;
     /* Slide change animation */
+    z-index: 0;
     opacity: 0;
     transition: 400ms ease-in-out;
 }
