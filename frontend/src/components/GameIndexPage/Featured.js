@@ -30,16 +30,16 @@ const Featured = ({ games }) => {
         setPause(!pause);
     }
 
-    useEffect(() => {
-        let interval = setInterval(() => {
-            if (!pause) {
-                handleNext();
-            } else {
-                clearInterval(interval);
-            }
-        }, 6000);
-        return () => clearInterval(interval);
-    })
+    // useEffect(() => {
+    //     let interval = setInterval(() => {
+    //         if (!pause) {
+    //             handleNext();
+    //         } else {
+    //             clearInterval(interval);
+    //         }
+    //     }, 6000);
+    //     return () => clearInterval(interval);
+    // })
 
 
 
@@ -61,6 +61,7 @@ const Featured = ({ games }) => {
                         <div className={counter - 1 === i ? "show" : "not-show"}>
                             <FeaturedItem
                                 game={game}
+                                isActive={counter - 1 === i}
                                 key={i}
                             />
                         </div>
