@@ -38,21 +38,13 @@ const FeaturedItem = ({ game, isActive }) => {
 
     return (
         <div className="featured-container">
-            {/* <img className="main-image" src={imageUrls[index]} alt="" /> */}
             {mainImage}
             <div className="featured-info">
-
                 <div className="featured-game-title">
                     <h3>{game.title}</h3>
                 </div>
                 <div className="featured-image-container">
-
                     {sideImages}
-
-                    {/* <div><img className="side-image" src={imageUrls[2]} alt="" /></div>
-                    <div><img className="side-image" src={imageUrls[3]} alt="" /></div>
-                    <div><img className="side-image" src={imageUrls[4]} alt="" /></div>
-                    <div><img className="side-image" src={imageUrls[5]} alt="" /></div> */}
                 </div>
             </div>
 
