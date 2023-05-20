@@ -29,7 +29,7 @@
 
 .not-show-slide {
     opacity: 0;
-    box-shadow: 10px 0px 10px -5px #000;
+    /* box-shadow: 10px 0px 10px -5px #000; */
     transition: 200ms ease-in-out
 }
 
