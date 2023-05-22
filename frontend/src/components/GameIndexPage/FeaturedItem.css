@@ -12,7 +12,6 @@
 .main-image {
     position: absolute;
     background-color: #000;
-    /* position: relative; */
     display: inline-block;
     margin-right: 10px;
     width: 616px;
@@ -29,7 +28,6 @@
 
 .not-show-slide {
     opacity: 0;
-    /* box-shadow: 10px 0px 10px -5px #000; */
     transition: 200ms ease-in-out
 }
 
