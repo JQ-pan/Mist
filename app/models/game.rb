@@ -14,6 +14,7 @@
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
 #  long_description :text             not null
+#  language         :text             default([]), not null, is an Array
 #
 class Game < ApplicationRecord
     validates :title, :developer, :publisher, :release_date, presence: true

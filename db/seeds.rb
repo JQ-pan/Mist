@@ -97,7 +97,8 @@ ApplicationRecord.transaction do
         price: 49.99,
         release_date: "September 13, 1985",
         featured: true,
-        images: super_mario_bros_images
+        images: super_mario_bros_images,
+        language: ["Japanese", "English"]
       },
       {
         title: "The Legend of Zelda",
@@ -108,7 +109,8 @@ ApplicationRecord.transaction do
         price: 49.99,
         release_date: "February 21, 1986",
         featured: true,
-        images: legend_of_zelda_images
+        images: legend_of_zelda_images,
+        language: ["Japanese", "English"]
       },
       {
         title: "Contra",
@@ -119,7 +121,8 @@ ApplicationRecord.transaction do
         price: 49.99,
         release_date: "February 20, 1987",
         featured: true,
-        images: contra_images
+        images: contra_images,
+        language: ["Japanese", "English"]
       },
       {
         title: "Metroid",
@@ -130,7 +133,8 @@ ApplicationRecord.transaction do
         price: 49.99,
         release_date: "August 6, 1986",
         featured: true,
-        images: metroid_images
+        images: metroid_images,
+        language: ["Japanese", "English"]
       },
       {
         title: "Castlevania",
@@ -141,7 +145,8 @@ ApplicationRecord.transaction do
         price: 49.99,
         release_date: "May 1, 1987",
         featured: true,
-        images: castlevania_images
+        images: castlevania_images,
+        language: ["Japanese", "English"]
       },
       {
         title: "Final Fantasy",
@@ -152,7 +157,8 @@ ApplicationRecord.transaction do
         price: 49.99,
         release_date: "December 18, 1987",
         featured: true,
-        images: final_fantasy_images
+        images: final_fantasy_images,
+        language: ["Japanese", "English"]
       },
       {
         title: "Double Dragon",
@@ -163,7 +169,8 @@ ApplicationRecord.transaction do
         price: 49.99,
         release_date: "June 1987",
         featured: true,
-        images: double_dragon_images
+        images: double_dragon_images,
+        language: ["Japanese", "English"]
       },
       {
         title: "Mega Man",
@@ -174,7 +181,8 @@ ApplicationRecord.transaction do
         price: 49.99,
         release_date: "December 17, 1987",
         featured: true,
-        images: mega_man_images
+        images: mega_man_images,
+        language: ["Japanese", "English"]
       },
       {
         title: "Duck Hunt",
@@ -185,7 +193,8 @@ ApplicationRecord.transaction do
         price: 29.99,
         release_date: "April 21, 1984",
         featured: true,
-        images: duck_hunt_images
+        images: duck_hunt_images,
+        language: ["Japanese", "English"]
       }
     ]
     )
