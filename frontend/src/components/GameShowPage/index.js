@@ -19,6 +19,7 @@ function GameShowPage() {
     const { gameId } = useParams();
 
     const game = useSelector(state => state.games ? state.games[gameId] : {});
+    console.log(game);
     useEffect(() => {
         dispatch(fetchGame(gameId));
         dispatch(fetchReviews(gameId));
@@ -27,6 +28,20 @@ function GameShowPage() {
         dispatch(fetchCartItems());
     }, [gameId, dispatch])
 
+    const languages = game.language.map((language) => (
+        <tr style={{}} className="">
+            <td style={{ width: '94px', textAlign: 'left' }} className="ellipsis">
+                {language}			</td>
+            <td className="checkcol">
+                <span>✔</span> 				</td>
+            <td className="checkcol">
+                <span>✔</span> 				</td>
+            <td className="checkcol">
+                <span>✔</span> 				</td>
+        </tr>
+    ))
+
+    
     const reviewsArray = useSelector(state => state.reviews ? Object.values(state.reviews).filter(
         (review) => review.gameId === game.id
     ) : []);
@@ -117,7 +132,7 @@ function GameShowPage() {
 
                     <div className="game-media-and-summary">
                         <div className="highlights-carousel-container">
-                            <GameShowCarousel game={game} key={game.id}/>
+                            <GameShowCarousel game={game} key={game.id} />
                             {/* <img className="highlights-cont" src={game.images[1]} alt=""></img>
 
                             <div className="image-carousel">
@@ -210,32 +225,14 @@ function GameShowPage() {
                                 <div id="language-table">
                                     <table className="game_language_options" cellPadding="0" cellSpacing="0">
                                         <tbody><tr>
-                                            <th style={{width: '94px'}}></th>
+                                            <th style={{ width: '94px' }}></th>
                                             <th className="checkcol">Interface</th>
                                             <th className="checkcol">Full Audio</th>
                                             <th className="checkcol">Subtitles</th>
                                         </tr>
 
-                                            <tr style={{}} className="">
-                                                <td style={{width: '94px', textAlign: 'left'}} className="ellipsis">
-                                                    English			</td>
-                                                <td className="checkcol">
-                                                    <span>✔</span> 				</td>
-                                                <td className="checkcol">
-                                                </td>
-                                                <td className="checkcol">
-                                                    <span>✔</span> 				</td>
-                                            </tr>
-                                            <tr style={{}} className="">
-                                                <td style={{width: '94px', textAlign: 'left'}} className="ellipsis">
-                                                    Simplified Chinese			</td>
-                                                <td className="checkcol">
-                                                    <span>✔</span> 				</td>
-                                                <td className="checkcol">
-                                                    <span>✔</span> 				</td>
-                                                <td className="checkcol">
-                                                    <span>✔</span> 				</td>
-                                            </tr>
+                                            {languages}
+
                                         </tbody></table>
                                 </div>
                             </div>
