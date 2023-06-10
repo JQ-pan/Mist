@@ -1,5 +1,4 @@
 .featured-container {
-    box-shadow: 0 0 7px 0px #000;
     height: 353px;
     overflow: hidden;
     display: flex;
@@ -7,6 +6,12 @@
     background-repeat: no-repeat;
     background-position: right;
     color: #fff;
+}
+
+.main-image-container {
+    box-shadow: 10px 0px 10px -5px #000;
+    width: 616px;
+    height: 353px;
 }
 
 .main-image {
@@ -34,7 +39,7 @@
 .featured-info {
     display: inline-block;
     height: 100%;
-    margin-left: 626px;
+    margin-left: 10px;
 }
 
 .featured-game-title {

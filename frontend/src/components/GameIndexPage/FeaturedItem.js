@@ -38,7 +38,9 @@ const FeaturedItem = ({ game, isActive }) => {
 
     return (
         <div className="featured-container">
-            {mainImage}
+            <div className="main-image-container">
+                {mainImage}
+            </div>
             <div className="featured-info">
                 <div className="featured-game-title">
                     <h3>{game.title}</h3>
