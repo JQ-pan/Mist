@@ -7,29 +7,26 @@ import logo from '../../assets/steam-icon-14885.png'
 function BottomBlock() {
     const sessionUser = useSelector(state => state.session.user);
 
-    let homeContent;
+    let bottomContent;
 
     if (sessionUser) {
-        homeContent = (
+        bottomContent = (
             <>
-                <div className="loggedin-content">
-                    <div className="loggedin-home-content">
+                <div className="footer-content">
+                    <div className="loggedin-footer-content">
                         <img className="img" src={logo} alt=""></img>
-                        {/* <div className="text1">Keep scrolling for more recommendations</div>
-                        <div className="text2">Below, you'll find a variety of titles that you may be interested in from categories across Mist</div> */}
+                        <div className="text1">Keep scrolling for more recommendations</div>
+                        <div className="text2">Below, you'll find a variety of titles that you may be interested in from categories across Mist</div>
                     </div>
                 </div>
             </>
         )
     } else {
-        homeContent = (
+        bottomContent = (
             <>
-                <div className="loggedout-content">
-                    {/* <div className="home-content">
-                        <div className="content-title">Looking for recommendations?</div>
-                    </div> */}
+                <div className="footer-content">
 
-                    <div className="home-content">
+                    <div className="loggedout-content">
                         <div className="sign-in-content">
                             <br />
                             Sign in to view personalized recommendations
@@ -50,7 +47,7 @@ function BottomBlock() {
         )
     }
 
-    return homeContent;
+    return bottomContent;
 }
 
 export default BottomBlock;
