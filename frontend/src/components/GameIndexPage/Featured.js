@@ -30,21 +30,8 @@ const Featured = ({ games }) => {
         setPause(!pause);
     }
 
-    // useEffect(() => {
-    //     let interval = setInterval(() => {
-    //         if (!pause) {
-    //             handleNext();
-    //         } else {
-    //             clearInterval(interval);
-    //         }
-    //     }, 6000);
-    //     return () => clearInterval(interval);
-    // })
-
-
-
     return (
-        <div className="carousel-background">
+        <div className="home-content carousel-background">
             <div className="carousel">
 
                 <div className="inner"

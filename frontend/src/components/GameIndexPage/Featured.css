@@ -1,8 +1,6 @@
 .carousel-background {
-    padding-left: 2%;
-    padding-right: 2%;
-    padding-bottom: 20px;
-    padding-top: 20px;
+    background: url( 'https://store.akamai.steamstatic.com/public/images/v6/home/cluster_bg.png?v=1' ) bottom center no-repeat;
+    padding-bottom: 46px !important;
 }
 
 .carousel {

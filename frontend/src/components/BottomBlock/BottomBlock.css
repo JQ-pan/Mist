@@ -1,9 +1,9 @@
-.loggedout-content, .loggedin-content {
+.footer-content {
     margin-bottom: -52px;
     padding: 25px 0 0;
 }
 
-.home-content {
+.loggedout-content {
     position: relative;
     width: 940px;
     margin: 0 auto;
@@ -72,7 +72,7 @@
     padding:20px 0px;
 }
 
-.loggedin-home-content {
+.loggedin-footer-content {
     margin-top: 0px;
     padding-top: 100px;
 }
