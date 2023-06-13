@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import GameIndexItem from './GameIndexItem';
 import Featured from './Featured';
@@ -10,7 +10,17 @@ const GameIndex = () => {
     const dispatch = useDispatch();
     const games = useSelector(state => Object.values(state.games))
     useEffect(() => { dispatch(fetchGames()) }, [dispatch])
-    const gameItems = games.map((game, i) => <GameIndexItem key={i} game={game} />)
+    
+    const [index, setIndex] = useState(0);
+    const handleMouseEnter = index => {
+        setIndex(index);
+    }
+    const gamePreview = games.length > 0 ? games[index] : {}
+    const gameItems = games.map((game, i) => 
+        <div onMouseEnter={() => handleMouseEnter(i)}>
+            <GameIndexItem key={i} game={game} />
+        </div>
+    )
     return (
         <div className="game-display-background">
             <StoreNavigation />
@@ -22,9 +32,9 @@ const GameIndex = () => {
                             {gameItems}
                         </ul>
                     </div>
-                    <div className="game-right-display-container">
-                        <div className="game-right-display-content">
-                            Coming Soon...
+                    <div className="tab-preview">
+                        <div className="tab-preview-content">
+                            <h2>{gamePreview.title}</h2>
                         </div>
                     </div>
                 </div>
