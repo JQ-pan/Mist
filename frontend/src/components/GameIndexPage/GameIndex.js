@@ -9,7 +9,9 @@ import './GameIndex.css';
 const GameIndex = () => {
     const dispatch = useDispatch();
     const games = useSelector(state => Object.values(state.games))
-    useEffect(() => { dispatch(fetchGames()) }, [dispatch])
+    useEffect(() => { 
+        dispatch(fetchGames()) 
+    }, [dispatch])
     
     const [index, setIndex] = useState(0);
     const handleMouseEnter = index => {

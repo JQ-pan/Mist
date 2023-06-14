@@ -7,9 +7,9 @@ function Reviews({ game }) {
     const currentUser = useSelector((state) => state.session.user);
     const users = useSelector((state) => state.users?.users);
     let reviewsArray = useSelector(state => state.reviews ? Object.values(state.reviews) : []);
-    
+    console.log(reviewsArray);
     if (game === undefined) {
-        return <></>
+        return <>Loading</>
     }
 
     if (reviewsArray.length > 0 && currentUser) {
