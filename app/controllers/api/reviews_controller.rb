@@ -2,7 +2,6 @@ class Api::ReviewsController < ApplicationController
     before_action :require_logged_in, only: [:create, :update, :destroy]
 
     def index 
-        p "index"
         @reviews = Review.all
         render 'api/reviews/index'
     end
@@ -10,7 +9,7 @@ class Api::ReviewsController < ApplicationController
     def show
         @reviews = Review.where(game_id: params[:id])
         if @reviews
-            render 'api/reviews/show'
+            render 'api/reviews/index'
         else
             render json: {}
         end
@@ -20,15 +19,16 @@ class Api::ReviewsController < ApplicationController
         @review = Review.new(review_params)
         @reviews = Review.where(game_id: params[:game_id])
         if @review.save
-            render 'api/reviews/show'
+            render 'api/reviews/index'
         else
             render json: @review.errors, status: :unprocessable_entity
         end
     end
     
     def update
+        puts "update"
         @review = Review.find(params[:id])
-
+        puts @review
         if @review.update(review_params)
             render 'api/reviews/show'
         else
