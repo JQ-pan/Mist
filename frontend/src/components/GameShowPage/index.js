@@ -17,9 +17,6 @@ function GameShowPage() {
     const dispatch = useDispatch();
     const history = useHistory();
     const { gameId } = useParams();
-
-    const game = useSelector(state => state.games ? state.games[gameId] : {});
-    console.log(game);
     useEffect(() => {
         dispatch(fetchGame(gameId));
         dispatch(fetchReviews(gameId));
@@ -28,7 +25,9 @@ function GameShowPage() {
         dispatch(fetchCartItems());
     }, [gameId, dispatch])
 
-    const languages = game.language.map((language) => (
+    const game = useSelector(state => state.games ? state.games[gameId] : {});
+    
+    const languages = game ? game.language.map((language) => (
         <tr style={{}} className="">
             <td style={{ width: '94px', textAlign: 'left' }} className="ellipsis">
                 {language}			</td>
@@ -39,9 +38,9 @@ function GameShowPage() {
             <td className="checkcol">
                 <span>✔</span> 				</td>
         </tr>
-    ))
+    )) : [];
 
-    
+
     const reviewsArray = useSelector(state => state.reviews ? Object.values(state.reviews).filter(
         (review) => review.gameId === game.id
     ) : []);
@@ -133,19 +132,6 @@ function GameShowPage() {
                     <div className="game-media-and-summary">
                         <div className="highlights-carousel-container">
                             <GameShowCarousel game={game} key={game.id} />
-                            {/* <img className="highlights-cont" src={game.images[1]} alt=""></img>
-
-                            <div className="image-carousel">
-                                <img className="show-page-carousel-images" src={game.images[2]} alt=""></img>
-                                <img className="show-page-carousel-images" src={game.images[3]} alt=""></img>
-                                <img className="show-page-carousel-images" src={game.images[4]} alt=""></img>
-                                <img className="show-page-carousel-images" src={game.images[5]} alt=""></img>
-                                <img className="show-page-carousel-images" src={game.images[6]} alt=""></img>
-                            </div>
-
-                            <div className="carousel-slider">
-                                Slider Here
-                            </div> */}
                         </div>
 
                         <div className="game-preview-container">

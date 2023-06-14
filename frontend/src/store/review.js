@@ -2,12 +2,18 @@ import csrfFetch from "./csrf";
 
 // Action Types
 const RECEIVE_REVIEWS = "reviews/RECEIVE_REVIEWS";
+const RECEIVE_ALL_REVIEWS = "reviews/RECEIVE_ALL_REVIEWS";
 const ADD_REVIEW = "reviews/ADD_REVIEW";
 const REMOVE_REVIEW = "reviews/REMOVE_REVIEW";
 
 // Action Creators
 const receiveReviews = (reviews) => ({
     type: RECEIVE_REVIEWS,
+    payload: reviews
+})
+
+const receiveAllReviews = (reviews) => ({
+    type: RECEIVE_ALL_REVIEWS,
     payload: reviews
 })
 
@@ -23,10 +29,20 @@ const removeReview = (reviewId) => ({
 
 // Thunk action creators
 export const fetchReviews = (gameId) => async dispatch => {
-    const res = await csrfFetch(`/api/reviews?game_id=${gameId}`);
+    const res = await csrfFetch(`/api/reviews/${gameId}`);
     if (res.ok) {
         const reviews = await res.json();
         dispatch(receiveReviews(reviews))
+    } else {
+        throw new Error('Failed to fetch reviews');
+    }
+}
+
+export const fetchAllReviews = () => async dispatch => {
+    const res = await csrfFetch('/api/reviews')
+    if (res.ok) {
+        const reviews = await res.json();
+        dispatch(receiveAllReviews(reviews))
     } else {
         throw new Error('Failed to fetch reviews');
     }
@@ -49,7 +65,7 @@ export const createReview = (review) => async dispatch => {
 }
 
 export const updateReview = (reviewId, review) => async dispatch => {
-    const res = await csrfFetch(`/api/reviews/${reviewId}`, {
+    const res = await csrfFetch(`/api/reviews/${reviewId}/show`, {
         method: "PUT",
         headers: {
             "Content-type": "application/json",
@@ -80,7 +96,9 @@ const reviewsReducer = (state = {}, action) => {
 
     switch (action.type) {
         case RECEIVE_REVIEWS:
-            return { ...state, ...action.payload };
+            return { ...action.payload };
+        case RECEIVE_ALL_REVIEWS:
+            return { nextState, ...action.payload };
         case ADD_REVIEW:
             nextState = action.payload;
             return nextState;
