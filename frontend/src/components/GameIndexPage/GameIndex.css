@@ -34,7 +34,7 @@
     margin: auto;
 }
 
-.tab-preview {
+.tab-preview-container {
     margin-left: 14px;
     width: 292px;
     background: linear-gradient( to right, #95bbd4 5%,#859bac 95%);
@@ -61,7 +61,7 @@
     left: 16px;
 }
 
-.tab-preview h2 {
+.tab-preview-content h2 {
     text-transform: none;
     font-size: 21px;
     letter-spacing: 0px;
@@ -71,4 +71,13 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+}
+
+.tab-preview-summary {
+    padding: 5px 7px;
+    margin-bottom: 10px;
+    background-color: rgba( 38, 54, 69, 0.6);
+    width: 258px;
+    border-radius: 2px;
+    color: #c6d4df;
 }

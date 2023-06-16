@@ -26,9 +26,7 @@ class Api::ReviewsController < ApplicationController
     end
     
     def update
-        puts "update"
         @review = Review.find(params[:id])
-        puts @review
         if @review.update(review_params)
             render 'api/reviews/show'
         else
