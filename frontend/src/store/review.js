@@ -65,8 +65,6 @@ export const createReview = (review) => async dispatch => {
 }
 
 export const updateReview = (reviewId, review) => async dispatch => {
-    console.log("inside update review")
-    console.log(reviewId, review)
     const res = await csrfFetch(`/api/reviews/${reviewId}`, {
         method: "PUT",
         headers: {
@@ -74,8 +72,6 @@ export const updateReview = (reviewId, review) => async dispatch => {
         },
         body: JSON.stringify(review)
     });
-    console.log("res")
-    console.log(res)
     if (res.ok) {
         const updatedReview = await res.json();
         dispatch(receiveReviews(updatedReview));
