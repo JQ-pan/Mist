@@ -17,10 +17,10 @@
 #  language         :text             default([]), not null, is an Array
 #
 class Game < ApplicationRecord
-    validates :title, :developer, :publisher, :release_date, presence: true
-    validates :images, presence: true, length: { minimum: 1 }
+    validates :title, :developer, :publisher, :description, :long_description, :release_date, presence: true
+    validates :images, :language, presence: true, length: { minimum: 1 }
     validates :featured, presence: true
-    validates :price, numericality: { greater_than_or_equal_to: 0 }
+    validates :price, numericality: { greater_than_or_equal_to: 0 }, presence: true
     validate :images_not_empty
     
     has_many :cart_items,
