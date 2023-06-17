@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import FeaturedItem from "./FeaturedItem";
 import './Featured.css';
 
@@ -45,11 +45,11 @@ const Featured = ({ games }) => {
                         <div></div>
                     </button>
                         {games.map((game, i) =>
-                            <div className={counter - 1 === i ? "show" : "not-show"}>
+                            <div key={i} className={counter - 1 === i ? "show" : "not-show"}>
                                 <FeaturedItem
+                                    key={i}
                                     game={game}
                                     isActive={counter - 1 === i}
-                                    key={i}
                                 />
                             </div>
                         )}

@@ -17,13 +17,14 @@ function GameShowPage() {
     const dispatch = useDispatch();
     const history = useHistory();
     const { gameId } = useParams();
+    
     useEffect(() => {
         dispatch(fetchGame(gameId));
-        dispatch(fetchReviews(gameId));
         dispatch(fetchUsers());
         dispatch(fetchLibraryItems());
         dispatch(fetchCartItems());
-    }, [gameId, dispatch])
+        dispatch(fetchReviews(gameId));
+    }, [dispatch, gameId])
 
     const game = useSelector(state => state.games ? state.games[gameId] : {});
     
@@ -44,6 +45,8 @@ function GameShowPage() {
     const reviewsArray = useSelector(state => state.reviews ? Object.values(state.reviews).filter(
         (review) => review.gameId === game.id
     ) : []);
+
+    console.log(reviewsArray);
 
     const count = reviewsArray.reduce((acc, review) => {
         if (review.recommended) {
@@ -231,7 +234,7 @@ function GameShowPage() {
                             <div className="reviews-area">
                                 <div className="game-show-reviews-listed">
                                     <div className="game-show-review-content">
-                                        <Reviews game={game} />
+                                        <Reviews game={game} reviewsArray={reviewsArray}/>
                                     </div>
                                 </div>
                             </div>

@@ -2,11 +2,11 @@ import { useSelector } from "react-redux";
 import ReviewItem from "./ReviewItem";
 import './Reviews.css';
 
-function Reviews({ game }) {
-
+function Reviews({ game, reviewsArray }) {
     const currentUser = useSelector((state) => state.session.user);
     const users = useSelector((state) => state.users?.users);
-    let reviewsArray = useSelector(state => state.reviews ? Object.values(state.reviews) : []);
+    console.log('reviewsArray');
+    console.log(reviewsArray);
     if (game === undefined) {
         return <>Loading</>
     }
