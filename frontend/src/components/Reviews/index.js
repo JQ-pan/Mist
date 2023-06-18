@@ -5,8 +5,7 @@ import './Reviews.css';
 function Reviews({ game, reviewsArray }) {
     const currentUser = useSelector((state) => state.session.user);
     const users = useSelector((state) => state.users?.users);
-    console.log('reviewsArray');
-    console.log(reviewsArray);
+
     if (game === undefined) {
         return <>Loading</>
     }
