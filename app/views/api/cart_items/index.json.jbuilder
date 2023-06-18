@@ -1,4 +1,4 @@
-# if @cart_items.length
+if @cart_items.length
     @cart_items.each do |cart_item|
         json.cart_items do
             json.set! cart_item.id do
@@ -12,7 +12,6 @@
             end
         end
     end
-# else
-#     json.cart_items({})
-#     json.games({})
-# end
+else
+    json.cart_items({})
+    json.games({})

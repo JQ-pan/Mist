@@ -3,7 +3,11 @@ class Api::CartItemsController < ApplicationController
     
     def index
         @cart_items = CartItem.where(buyer_id: current_user.id)
+        # if @cart_items
         render 'api/cart_items/index'
+        # else
+        #     render json: { errors: @cart_item.errors.full_messages }
+        # end
     end
 
     def create

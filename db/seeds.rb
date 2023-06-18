@@ -49,27 +49,27 @@ ApplicationRecord.transaction do
 
     super_mario_bros_images, legend_of_zelda_images, contra_images, metroid_images, castlevania_images, final_fantasy_images, double_dragon_images, mega_man_images, duck_hunt_images = Array.new(10) { [] }
 
-    7.times do |i|
+    8.times do |i|
       super_mario_bros_images << "https://mist-seeds.s3.amazonaws.com/super-mario-bros/super-mario-bros-#{i+1}.jpg"
     end
 
-    7.times do |i|
+    8.times do |i|
       legend_of_zelda_images << "https://mist-seeds.s3.amazonaws.com/legend-of-zelda/legend-of-zelda-#{i+1}.jpg"
     end
 
-    7.times do |i|
+    8.times do |i|
       contra_images << "https://mist-seeds.s3.amazonaws.com/contra/contra-#{i+1}.jpg"
     end
 
-    7.times do |i|
+    8.times do |i|
       metroid_images << "https://mist-seeds.s3.amazonaws.com/metroid/metroid-#{i+1}.jpg"
     end
 
-    7.times do |i|
+    8.times do |i|
       castlevania_images << "https://mist-seeds.s3.amazonaws.com/castlevania/castlevania-#{i+1}.jpg"
     end
 
-    7.times do |i|
+    8.times do |i|
       final_fantasy_images << "https://mist-seeds.s3.amazonaws.com/final-fantasy/final-fantasy-#{i+1}.jpg"
     end
 
