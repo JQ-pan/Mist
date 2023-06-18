@@ -22,7 +22,7 @@ const GameIndex = () => {
     }
     const gamePreview = games.length > 0 ? games[index] : false
     const gameItems = games.map((game, i) =>
-        <div onMouseEnter={() => handleMouseEnter(i)}>
+        <div key={i} onMouseEnter={() => handleMouseEnter(i)}>
             <GameIndexItem key={i} game={game} />
         </div>
     )
@@ -63,7 +63,8 @@ const GameIndex = () => {
         reviewObject[key] = [length, averageRating];
     }
 
-    console.log(reviewObject);
+    console.log(reviewObject[gamePreview.id]);
+
     return (
         <div className="game-display-background">
             <StoreNavigation />

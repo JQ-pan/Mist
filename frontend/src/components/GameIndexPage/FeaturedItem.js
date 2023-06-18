@@ -24,11 +24,10 @@ const FeaturedItem = ({ game, isActive }) => {
 
     const sideImages = imageUrls.slice(1, 5).map((img, i) => {
         return (
-            <div>
+            <div key={i}>
                 <img 
                     className="side-image" 
                     src={img} alt="" 
-
                     onMouseEnter={() => handleMouseEnter(i + 1)}
                     onMouseLeave={() => handleMouseLeave()}
                 />
