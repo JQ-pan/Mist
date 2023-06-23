@@ -10,6 +10,25 @@
     margin-top: 8px;
 }
 
+.game-container {
+    background: #202d39; 
+}
+
+.game-container.focused {
+    background: linear-gradient( to right, #c6e6f8 5%,#95bcd3 95%);
+    padding-right: 22px;
+    margin-right: -22px;
+}
+
+.game-container.focused .game-name {
+    color: #10161b;
+    transition: color 0.25s;
+}
+
+.game-container.focused .game-price {
+    color: #263645;
+}
+
 .game-display-background {
     background: linear-gradient(180deg, #2A475E 0%, #1B2838 80%);
 }
@@ -39,7 +58,7 @@
     width: 292px;
     background: linear-gradient( to right, #95bbd4 5%,#859bac 95%);
     /* background-color: #202d39; */
-    height: 630px;
+    height: 635px;
     position: relative;
 }
 
@@ -82,6 +101,8 @@
     color: #c6d4df;
 }
 
-/* .tab-preview-images > li {
+.tab-preview-images > img{
     width: 258px;
-} */
+    height: 124px;
+    margin-top: 3px;
+}

@@ -3,7 +3,7 @@
     justify-content: flex-start;
     flex-direction: row;
     margin-bottom: 5px;
-    background: #202d39;
+    /* background: #202d39; */
     /* margin-right: 23px; may or may not have to change */
     text-decoration: none;
     color: white;
@@ -22,10 +22,12 @@
     width: 342px;
     color: #C7D5E0;
     margin-top: 10px;
+    font-size: 1.25em;
 }
 
 .game-div .game-price {
     position: relative;
     margin-left: 12px;
     margin-top: 24px;
+    font-size: 15px;
 }

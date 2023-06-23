@@ -22,7 +22,7 @@ const GameIndex = () => {
     const gamePreview = games.length > 0 ? games[index] : false;
 
     const gameItems = games.map((game, i) =>
-        <div key={i} onMouseEnter={() => handleMouseEnter(i)} className="{}">
+        <div key={i} onMouseEnter={() => handleMouseEnter(i)} className={index === i ? "game-container focused" : "game-container"}>
             <GameIndexItem key={i} game={game} />
         </div>
     )
@@ -94,10 +94,10 @@ const GameIndex = () => {
                                             <span>&nbsp;({reviewObject[gamePreview.id][0]})</span>
                                         </div>
                                         <ul className="tab-preview-images">
-                                            <li><img src={gamePreview.images[1]} alt="" /></li>
-                                            <li><img src={gamePreview.images[2]} alt="" /></li>
-                                            <li><img src={gamePreview.images[3]} alt="" /></li>
-                                            <li><img src={gamePreview.images[4]} alt="" /></li>
+                                            <img src={gamePreview.images[1]} alt="" />
+                                            <img src={gamePreview.images[2]} alt="" />
+                                            <img src={gamePreview.images[3]} alt="" />
+                                            <img src={gamePreview.images[4]} alt="" />
                                         </ul>
                                     </>
                                 )}
