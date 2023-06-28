@@ -2,12 +2,12 @@
 This is a full stack web application that is a clone of the popular game library, Steam.
 
 ## Technologies used
-- React with Redux
-- Ruby on Rails
-- PostgresQL
-- AWS
-- CSS
-- onRender
+- React with Redux: Handles data on frontend and renders components
+- Ruby on Rails: Backend for data
+- PostgresQL: Database
+- AWS S3: Cloud storage for images
+- CSS: Styling
+- onRender: Hosting service
 
 ## Index Carousel
 ![Carousel gif](/readme_assets/Carousel-gif.gif "Carousel")
