@@ -73,15 +73,15 @@ ApplicationRecord.transaction do
       final_fantasy_images << "https://mist-seeds.s3.amazonaws.com/final-fantasy/final-fantasy-#{i+1}.jpg"
     end
 
-    7.times do |i|
+    8.times do |i|
       double_dragon_images << "https://mist-seeds.s3.amazonaws.com/double-dragon/double-dragon-#{i+1}.jpg"
     end
 
-    7.times do |i|
+    8.times do |i|
       mega_man_images << "https://mist-seeds.s3.amazonaws.com/mega-man/mega-man-#{i+1}.jpg"
     end
 
-    7.times do |i|
+    8.times do |i|
       duck_hunt_images << "https://mist-seeds.s3.amazonaws.com/duck-hunt/duck-hunt-#{i+1}.jpg"
     end
 
