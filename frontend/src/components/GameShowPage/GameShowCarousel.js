@@ -1,4 +1,3 @@
-import { unstable_renderSubtreeIntoContainer } from 'react-dom';
 import './GameShowCarousel.css';
 import { useState, useEffect } from 'react';
 
@@ -29,9 +28,9 @@ function GameShowCarousel({ game }) {
         setCounter(page);
     };
 
-    const handleMouse = () => {
-        setPause(!pause);
-    }
+    // const handleMouse = () => {
+    //     setPause(!pause);
+    // }
 
     useEffect(() => {
         let interval = setInterval(() => {
