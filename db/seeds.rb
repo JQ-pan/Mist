@@ -43,7 +43,6 @@ ApplicationRecord.transaction do
       }) 
     end
 
-
     
     puts "Seeding images..."
 

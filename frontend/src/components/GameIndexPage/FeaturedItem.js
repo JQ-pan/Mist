@@ -18,16 +18,19 @@ const FeaturedItem = ({ game, isActive }) => {
 
     const mainImage = imageUrls.map((img, i) => {
         return (
-            <img className={index === i ? "main-image show-slide" : "main-image not-show-slide"} src={imageUrls[i]} alt="" />
+            <img
+                key={i}
+                className={index === i ? "main-image show-slide" : "main-image not-show-slide"} 
+                src={imageUrls[i]} alt="" />
         )
     })
 
-    const sideImages = imageUrls.slice(1, 5).map((img, i) => {
+    const sideImages = imageUrls.slice(1, 5).map((imageUrl, i) => {
         return (
             <div key={i}>
-                <img 
+                <img
                     className="side-image" 
-                    src={img} alt="" 
+                    src={imageUrl} alt="" 
                     onMouseEnter={() => handleMouseEnter(i + 1)}
                     onMouseLeave={() => handleMouseLeave()}
                 />

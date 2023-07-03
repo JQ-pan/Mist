@@ -58,9 +58,9 @@ const Featured = ({ games }) => {
                 <div className="page">
                     {games.map((game, i) => (
                         <span
+                            key={i}
                             className={counter - 1 === i ? "dot displayed" : "dot"}
                             onClick={() => handlePage(i + 1)}
-                            key={i}
                         />
                     ))}
                 </div>
