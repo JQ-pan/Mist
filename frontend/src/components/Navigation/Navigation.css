@@ -3,12 +3,13 @@
     display: flex;
     justify-content: center;
     min-width: 940px;
+    /* width: 100%; */
     background: #171a21;
 }
 
 .navbar-content {
     height: 104px;
-    width: 940px;
+    min-width: 940px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -102,4 +103,8 @@
     width: 32px;
     padding: 1px;
     background: linear-gradient( to bottom, rgba(83,164,196,1) 5%, rgba(69,128,151,1) 95%);
+}
+
+@media screen and (max-width: 910px) {
+    
 }
