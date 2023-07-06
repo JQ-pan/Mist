@@ -2,14 +2,14 @@
     margin: auto;
     display: flex;
     justify-content: center;
-    min-width: 940px;
+    min-width: 1080px;
     /* width: 100%; */
     background: #171a21;
 }
 
 .navbar-content {
     height: 104px;
-    min-width: 940px;
+    min-width: 1080px;
     display: flex;
     justify-content: space-between;
     align-items: center;
