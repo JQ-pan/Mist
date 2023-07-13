@@ -19,7 +19,6 @@ function Navigation() {
         sessionLinks = (
             <>
                 <ProfileButton user={sessionUser} />
-                {/* <button className="logoutButton" onClick={handleLogout}>Log Out</button> */}
                 <div className="profile-pic-background">
                     <img className="profile-pic" src={demoIcon} alt=""></img>
                 </div>
