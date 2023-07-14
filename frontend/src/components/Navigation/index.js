@@ -12,7 +12,6 @@ import demoIcon from '../../assets/png-transparent-robotic-process-automation-co
 
 function Navigation() {
     const sessionUser = useSelector(state => state.session.user);
-    // const dispatch = useDispatch();
     let sessionLinks;
 
     if (sessionUser) {
