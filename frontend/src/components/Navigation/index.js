@@ -5,8 +5,6 @@ import ProfileButton from './ProfileButton';
 import './Navigation.css';
 import logo from '../../assets/steam-icon-14885.png'
 import demoIcon from '../../assets/png-transparent-robotic-process-automation-computer-icons-robotics-roboto-electronics-silhouette-black.png'
-// import githubIcon from '../../assets/icons8-github-50.png'
-// import linkedinIcon from '../../assets/icon8-linkedin-circled-50.png'
 // import * as sessionActions from '../../store/session/home/jiongqipan/Projects/Mist/frontend/src/assets/icons8-github-50.png';
 
 function Navigation() {
