@@ -18,7 +18,6 @@ function Navigation() {
                 <div className="profile-pic-background">
                     <img className="profile-pic" src={demoIcon} alt=""></img>
                 </div>
-
             </>
         );
     } else {
