@@ -10,7 +10,7 @@ class Api::CartItemsController < ApplicationController
 
     def create
         @cart_item = CartItem.new(buyer_id: current_user.id, game_id: cart_item_params[:game_id])
-        
+        @cart_items = CartItem.where(buyer_id: current_user.id)
         if @cart_item.save!
             render 'api/cart_items/index'
         else

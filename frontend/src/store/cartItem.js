@@ -74,7 +74,7 @@ const cartItemsReducer = (state = {}, action) => {
         case RECEIVE_CART_ITEMS:
             return { ...state, ...action.payload.games };
         case ADD_CART_ITEM:
-            return nextState;
+            return { ...state, ...action.payload.games };
         case REMOVE_CART_ITEM:
             delete nextState[action.payload];
             return nextState;

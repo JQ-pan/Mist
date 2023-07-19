@@ -15,3 +15,4 @@ if @cart_items.length
 else
     json.cart_items({})
     json.games({})
+end
