@@ -30,7 +30,7 @@
 }
 
 .game-display-background {
-    min-width: 940px;
+    min-width: 1080px;
     background: linear-gradient(180deg, #2A475E 0%, #1B2838 80%);
 }
 
