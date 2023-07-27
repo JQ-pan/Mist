@@ -54,7 +54,7 @@ const FeaturedItem = ({ game, isActive }) => {
             </div>
 
             <div className="featured-price">
-                {game.price}
+                ${game.price}
             </div>
         </Link>
     )
