@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import './FeaturedItem.css';
 
 const FeaturedItem = ({ game, isActive }) => {
@@ -39,7 +40,7 @@ const FeaturedItem = ({ game, isActive }) => {
     })
 
     return (
-        <div className="featured-container">
+        <Link className="featured-container" exact to={`/${game.id}`}>
             <div className="main-image-container">
                 {mainImage}
             </div>
@@ -55,7 +56,7 @@ const FeaturedItem = ({ game, isActive }) => {
             <div className="featured-price">
                 {game.price}
             </div>
-        </div>
+        </Link>
     )
 }
 
