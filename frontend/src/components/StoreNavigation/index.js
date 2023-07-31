@@ -66,11 +66,11 @@ function StoreNavigation() {
 
             <div className="store-navbar-content">
                 <div className="navbar-element">Your Store</div>
-                {/* <div className="navbar-element">New & Noteworthy</div>
+                {/* <div className="navbar-element">New & Noteworthy</div> */}
                 <div className="navbar-element">Categories</div>
-                <div className="navbar-element">Points Shop</div>
-                <div className="navbar-element">News</div>
-                <div className="navbar-element">Labs</div> */}
+                {/* <div className="navbar-element">Points Shop</div> */}
+                {/* <div className="navbar-element">News</div> */}
+                {/* <div className="navbar-element">Labs</div> */}
 
                 <div className="navbar-search">
                     <div className="search-inner">
