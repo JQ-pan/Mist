@@ -98,12 +98,12 @@ ApplicationRecord.transaction do
         featured: true,
         images: super_mario_bros_images,
         language: ["Japanese", "English"],
-        genre: ["Platformer"]
+        tag: ["Platformer"]
       },
       {
         title: "The Legend of Zelda",
         description: "The Legend of Zelda is an action-adventure game developed and published by Nintendo. Players control a young hero named Link as he travels through the land of Hyrule to rescue Princess Zelda and defeat the evil Ganon.",
-        long_description: "The Legend of Zelda is a seminal game that revolutionized the action-adventure genre. First released in 1986, this game introduced players to a vast and immersive world known as Hyrule. As the courageous hero Link, players embark on an epic quest to rescue Princess Zelda and thwart the plans of the malevolent Ganon. The game is filled with intricate puzzles, challenging enemies, and memorable characters, all set in a beautifully designed fantasy realm. With its open-ended gameplay and non-linear exploration, The Legend of Zelda offers players a sense of freedom and discovery unlike anything else at the time. It remains a beloved and influential title in the gaming industry.",
+        long_description: "The Legend of Zelda is a seminal game that revolutionized the action-adventure tag. First released in 1986, this game introduced players to a vast and immersive world known as Hyrule. As the courageous hero Link, players embark on an epic quest to rescue Princess Zelda and thwart the plans of the malevolent Ganon. The game is filled with intricate puzzles, challenging enemies, and memorable characters, all set in a beautifully designed fantasy realm. With its open-ended gameplay and non-linear exploration, The Legend of Zelda offers players a sense of freedom and discovery unlike anything else at the time. It remains a beloved and influential title in the gaming industry.",
         developer: "Nintendo R&D4",
         publisher: "Nintendo",
         price: 49.99,
@@ -111,7 +111,7 @@ ApplicationRecord.transaction do
         featured: true,
         images: legend_of_zelda_images,
         language: ["Japanese", "English"],
-        genre: ["Action-Adventure"]
+        tag: ["Action-Adventure"]
       },
       {
         title: "Contra",
@@ -124,7 +124,7 @@ ApplicationRecord.transaction do
         featured: true,
         images: contra_images,
         language: ["Japanese", "English"],
-        genre: ["Run and Gun", "Action"]
+        tag: ["Run and Gun", "Action"]
       },
       {
         title: "Metroid",
@@ -137,7 +137,7 @@ ApplicationRecord.transaction do
         featured: true,
         images: metroid_images,
         language: ["Japanese", "English"],
-        genre: ["Sci-Fi", "Action-Adventure", "Platformer"]
+        tag: ["Sci-Fi", "Action-Adventure", "Platformer"]
       },
       {
         title: "Castlevania",
@@ -150,7 +150,7 @@ ApplicationRecord.transaction do
         featured: true,
         images: castlevania_images,
         language: ["Japanese", "English"],
-        genre: []
+        tag: ["Platformer", "Action"]
       },
       {
         title: "Final Fantasy",
@@ -163,12 +163,12 @@ ApplicationRecord.transaction do
         featured: true,
         images: final_fantasy_images,
         language: ["Japanese", "English"],
-        genre: []
+        tag: ["RPG"]
       },
       {
         title: "Double Dragon",
         description: "Double Dragon is a side-scrolling beat 'em up game developed and published by Technos Japan. Players control brothers Billy and Jimmy Lee as they battle against street gangs and other enemies in a quest to rescue Billy's girlfriend Marian.",
-        long_description: "Double Dragon is a side-scrolling beat 'em up game that became an instant hit upon its release in 1987. In the game, players assume the roles of Billy and Jimmy Lee, twin brothers skilled in martial arts, as they fight their way through the dangerous streets to rescue Billy's girlfriend, Marian, who has been kidnapped by a street gang. Players unleash a variety of punches, kicks, and special moves to defeat their enemies, all while collecting power-ups and weapons along the way. Double Dragon's cooperative multiplayer mode allowed players to team up and take on the challenges together, adding an extra layer of excitement and camaraderie. With its iconic characters, intense action, and memorable gameplay, Double Dragon left a lasting impact on the beat 'em up genre and became a beloved classic.",
+        long_description: "Double Dragon is a side-scrolling beat 'em up game that became an instant hit upon its release in 1987. In the game, players assume the roles of Billy and Jimmy Lee, twin brothers skilled in martial arts, as they fight their way through the dangerous streets to rescue Billy's girlfriend, Marian, who has been kidnapped by a street gang. Players unleash a variety of punches, kicks, and special moves to defeat their enemies, all while collecting power-ups and weapons along the way. Double Dragon's cooperative multiplayer mode allowed players to team up and take on the challenges together, adding an extra layer of excitement and camaraderie. With its iconic characters, intense action, and memorable gameplay, Double Dragon left a lasting impact on the beat 'em up tag and became a beloved classic.",
         developer: "Technos Japan",
         publisher: "Technos Japan",
         price: 49.99,
@@ -176,7 +176,7 @@ ApplicationRecord.transaction do
         featured: true,
         images: double_dragon_images,
         language: ["Japanese", "English"],
-        genre: []
+        tag: ["Action"]
       },
       {
         title: "Mega Man",
@@ -189,7 +189,7 @@ ApplicationRecord.transaction do
         featured: true,
         images: mega_man_images,
         language: ["Japanese", "English"],
-        genre: []
+        tag: ["Action", "Platformer"]
       },
       {
         title: "Duck Hunt",
@@ -202,7 +202,7 @@ ApplicationRecord.transaction do
         featured: true,
         images: duck_hunt_images,
         language: ["Japanese", "English"],
-        genre: []
+        tag: ["Light Gun Shooter", "Arcade"]
       }
     ]
     )

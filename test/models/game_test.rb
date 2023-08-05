@@ -15,6 +15,7 @@
 #  updated_at       :datetime         not null
 #  long_description :text             not null
 #  language         :text             default([]), not null, is an Array
+#  tag              :string           default([]), not null, is an Array
 #
 require "test_helper"
 

@@ -15,9 +15,10 @@
 #  updated_at       :datetime         not null
 #  long_description :text             not null
 #  language         :text             default([]), not null, is an Array
+#  tag              :string           default([]), not null, is an Array
 #
 class Game < ApplicationRecord
-    validates :title, :developer, :publisher, :description, :long_description, :release_date, presence: true
+    validates :title, :developer, :publisher, :description, :long_description, :release_date, :tag, presence: true
     validates :images, :language, presence: true, length: { minimum: 1 }
     validates :featured, presence: true
     validates :price, numericality: { greater_than_or_equal_to: 0 }, presence: true
