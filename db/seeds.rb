@@ -97,7 +97,8 @@ ApplicationRecord.transaction do
         release_date: "September 13, 1985",
         featured: true,
         images: super_mario_bros_images,
-        language: ["Japanese", "English"]
+        language: ["Japanese", "English"],
+        genre: ["Platformer"]
       },
       {
         title: "The Legend of Zelda",
@@ -109,7 +110,8 @@ ApplicationRecord.transaction do
         release_date: "February 21, 1986",
         featured: true,
         images: legend_of_zelda_images,
-        language: ["Japanese", "English"]
+        language: ["Japanese", "English"],
+        genre: ["Action-Adventure"]
       },
       {
         title: "Contra",
@@ -121,7 +123,8 @@ ApplicationRecord.transaction do
         release_date: "February 20, 1987",
         featured: true,
         images: contra_images,
-        language: ["Japanese", "English"]
+        language: ["Japanese", "English"],
+        genre: ["Run and Gun", "Action"]
       },
       {
         title: "Metroid",
@@ -133,7 +136,8 @@ ApplicationRecord.transaction do
         release_date: "August 6, 1986",
         featured: true,
         images: metroid_images,
-        language: ["Japanese", "English"]
+        language: ["Japanese", "English"],
+        genre: ["Sci-Fi", "Action-Adventure", "Platformer"]
       },
       {
         title: "Castlevania",
@@ -145,7 +149,8 @@ ApplicationRecord.transaction do
         release_date: "May 1, 1987",
         featured: true,
         images: castlevania_images,
-        language: ["Japanese", "English"]
+        language: ["Japanese", "English"],
+        genre: []
       },
       {
         title: "Final Fantasy",
@@ -157,7 +162,8 @@ ApplicationRecord.transaction do
         release_date: "December 18, 1987",
         featured: true,
         images: final_fantasy_images,
-        language: ["Japanese", "English"]
+        language: ["Japanese", "English"],
+        genre: []
       },
       {
         title: "Double Dragon",
@@ -169,7 +175,8 @@ ApplicationRecord.transaction do
         release_date: "June 1987",
         featured: true,
         images: double_dragon_images,
-        language: ["Japanese", "English"]
+        language: ["Japanese", "English"],
+        genre: []
       },
       {
         title: "Mega Man",
@@ -181,7 +188,8 @@ ApplicationRecord.transaction do
         release_date: "December 17, 1987",
         featured: true,
         images: mega_man_images,
-        language: ["Japanese", "English"]
+        language: ["Japanese", "English"],
+        genre: []
       },
       {
         title: "Duck Hunt",
@@ -193,7 +201,8 @@ ApplicationRecord.transaction do
         release_date: "April 21, 1984",
         featured: true,
         images: duck_hunt_images,
-        language: ["Japanese", "English"]
+        language: ["Japanese", "English"],
+        genre: []
       }
     ]
     )
