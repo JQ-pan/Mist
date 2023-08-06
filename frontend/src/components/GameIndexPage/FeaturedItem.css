@@ -88,6 +88,27 @@
     cursor: pointer;
 }
 
+.featured-tags {
+    margin-top: 8px;
+}
+
+.featured-tags > li {
+    display: inline-block;
+    line-height: 19px;
+    padding: 0 7px;
+    background-color: rgba( 255, 255, 255, 0.2 );
+    box-shadow: none;
+    margin-right: 2px;
+    border-radius: 2px;
+    cursor: pointer;
+    margin-bottom: 3px;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 11px;
+}
+
 .featured-price {
     position: absolute;
     bottom: 10px;

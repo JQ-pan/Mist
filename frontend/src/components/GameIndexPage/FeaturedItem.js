@@ -39,6 +39,9 @@ const FeaturedItem = ({ game, isActive }) => {
             )
     })
 
+    const gameTags = game.tag.map((tag, i) => <li>
+        {tag}
+    </li>)
     return (
         <Link className="featured-container" exact to={`/${game.id}`}>
             <div className="main-image-container">
@@ -51,8 +54,10 @@ const FeaturedItem = ({ game, isActive }) => {
                 <div className="featured-image-container">
                     {sideImages}
                 </div>
+                <ul className="featured-tags">
+                    {gameTags}
+                </ul>
             </div>
-
             <div className="featured-price">
                 ${game.price}
             </div>
