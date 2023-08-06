@@ -10,6 +10,7 @@ import './GameIndex.css';
 const GameIndex = () => {
     const dispatch = useDispatch();
     const games = useSelector(state => Object.values(state.games))
+    
     useEffect(() => {
         dispatch(fetchGames());
         dispatch(fetchAllReviews());
@@ -19,7 +20,7 @@ const GameIndex = () => {
     const handleMouseEnter = index => {
         setIndex(index);
     }
-    const gamePreview = games.length > 0 ? games[index] : false;
+    const gamePreview = games.length > 0 ? games[index] : {};
 
     const gameItems = games.map((game, i) =>
         <div key={i} onMouseEnter={() => handleMouseEnter(i)} className={index === i ? "game-container focused" : "game-container"}>
@@ -63,6 +64,18 @@ const GameIndex = () => {
         reviewObject[key] = [length, averageRating];
     }
 
+    // if (games) {
+    //     const gameTags = gamePreview && gamePreview.tags ? gamePreview.tags.map((tag, i) => <div>
+    //     {tag}
+    // </div>) : <></>
+    // }
+
+    const gameTags = gamePreview && gamePreview.tag
+        ? gamePreview.tag.map((tag, i) => 
+        <li key={i}>
+            {tag}
+        </li>) : <>Tags not loading</>;
+
     if (games.length === 0) {
         return <>Still loading...</>
     } else {
@@ -93,6 +106,11 @@ const GameIndex = () => {
                                             }}>{reviewObject[gamePreview.id][1]}</span>
                                             <span>&nbsp;({reviewObject[gamePreview.id][0]})</span>
                                         </div>
+
+                                        <ul className="tab-preview-tags">
+                                            {gameTags}    
+                                        </ul>
+                                        
                                         <ul className="tab-preview-images">
                                             <img src={gamePreview.images[1]} alt="" />
                                             <img src={gamePreview.images[2]} alt="" />
