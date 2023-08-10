@@ -1,6 +1,6 @@
 if @cart_items.length
     @cart_items.each do |cart_item|
-        json.cart_items do
+        json.cart_item do
             json.set! cart_item.id do
                 json.extract! cart_item, :id, :buyer_id, :game_id
             end
