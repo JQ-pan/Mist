@@ -32,11 +32,14 @@ function App() {
         <Route path="/library">
           <LibraryPage />
         </Route>
-        
-        <Route path="/:gameId">
+
+        <Route path="/game/:gameId">
           <GameShowPage />
         </Route>
 
+        <Route path="/:genre">
+          
+        </Route>
 
       </Switch>
     </>

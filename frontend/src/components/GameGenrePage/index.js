@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import './GameCategoriesPage.css';
+import './GameGenrePage.css';
 
-const GameCategoriesPage = () => {
+const GameGenrePage = () => {
 
 }
 
-export default GameCategoriesPage;
+export default GameGenrePage;
