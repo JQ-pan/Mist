@@ -1,0 +1,11 @@
+#main-background {
+    position: relative;
+    height: 650px;
+    width: 100%;
+    background-color: #333;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    mask: linear-gradient(180deg, rgb(0, 0, 0) 58%, rgba(0, 0, 0, 0) 95%),radial-gradient(15.77% 44.22% at 50% 104.95%, rgba(66, 66, 66, 0) 0%, #333333 100%),radial-gradient(30.95% 86.8% at 30.69% 13.2%, rgba(66, 66, 66, 0.33) 0%, #333333 100%),radial-gradient(51.31% 143.89% at 49.99% 24.75%, #000000 0%, #000000 52.6%, rgba(0, 0, 0, 0.18) 83.33%, rgba(0, 0, 0, 0) 95.31%),radial-gradient(51.31% 143.89% at 49.99% 24.75%, #000000 0%, #000000 52.6%, rgba(0, 0, 0, 0.18) 83.33%, rgba(0, 0, 0, 0) 95.31%),linear-gradient(180deg, #000000 90%, rgba(0, 0, 0, 0) 100%);    transition: background-image .1s ease-out;
+    mask-composite: source-in;
+}
