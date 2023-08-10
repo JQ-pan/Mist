@@ -8,6 +8,7 @@ import GameIndex from "./components/GameIndexPage/GameIndex";
 import GameShowPage from "./components/GameShowPage/";
 import CartPage from "./components/CartPage/";
 import LibraryPage from "./components/LibraryPage/";
+import GameGenrePage from "./components/GameGenrePage";
 
 function App() {
   return (
@@ -38,7 +39,7 @@ function App() {
         </Route>
 
         <Route path="/:genre">
-          
+          <GameGenrePage />
         </Route>
 
       </Switch>
