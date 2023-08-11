@@ -1,5 +1,9 @@
+#page-background {
+    background-color: rgb(14, 16, 20);
+}
+
 #main-background {
-    position: relative;
+    position: absolute;
     height: 650px;
     width: 100%;
     background-color: #333;
@@ -8,4 +12,47 @@
     background-position-x: center;
     mask: linear-gradient(180deg, rgb(0, 0, 0) 58%, rgba(0, 0, 0, 0) 95%),radial-gradient(15.77% 44.22% at 50% 104.95%, rgba(66, 66, 66, 0) 0%, #333333 100%),radial-gradient(30.95% 86.8% at 30.69% 13.2%, rgba(66, 66, 66, 0.33) 0%, #333333 100%),radial-gradient(51.31% 143.89% at 49.99% 24.75%, #000000 0%, #000000 52.6%, rgba(0, 0, 0, 0.18) 83.33%, rgba(0, 0, 0, 0) 95.31%),radial-gradient(51.31% 143.89% at 49.99% 24.75%, #000000 0%, #000000 52.6%, rgba(0, 0, 0, 0.18) 83.33%, rgba(0, 0, 0, 0) 95.31%),linear-gradient(180deg, #000000 90%, rgba(0, 0, 0, 0) 100%);    transition: background-image .1s ease-out;
     mask-composite: source-in;
+    top: 105px;
+}
+
+#testing {
+    margin-top: 640px;
+}
+
+.container {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    padding: 16px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.category-section-title {
+    width: 940px;
+    color: rgb(255,255,255);
+    padding-left: 8px;
+    font-weight: 400;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    text-shadow: 1px 1px 1px rgb(0 0 0 / 30%);
+}
+
+.test {
+    position: relative;
+    height: 200px;
+    width: 940px;
+    background-color: Gray;
+}
+
+.footer-spacer {
+    height: 400px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgb(14, 16, 20);
 }

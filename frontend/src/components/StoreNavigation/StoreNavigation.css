@@ -2,6 +2,9 @@
     width: 940px;
     margin: auto;
     margin-bottom: 16px;
+    z-index: 2;
+    position: relative;
+    padding-bottom: 20px;
 }
 
 /* Start Cart Button */
