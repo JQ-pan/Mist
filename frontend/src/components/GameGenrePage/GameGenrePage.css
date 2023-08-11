@@ -15,6 +15,34 @@
     top: 105px;
 }
 
+.main-carousel-title {
+    position: relative;
+    width: 940px;
+    color: white;
+    text-align: left;
+    font-size: 48px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.main-carousel-content {
+    margin: 20px;
+    /* padding: 20px; */
+    width: 940px;
+    height: 340px;
+    backdrop-filter: blur(20px);
+    background: rgba(0,0,0,.3098039216);
+}
+
+.slide-image {
+    height: 340px;
+    width: 259px;
+    box-shadow: 0 0 12px rgba(0,0,0,.5);
+}
+
+
+
+
 #testing {
     margin-top: 640px;
 }

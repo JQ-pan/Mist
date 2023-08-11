@@ -13,6 +13,8 @@ const GameGenrePage = () => {
     }, [dispatch, genre])
     const games = useSelector(state => Object.values(state.games).filter(game => game.tag.some(tag => tag.toLowerCase().replace(/ /g, '-') === genre)))
 
+    const game = games[0];
+
     if (!games.length) {
         return <>Loading</>
     }
@@ -23,8 +25,21 @@ const GameGenrePage = () => {
             style={{
                 backgroundImage: `url(${games[0].images[0]})`
             }}
-            
             >
+        </div>
+        <div className="container">
+            <div className="main-carousel-title">{genre}</div>
+            <div className="main-carousel-content">
+                <img className="slide-image" src={game.images[0]}/>
+                <div className="featured-info">
+                    <div className="featured-title">
+                        {game.title}
+                    </div>
+                    <div className="featured-release-date"></div>
+                    <div className="featured-rating"></div>
+                    <div className="featured-tags"></div>
+                </div>
+            </div>
         </div>
         <div className="container" id="testing">
             <div className="category-section-title">
