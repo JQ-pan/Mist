@@ -2,7 +2,7 @@
     background-color: rgb(14, 16, 20);
 }
 
-#main-background {
+#category-background {
     position: absolute;
     height: 650px;
     width: 100%;
@@ -15,7 +15,19 @@
     top: 105px;
 }
 
-.main-carousel-title {
+.carousel-container {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    padding: 16px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.category-carousel-title {
     position: relative;
     width: 940px;
     color: white;
@@ -25,13 +37,15 @@
     text-transform: uppercase;
 }
 
-.main-carousel-content {
+.category-carousel-content {
     margin: 20px;
     /* padding: 20px; */
     width: 940px;
     height: 340px;
     backdrop-filter: blur(20px);
     background: rgba(0,0,0,.3098039216);
+    display: flex;
+    flex-direction: row;
 }
 
 .slide-image {
@@ -40,8 +54,97 @@
     box-shadow: 0 0 12px rgba(0,0,0,.5);
 }
 
+.category-featured-content {
+    padding: 20px;
+    width: 100%;
+}
 
+.category-featured-info {
+    padding-left: 4px;
+}
 
+.category-featured-title {
+    font-size: 30px;
+    line-height: 34px;
+    text-shadow: none;
+    font-weight: 600;
+    overflow: hidden;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.category-featured-release-date {
+    font-size: 18px;
+    text-shadow: none;
+    color: #c6d4df;
+}
+
+.category-featured-rating-container {
+    margin-top: 4px;
+    margin-left: -4px;
+    margin-bottom: 4px;
+}
+
+.category-featured-rating-content {
+    font-size: 16px;
+    font-weight: 540;
+    background: rgba(0,0,0,.2705882353);
+    border-radius: 2px;
+    width: fit-content;
+    padding: 4px 4px 4px 8px;
+
+    color: #32ad32;
+}
+
+.category-featured-rating-content > span {
+    color: #6b8aaa;
+    margin-right: 4px;
+    margin-left: 4px;
+}
+
+.category-featured-tag-box {
+    max-height: 50px;
+    gap: 2px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+.category-featured-tags {
+    font-size: 12px;
+    color: #c6d4df;
+    background-color: rgba(198,212,223,.1490196078);
+    font-weight: 300;
+    text-transform: nonoe;
+    margin-right: 2px;
+    margin-bottom: 2px;
+    padding: 2px 10px;
+    border-radius: 2px;
+}
+
+.category-featured-info-box {
+    font-size: 14px;
+    margin-top: 6px;
+    max-height: 125px;
+    display: flex;
+    flex-wrap: wrap;
+    color: #A7BACC;
+}
+
+.buttons {
+    margin-top: 6px;
+    background-color: gray;
+    
+}
+
+.buttons > button {
+    background-color: lightblue;
+    height: 20px;
+    border-radius: 25%;
+    margin: 0 10px;
+}
 
 #testing {
     margin-top: 640px;
