@@ -1,5 +1,9 @@
-#main-background {
-    position: relative;
+#page-background {
+    background-color: rgb(14, 16, 20);
+}
+
+#category-background {
+    position: absolute;
     height: 650px;
     width: 100%;
     background-color: #333;
@@ -8,4 +12,197 @@
     background-position-x: center;
     mask: linear-gradient(180deg, rgb(0, 0, 0) 58%, rgba(0, 0, 0, 0) 95%),radial-gradient(15.77% 44.22% at 50% 104.95%, rgba(66, 66, 66, 0) 0%, #333333 100%),radial-gradient(30.95% 86.8% at 30.69% 13.2%, rgba(66, 66, 66, 0.33) 0%, #333333 100%),radial-gradient(51.31% 143.89% at 49.99% 24.75%, #000000 0%, #000000 52.6%, rgba(0, 0, 0, 0.18) 83.33%, rgba(0, 0, 0, 0) 95.31%),radial-gradient(51.31% 143.89% at 49.99% 24.75%, #000000 0%, #000000 52.6%, rgba(0, 0, 0, 0.18) 83.33%, rgba(0, 0, 0, 0) 95.31%),linear-gradient(180deg, #000000 90%, rgba(0, 0, 0, 0) 100%);    transition: background-image .1s ease-out;
     mask-composite: source-in;
+    top: 105px;
+}
+
+.carousel-container {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    padding: 16px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.category-carousel-title {
+    position: relative;
+    width: 940px;
+    color: white;
+    text-align: left;
+    font-size: 48px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.category-carousel-content {
+    margin: 20px;
+    width: 940px;
+    height: 340px;
+    backdrop-filter: blur(20px);
+    background: rgba(0,0,0,.3098039216);
+    display: flex;
+    flex-direction: row;
+}
+
+.slide-image {
+    height: 340px;
+    width: 259px;
+    box-shadow: 0 0 12px rgba(0,0,0,.5);
+}
+
+.category-featured-content {
+    padding: 20px;
+    width: 100%;
+}
+
+.category-featured-info {
+    padding-left: 4px;
+}
+
+.category-featured-title {
+    font-size: 30px;
+    line-height: 34px;
+    text-shadow: none;
+    font-weight: 600;
+    overflow: hidden;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.category-featured-release-date {
+    font-size: 18px;
+    text-shadow: none;
+    color: #c6d4df;
+}
+
+.category-featured-rating-container {
+    margin-top: 4px;
+    margin-left: -4px;
+    margin-bottom: 4px;
+}
+
+.category-featured-rating-content {
+    font-size: 16px;
+    font-weight: 540;
+    background: rgba(0,0,0,.2705882353);
+    border-radius: 2px;
+    width: fit-content;
+    padding: 4px 4px 4px 8px;
+
+    color: #32ad32;
+}
+
+.category-featured-rating-content > span {
+    color: #6b8aaa;
+    margin-right: 4px;
+    margin-left: 4px;
+}
+
+.category-featured-tag-box {
+    max-height: 50px;
+    gap: 2px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+.category-featured-tags {
+    font-size: 12px;
+    color: #c6d4df;
+    background-color: rgba(198,212,223,.1490196078);
+    font-weight: 300;
+    text-transform: nonoe;
+    margin-right: 2px;
+    margin-bottom: 2px;
+    padding: 2px 10px;
+    border-radius: 2px;
+}
+
+.category-featured-info-box {
+    font-size: 14px;
+    margin-top: 6px;
+    max-height: 125px;
+    display: flex;
+    flex-wrap: wrap;
+    color: #A7BACC;
+}
+
+.previous,
+.next {
+    width: 60px;
+    top: 70px;
+    height: 200px;
+    padding-left: 7px;
+    margin: auto 0;
+    background: rgba(0,0,0,.3);
+    border-radius: 4px;
+}
+
+.previous:hover,
+.next:hover {
+    background: #fff;
+}
+
+.previous svg,
+.next svg {
+    width: 50px;
+    height: 50px;
+}
+
+.previous {
+    position: absolute;
+    left: calc(50% - 564px);
+    transform: rotateZ(180deg);
+}
+
+.next {
+    position: absolute;
+    left: calc(50% + 504px);
+}
+
+#testing {
+    margin-top: 640px;
+}
+
+.container {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    padding: 16px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.category-section-title {
+    width: 940px;
+    color: rgb(255,255,255);
+    padding-left: 8px;
+    font-weight: 400;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    text-shadow: 1px 1px 1px rgb(0 0 0 / 30%);
+}
+
+.test {
+    position: relative;
+    height: 200px;
+    width: 940px;
+    background-color: Gray;
+}
+
+.footer-spacer {
+    height: 400px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgb(14, 16, 20);
 }
