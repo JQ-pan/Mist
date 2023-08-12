@@ -43,7 +43,7 @@ const FeaturedItem = ({ game, isActive }) => {
         {tag}
     </li>)
     return (
-        <Link className="featured-container" exact to={`/${game.id}`}>
+        <Link className="featured-container" exact to={`/game/${game.id}`}>
             <div className="main-image-container">
                 {mainImage}
             </div>
