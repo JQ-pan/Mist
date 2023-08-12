@@ -39,7 +39,6 @@
 
 .category-carousel-content {
     margin: 20px;
-    /* padding: 20px; */
     width: 940px;
     height: 340px;
     backdrop-filter: blur(20px);
@@ -133,17 +132,37 @@
     color: #A7BACC;
 }
 
-.buttons {
-    margin-top: 6px;
-    background-color: gray;
-    
+.previous,
+.next {
+    width: 60px;
+    top: 70px;
+    height: 200px;
+    padding-left: 7px;
+    margin: auto 0;
+    background: rgba(0,0,0,.3);
+    border-radius: 4px;
 }
 
-.buttons > button {
-    background-color: lightblue;
-    height: 20px;
-    border-radius: 25%;
-    margin: 0 10px;
+.previous:hover,
+.next:hover {
+    background: #fff;
+}
+
+.previous svg,
+.next svg {
+    width: 50px;
+    height: 50px;
+}
+
+.previous {
+    position: absolute;
+    left: calc(50% - 564px);
+    transform: rotateZ(180deg);
+}
+
+.next {
+    position: absolute;
+    left: calc(50% + 504px);
 }
 
 #testing {
