@@ -5,7 +5,7 @@ import Featured from './Featured';
 import { fetchGames } from '../../store/game';
 import { fetchAllReviews } from '../../store/review';
 import StoreNavigation from '../StoreNavigation';
-import './GameIndex.css';
+import './GameIndexPage.css';
 
 const GameIndex = () => {
     const dispatch = useDispatch();

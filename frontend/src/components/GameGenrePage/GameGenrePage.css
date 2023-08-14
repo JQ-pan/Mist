@@ -204,5 +204,5 @@
 }
 
 ::-webkit-scrollbar-track {
-    background: rgb(14, 16, 20);
+    background: rgb(14, 16, 20) !important;
 }

@@ -4,7 +4,7 @@ import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
 import Navigation from "./components/Navigation";
 import BottomBlock from "./components/BottomBlock"
-import GameIndex from "./components/GameIndexPage/GameIndex";
+import GameIndex from "./components/GameIndexPage";
 import GameShowPage from "./components/GameShowPage/";
 import CartPage from "./components/CartPage/";
 import LibraryPage from "./components/LibraryPage/";
