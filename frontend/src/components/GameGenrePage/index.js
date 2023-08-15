@@ -21,11 +21,11 @@ const GameGenrePage = () => {
     const featuredGame = games[index];
 
     const increment = () => {
-        index == games.length - 1? setIndex(0) : setIndex(index + 1);
+        index === games.length - 1? setIndex(0) : setIndex(index + 1);
     }
 
     const decrement = () => {
-        index == 0 ? setIndex(games.length - 1) : setIndex(index - 1);
+        index === 0 ? setIndex(games.length - 1) : setIndex(index - 1);
     }
 
     if (!games.length) {
@@ -44,7 +44,7 @@ const GameGenrePage = () => {
         <div className="carousel-container">
             <div className="category-carousel-title">{genre}</div>
             <div className="category-carousel-content">
-                <img className="slide-image" src={featuredGame.images[0]}/>
+                <img className="slide-image" src={featuredGame.images[0]} alt=""/>
                 <div className="category-featured-content">
                     <div className="category-featured-info">
                         <div className="category-featured-title">
