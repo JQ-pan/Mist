@@ -5,6 +5,7 @@ import Featured from './Featured';
 import { fetchGames } from '../../store/game';
 import { fetchAllReviews } from '../../store/review';
 import StoreNavigation from '../StoreNavigation';
+import { Link } from 'react-router-dom';
 import './GameIndexPage.css';
 
 const GameIndex = () => {
@@ -64,17 +65,11 @@ const GameIndex = () => {
         reviewObject[key] = [length, averageRating];
     }
 
-    // if (games) {
-    //     const gameTags = gamePreview && gamePreview.tags ? gamePreview.tags.map((tag, i) => <div>
-    //     {tag}
-    // </div>) : <></>
-    // }
-
     const gameTags = gamePreview && gamePreview.tag
         ? gamePreview.tag.map((tag, i) => 
-        <li key={i}>
+        <Link className="tag-link" key={i} exact to={`/${tag.toLowerCase().replace(/ /g, '-')}`}>
             {tag}
-        </li>) : <>Tags not loading</>;
+        </Link>) : <>Tags not loading</>;
 
     if (games.length === 0) {
         return <>Still loading...</>
@@ -108,7 +103,7 @@ const GameIndex = () => {
                                         </div>
 
                                         <ul className="tab-preview-tags">
-                                            {gameTags}    
+                                            {gameTags} 
                                         </ul>
                                         
                                         <ul className="tab-preview-images">
