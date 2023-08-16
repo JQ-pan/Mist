@@ -45,7 +45,6 @@
     height: 100%;
     flex-direction: row;
 
-    /* Testing Carousel */
     margin-top: 20px;
 }
 
@@ -58,22 +57,9 @@
     margin-left: 14px;
     width: 292px;
     background: linear-gradient( to right, #95bbd4 5%,#859bac 95%);
-    /* background-color: #202d39; */
     height: 635px;
     position: relative;
 }
-
-/* .tab-preview-content {
-    text-align: center;
-    position: absolute;
-    top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-    font-size: 64px;
-    line-height: 92px;
-
-    color: white
-} */
 
 .tab-preview-content {
     position: absolute;
@@ -111,9 +97,9 @@
     overflow: hidden;
 }
 
-.tab-preview-tags > li {
+.tab-preview-tags > .tag-link{
     background-color: rgba( 38, 54, 69, 0.6);
-
+    text-decoration: none;
     display: inline-block;
     line-height: 19px;
     padding: 0 7px;
@@ -130,7 +116,7 @@
     color: #ffffff;
 }
 
-.tab-preview-tags > li:hover {
+.tab-preview-tags > .tag-link:hover {
     color: #66C0F4
 }
 

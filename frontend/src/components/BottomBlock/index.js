@@ -20,7 +20,6 @@ function BottomBlock() {
     } else {
         return (
             <div className="footer-content">
-
                 <div className="loggedout-content">
                     <div className="sign-in-content">
                         <br />
