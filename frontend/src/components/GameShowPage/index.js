@@ -60,17 +60,14 @@ function GameShowPage() {
     let averageRating;
     if (ratio < 0.19) {
         averageRating = "Negative";
-        // const color="#c35c2c"
     } else if (ratio < 0.39) {
         averageRating = "Mostly Negative";
     } else if (ratio < 0.69) {
         averageRating = "Mixed";
-        // const color="#a8926a"
     } else if (ratio < 0.79) {
         averageRating = "Mostly Positive";
     } else {
         averageRating = "Positive";
-        // const color="#66C0F4"
     }
 
     const handleAddToCart = () => {
@@ -168,6 +165,12 @@ function GameShowPage() {
                                     <div className="subcolumn-content">{game.publisher}</div>
                                 </div>
                             </div>
+
+                            <div className="tags-row">
+                                <div className="tags-title">Popular user-defined tags for this product:</div>
+                                <div className="tags-content">{game.tag.map((tag) => tag)}</div>
+                            </div>
+
                         </div>
                     </div>
 
