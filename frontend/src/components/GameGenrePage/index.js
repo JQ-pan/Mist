@@ -78,6 +78,14 @@ const GameGenrePage = () => {
                 </button>
             </div>
         </div>
+        <div className="carousel-pip-scroller-container">
+            <div className="pip-scroller">
+                <div className="pip-scroller-background"></div>
+                <div className="pip-scroller-foreground" style={{left: '0%', right: '91.6667%'}}></div>
+                <div className="pip-scrollbar" style={{left: '0%', width:'4.166667%'}}></div>
+                <div className="pip-scrollbar" style={{right: '0%', width:'95.8333%'}}></div>
+            </div>
+        </div>
         <div className="container" id="testing">
             <div className="category-section-title">
                 Recommended For You
