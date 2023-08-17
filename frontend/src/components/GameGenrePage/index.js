@@ -80,26 +80,20 @@ const GameGenrePage = () => {
         </div>
         <div className="carousel-pip-scroller-container">
             <div className="pip-scroller">
-                <div className="pip-scroller-background"></div>
-                <div className="pip-scroller-foreground" style={{left: '0%', right: '91.6667%'}}></div>
-                <div className="pip-scrollbar" style={{left: '0%', width:'4.166667%'}}></div>
-                <div className="pip-scrollbar" style={{right: '0%', width:'95.8333%'}}></div>
+                <div className="pip-scroller-background">{games.length} {index}</div>
+                <div className="pip-scroller-foreground" style={{left: '0%', right: `${((games.length - (index - 1))/games.length)}%`}}></div>
+                <div className="pip-scrollbar" style={{left: '0%', width:'20.8333%'}}></div>
+                <div className="pip-scrollbar" style={{right: '0%', width:'79.1667%'}}></div>
             </div>
         </div>
-        <div className="container" id="testing">
+        <div className="container">
             <div className="category-section-title">
                 Recommended For You
-            </div>
-            <div className="test">
-                
             </div>
         </div>
         <div className="container">
             <div className="category-section-title">
                 Popular Titles
-            </div>
-            <div className="test">
-                
             </div>
         </div>
         <div className="footer-spacer" />

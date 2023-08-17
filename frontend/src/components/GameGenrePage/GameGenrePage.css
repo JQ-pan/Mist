@@ -210,8 +210,11 @@ body {
     transition-duration: .4s;
 }
 
-#testing {
-    margin-top: 640px;
+.pip-scrollbar {
+    display: block;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
 }
 
 .container {
@@ -235,13 +238,6 @@ body {
     text-transform: uppercase;
     letter-spacing: .05em;
     text-shadow: 1px 1px 1px rgb(0 0 0 / 30%);
-}
-
-.test {
-    position: relative;
-    height: 200px;
-    width: 940px;
-    background-color: Gray;
 }
 
 .footer-spacer {
