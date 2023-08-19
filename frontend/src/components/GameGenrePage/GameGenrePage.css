@@ -150,12 +150,18 @@ body {
 .previous:hover,
 .next:hover {
     background: #fff;
+    cursor: pointer;
 }
 
 .previous svg,
 .next svg {
     width: 50px;
     height: 50px;
+}
+
+.previous:hover svg polygon,
+.next:hover svg polygon {
+    fill: #000000;
 }
 
 .previous {
@@ -167,6 +173,41 @@ body {
 .next {
     position: absolute;
     left: calc(50% + 504px);
+}
+
+.carousel-pip-scroller-container {
+    max-width: 940px;
+    width: 100%;
+    margin: 0 auto;
+    
+    display: flex;
+    flex-direction: row;
+    height: 35px;
+}
+
+.pip-scroller {
+    position: relative;
+    flex-grow: 1;
+    height: 100%;
+}
+
+.pip-scroller-background {
+    position: absolute;
+    left: 0px;
+    top: 17px;
+    bottom: 17px;
+    right:0px;
+    background-color: rgba(255,255,255,.13);
+    margin: auto 0;
+}
+
+.pip-scroller-foreground {
+    position: absolute;
+    top: 16px;
+    bottom: 16px;
+    background-color: rgba(255, 255, 255,.35);
+    transition: left right;
+    transition-duration: .4s;
 }
 
 #testing {
@@ -205,8 +246,4 @@ body {
 
 .footer-spacer {
     height: 400px;
-}
-
-::-webkit-scrollbar-track {
-    background: rgb(14, 16, 20) !important;
 }

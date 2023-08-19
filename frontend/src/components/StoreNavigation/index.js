@@ -65,12 +65,8 @@ function StoreNavigation() {
             {cartButton}
 
             <div className="store-navbar-content">
-                <div className="navbar-element">Your Store</div>
-                {/* <div className="navbar-element">New & Noteworthy</div> */}
+                <Link className="navbar-element" exact to="/">Your Store</Link>
                 <div className="navbar-element">Categories</div>
-                {/* <div className="navbar-element">Points Shop</div> */}
-                {/* <div className="navbar-element">News</div> */}
-                {/* <div className="navbar-element">Labs</div> */}
 
                 <div className="navbar-search">
                     <div className="search-inner">
