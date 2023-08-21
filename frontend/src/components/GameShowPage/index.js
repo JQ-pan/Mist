@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, useHistory } from 'react-router-dom';
 import { fetchGame } from '../../store/game'
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { fetchCartItems, createCartItem } from '../../store/cartItem';
 import { fetchLibraryItems } from '../../store/libraryItem';
 import { fetchReviews } from '../../store/review';
@@ -168,7 +168,11 @@ function GameShowPage() {
 
                             <div className="tags-row">
                                 <div className="tags-title">Popular user-defined tags for this product:</div>
-                                <div className="tags-content">{game.tag.map((tag) => tag)}</div>
+                                <div className="tags-content">{game.tag.map((tag, i) => 
+                                    <Link className="tag-link" key={i} exact to={`/${tag.toLowerCase().replace(/ /g, '-')}`}>
+                                        {tag}
+                                    </Link>
+                                )}</div>
                             </div>
 
                         </div>

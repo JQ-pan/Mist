@@ -2,6 +2,7 @@
     background-color: #1B2838;
     padding-top: 10px;
     color: white;
+    min-width: 1080px;
 }
 
 .show-page-content {
@@ -182,7 +183,6 @@
     display: inline-block;
     line-height: 19px;
     padding: 0 7px;
-    color: #67c1f5;
     background-color: rgba( 103, 193, 245, 0.2 );
     box-shadow: none;
     margin-right: 2px;
@@ -198,6 +198,15 @@
 .tags-content:hover {
     color: white;
     background-color: #67c1f5;
+}
+
+.tags-content:hover > .tag-link {
+    color: white;
+}
+
+.tag-link {
+    color: #67c1f5;
+    text-decoration: none;
 }
 
 .game-show-main-column {
