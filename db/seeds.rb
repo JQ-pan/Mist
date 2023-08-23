@@ -43,7 +43,6 @@ ApplicationRecord.transaction do
       }) 
     end
 
-    
     puts "Seeding images..."
 
     super_mario_bros_images, legend_of_zelda_images, contra_images, metroid_images, castlevania_images, final_fantasy_images, double_dragon_images, mega_man_images, duck_hunt_images = Array.new(10) { [] }
@@ -207,7 +206,26 @@ ApplicationRecord.transaction do
     ]
     )
 
-    
+#     "Sonic the Hedgehog"
+    # "Street Fighter II"
+    # "Pac-Man"
+    # "Tetris"
+    # "Pokémon Red and Blue"
+    # "Metal Gear"
+    # "Star Fox"
+    # "Resident Evil"
+    # "EarthBound"
+    # "The Sims"
+    # "Chrono Trigger"
+    # "Diablo"
+    # "Street Fighter II"
+    # "The Elder Scrolls: Morrowind"
+    # "Gran Turismo"
+    # "Fallout"
+    # "Soulcalibur"
+    # "The Secret of Monkey Island"
+    # "GoldenEye 007"
+    # "Half-Life"
 
     # Creates library items"
     puts "Creating library items..."
