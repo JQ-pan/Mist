@@ -10,7 +10,7 @@ import './GameIndexPage.css';
 
 const GameIndex = () => {
     const dispatch = useDispatch();
-    const games = useSelector(state => Object.values(state.games))
+    const games = useSelector(state => Object.values(state.games).slice(0,9))
     
     useEffect(() => {
         dispatch(fetchGames());

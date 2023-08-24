@@ -17,8 +17,13 @@ ApplicationRecord.transaction do
     
     puts "Resetting primary keys..."
     # For easy testing, so that after seeding, the first `User` has `id` of 1
-    ApplicationRecord.connection.reset_pk_sequence!('users')
-  
+    # ApplicationRecord.connection.reset_pk_sequence!('users')
+    
+    # For easy testing, so that after seeding, the first keys has `id` of 1
+    ActiveRecord::Base.connection.tables.each do |t|
+      ActiveRecord::Base.connection.reset_pk_sequence!(t)
+    end
+
     puts "Creating users..."
     # Create one user with an easy to remember username, email, and password:
     User.create!(
@@ -43,10 +48,31 @@ ApplicationRecord.transaction do
       }) 
     end
 
-    
     puts "Seeding images..."
 
-    super_mario_bros_images, legend_of_zelda_images, contra_images, metroid_images, castlevania_images, final_fantasy_images, double_dragon_images, mega_man_images, duck_hunt_images = Array.new(10) { [] }
+    super_mario_bros_images = [] 
+    legend_of_zelda_images = [] 
+    contra_images = [] 
+    metroid_images = [] 
+    castlevania_images = [] 
+    final_fantasy_images = [] 
+    double_dragon_images = [] 
+    mega_man_images = [] 
+    duck_hunt_images = []
+    sonic_the_hedgehog_images = []
+    street_fighter_2_images = []
+    pac_man_images = []
+    tetris_images = []
+    pokemon_red_and_blue_images = []
+    chrono_trigger_images = []
+    diablo_images = []
+    the_elder_scrolls_morrowind_images = []
+    gran_turismo_images = []
+    fallout_images = []
+    soulcalibur_images = []
+    the_secret_of_monkey_island = []
+    goldeneye_007_images = []
+    half_life_images = []
 
     8.times do |i|
       super_mario_bros_images << "https://mist-seeds.s3.amazonaws.com/super-mario-bros/super-mario-bros-#{i+1}.jpg"
@@ -82,6 +108,62 @@ ApplicationRecord.transaction do
 
     8.times do |i|
       duck_hunt_images << "https://mist-seeds.s3.amazonaws.com/duck-hunt/duck-hunt-#{i+1}.jpg"
+    end
+    
+    8.times do |i|
+      sonic_the_hedgehog_images << "https://mist-seeds.s3.amazonaws.com/sonic-the-hedgehog/sonic-the-hedgehog-#{i+1}.jpg"
+    end
+
+    8.times do |i|
+      street_fighter_2_images << "https://mist-seeds.s3.amazonaws.com/street-fighter-ii/street-fighter-ii-#{i+1}.jpg"
+    end
+
+    8.times do |i|
+      pac_man_images << "https://mist-seeds.s3.amazonaws.com/pac-man/pac-man-#{i+1}.jpg"
+    end
+
+    8.times do |i|
+      tetris_images << "https://mist-seeds.s3.amazonaws.com/tetris/tetris-#{i+1}.jpg"
+    end
+
+    8.times do |i|
+      pokemon_red_and_blue_images << "https://mist-seeds.s3.amazonaws.com/pokemon-red-and-blue/pokemon-red-and-blue-#{i+1}.jpg"
+    end
+
+    8.times do |i|
+      chrono_trigger_images << "https://mist-seeds.s3.amazonaws.com/chrono-trigger/chrono-trigger-#{i+1}.jpg"
+    end
+
+    8.times do |i|
+      diablo_images << "https://mist-seeds.s3.amazonaws.com/diablo/diablo-#{i+1}.jpg"
+    end
+    
+    8.times do |i|
+      the_elder_scrolls_morrowind_images << "https://mist-seeds.s3.amazonaws.com/elder-scrolls-morowind/elder-scrolls-morowind-#{i+1}.jpg"
+    end
+
+    8.times do |i|
+      gran_turismo_images << "https://mist-seeds.s3.amazonaws.com/gran-turismo/gran-turismo-#{i+1}.jpg"
+    end
+    
+    8.times do |i|
+      fallout_images << "https://mist-seeds.s3.amazonaws.com/fallout/fallout-#{i+1}.jpg"
+    end
+
+    8.times do |i|
+      soulcalibur_images << "https://mist-seeds.s3.amazonaws.com/chrono-trigger/chrono-trigger-#{i+1}.jpg"
+    end
+    
+    8.times do |i|
+      the_secret_of_monkey_island << "https://mist-seeds.s3.amazonaws.com/the-secret-of-the-monkey-island/the-secret-of-the-monkey-island-#{i+1}.jpg"
+    end
+
+    8.times do |i|
+      goldeneye_007_images << "https://mist-seeds.s3.amazonaws.com/golden-eye-001/golden-eye-001-#{i+1}.jpg"
+    end
+
+    8.times do |i|
+      half_life_images << "https://mist-seeds.s3.amazonaws.com/half-life/half-life-#{i+1}.jpg"
     end
 
     puts "Creating games..."
@@ -203,11 +285,204 @@ ApplicationRecord.transaction do
         images: duck_hunt_images,
         language: ["Japanese", "English"],
         tag: ["Light Gun Shooter", "Arcade"]
-      }
+      },
+      {
+        title: "Sonic the Hedgehog",
+        description: "Sonic the Hedgehog is a fast-paced platformer developed and published by Sega. Players control Sonic, a blue anthropomorphic hedgehog with incredible speed, as he races through vibrant levels to stop the evil Dr. Robotnik from collecting the Chaos Emeralds and conquering the world.",
+        long_description: "Sonic the Hedgehog revolutionized platforming games with its speedy gameplay and vibrant aesthetics. Released in 1991, the game introduced players to the iconic Sonic, whose main ability is his incredible speed. Players dash through loop-de-loops, corkscrews, and ramps in levels filled with loops, jumps, and enemies. As Sonic, players thwart Dr. Robotnik's plans by freeing captured animals and collecting rings to maintain their health. With its memorable soundtrack and exhilarating gameplay, Sonic the Hedgehog became a cornerstone of gaming history, solidifying Sonic's place as Sega's mascot.",
+        developer: "Sega",
+        publisher: "Sega",
+        price: 49.99,
+        release_date: "June 23, 1991",
+        featured: true,
+        images: sonic_the_hedgehog_images,
+        language: ["English", "Japanese"],
+        tag: ["Platformer", "Action"]
+      },
+      {
+        title: "Street Fighter II",
+        description: "Street Fighter II is a legendary one-on-one fighting game developed and published by Capcom. Players choose from a diverse roster of fighters, each with unique moves, as they compete in a global martial arts tournament to determine the world's strongest fighter.",
+        long_description: "Street Fighter II, released in 1991, is credited with popularizing the one-on-one fighting game genre. With characters like Ryu, Ken, and Chun-Li, each with their own fighting styles and special moves, players engage in intense battles across a variety of global locations. The game's competitive scene blossomed, sparking the birth of esports and widespread arcade culture. Its sequel's influence continues in the franchise's legacy, shaping the foundation of modern fighting games.",
+        developer: "Capcom",
+        publisher: "Capcom",
+        price: 49.99,
+        release_date: "February 6, 1991",
+        featured: true,
+        images: street_fighter_2_images,
+        language: ["English", "Japanese"],
+        tag: ["Fighting", "Arcade"]
+      },
+      {
+        title: "Pac-Man",
+        description: "Pac-Man is a classic arcade game developed by Namco. Players control Pac-Man, a round character that navigates mazes, eating dots while avoiding ghosts. The goal is to clear each level by eating all the dots and power pellets to temporarily turn the ghosts blue and eat them.",
+        long_description: "Pac-Man, introduced in 1980, is a hallmark of arcade gaming. Players guide Pac-Man through mazes filled with dots while avoiding the colorful ghosts: Blinky, Pinky, Inky, and Clyde. Eating power pellets gives Pac-Man the ability to turn the tables and devour the ghosts. The game's simple yet addictive gameplay, along with its catchy music and iconic characters, made it a cultural phenomenon and one of the most recognizable games in history.",
+        developer: "Namco",
+        publisher: "Namco",
+        price: 19.99,
+        release_date: "May 22, 1980",
+        featured: true,
+        images: pac_man_images,
+        language: ["English", "Japanese"],
+        tag: ["Arcade", "Puzzle"]
+      },
+      {
+        title: "Tetris",
+        description: "Tetris is a puzzle game created by Alexey Pajitnov. Players arrange falling tetrominoes (shapes composed of four blocks) to create solid lines that disappear. The game speeds up as players progress, challenging their spatial and strategic skills.",
+        long_description: "Tetris, launched in 1984, is a timeless puzzle game that transcends generations. Players manipulate falling tetrominoes to create complete lines, clearing them from the screen. The game's increasing speed and the need for quick decisions create a captivating experience. Tetris's simple yet addictive gameplay, along with its globally recognized theme music, have made it a cultural phenomenon.",
+        developer: "Alexey Pajitnov",
+        publisher: "Alexey Pajitnov",
+        price: 29.99,
+        release_date: "June 6, 1984",
+        featured: true,
+        images: tetris_images,
+        language: ["English", "Japanese"],
+        tag: ["Puzzle"]
+      },
+      {
+        title: "Pokémon Red and Blue",
+        description: "Pokémon Red and Blue are role-playing games developed by Game Freak and published by Nintendo. Players become Pokémon Trainers, capturing and training creatures called Pokémon to become the Pokémon Champion by battling other Trainers and collecting Gym Badges.",
+        long_description: "Pokémon Red and Blue, released in 1996, marked the beginning of the Pokémon franchise. Players explore the fictional world of Kanto, capturing and training a variety of Pokémon creatures to become a Pokémon Master. With its trading and battling mechanics, as well as the challenge of completing the Pokédex, the games became a cultural sensation, spawning an enduring franchise across video games, TV shows, movies, and merchandise.",
+        developer: "Game Freak",
+        publisher: "Nintendo",
+        price: 49.99,
+        release_date: "September 28, 1998",
+        featured: true,
+        images: pokemon_red_and_blue_images,
+        language: ["English", "Japanese"],
+        tag: ["RPG", "Adventure"]
+      },
+      {
+        title: "Chrono Trigger",
+        description: "Chrono Trigger is a role-playing game developed and published by Square Enix. Players follow the adventures of Chrono and his friends as they travel through time to prevent an apocalyptic future caused by a mysterious entity known as Lavos.",
+        long_description: "Released in 1995, Chrono Trigger is a masterpiece of storytelling and gameplay. With a unique time-traveling mechanic, players explore various eras, from the prehistoric to the distant future, meeting memorable characters and shaping the outcome of history. Its captivating narrative, memorable characters, and multiple endings make Chrono Trigger a timeless RPG that continues to be celebrated for its innovative mechanics and emotional depth.",
+        developer: "Square Enix",
+        publisher: "Square Enix",
+        price: 49.99,
+        release_date: "August 22, 1995",
+        featured: true,
+        images: chrono_trigger_images,
+        language: ["English", "Japanese"],
+        tag: ["RPG", "Time Travel"]
+      },
+      {
+        title: "Diablo",
+        description: "Diablo is an action RPG developed and published by Blizzard Entertainment. Players descend into the dark dungeons beneath the town of Tristram, battling hordes of demons and creatures to confront Diablo, the Lord of Terror.",
+        long_description: "Diablo, released in 1996, introduced players to a dark and foreboding world plagued by demonic forces. Players choose from character classes and delve into procedurally generated dungeons filled with loot, monsters, and epic battles. Its dark atmosphere, loot-driven progression, and engaging multiplayer elements contributed to Diablo's enduring legacy, influencing the action RPG genre for years to come.",
+        developer: "Blizzard Entertainment",
+        publisher: "Blizzard Entertainment",
+        price: 49.99,
+        release_date: "December 31, 1996",
+        featured: true,
+        images: diablo_images,
+        language: ["English"],
+        tag: ["Action", "RPG", "Hack and Slash"]
+      },
+      {
+        title: "The Elder Scrolls: Morrowind",
+        description: "The Elder Scrolls III: Morrowind is an open-world RPG developed by Bethesda Game Studios. Set in the fantastical land of Vvardenfell, players embark on a journey filled with exploration, quests, and the unraveling of ancient prophecies.",
+        long_description: "Released in 2002, Morrowind offered players an expansive open world with unprecedented freedom. The land of Vvardenfell is rich with lore, diverse landscapes, and intriguing characters. As the Nerevarine, players uncover political intrigue, engage in combat, and utilize the game's deep customization systems. Morrowind's immersive world and intricate storytelling contributed to the lasting success of The Elder Scrolls series.",
+        developer: "Bethesda Game Studios",
+        publisher: "Bethesda Softworks",
+        price: 29.99,
+        release_date: "May 1, 2002",
+        featured: true,
+        images: the_elder_scrolls_morrowind_images,
+        language: ["English"],
+        tag: ["RPG", "Open World"]
+      },
+      {
+        title: "Gran Turismo",
+        description: "Gran Turismo is a racing simulation game developed by Polyphony Digital. Players experience the thrill of realistic car racing, from tuning and customizing vehicles to competing in various races and challenges.",
+        long_description: "Introduced in 1997, Gran Turismo set a new standard for racing simulations. Players are offered an extensive collection of meticulously modeled cars and a range of tracks to master. The game's attention to detail, including vehicle physics and handling, drew racing enthusiasts into a virtual world of speed and competition. With its realistic approach and focus on authenticity, Gran Turismo became a landmark in the racing game genre.",
+        developer: "Polyphony Digital",
+        publisher: "Sony Computer Entertainment",
+        price: 49.99,
+        release_date: "May 8, 1998",
+        featured: true,
+        images: gran_turismo_images,
+        language: ["English", "Japanese"],
+        tag: ["Racing", "Simulation"]
+      },
+      {
+        title: "Fallout",
+        description: "Fallout is a post-apocalyptic RPG developed by Interplay Entertainment. Set in an alternate future after a nuclear war, players navigate the wasteland, making choices that affect the fate of various factions and settlements.",
+        long_description: "Released in 1997, Fallout's retro-futuristic setting, dark humor, and branching narratives set it apart. As the Vault Dweller, players explore the ruined landscapes, engage in turn-based combat, and make morally complex decisions. Fallout's unique blend of RPG elements and its exploration of the consequences of humanity's actions in the face of catastrophe make it a standout title in the post-apocalyptic genre.",
+        developer: "Interplay Entertainment",
+        publisher: "Interplay Entertainment",
+        price: 49.99,
+        release_date: "September 30, 1997",
+        featured: true,
+        images: fallout_images,
+        language: ["English"],
+        tag: ["RPG", "Post-Apocalyptic"]
+      },
+      {
+        title: "Soulcalibur",
+        description: "Soulcalibur is a 3D weapon-based fighting game developed and published by Namco. Players engage in fast-paced battles using a diverse roster of characters, each wielding unique weapons, in their quest to obtain the legendary Soul Edge sword.",
+        long_description: "Originally released in arcades in 1995, Soulcalibur set a new standard for 3D fighting games. With its precise controls, stunning graphics, and weapon-focused combat system, players engage in dynamic battles where each character's weapon style influences their playstyle. The game's deep mechanics and intricate storylines have made it a cornerstone of the fighting game community.",
+        developer: "Namco",
+        publisher: "Namco",
+        price: 49.99,
+        release_date: "December 20, 1995",
+        featured: true,
+        images: soulcalibur_images,
+        language: ["English", "Japanese"],
+        tag: ["Fighting", "Arcade"]
+      },
+      {
+        title: "The Secret of Monkey Island",
+        description: "The Secret of Monkey Island is a comedic point-and-click adventure game developed and published by Lucasfilm Games. Players assume the role of Guybrush Threepwood, an aspiring pirate, as he embarks on a humorous and swashbuckling journey to rescue the governor and uncover the mysteries of Monkey Island.",
+        long_description: "Released in 1990, The Secret of Monkey Island introduced players to a world of humor, wit, and memorable characters. With its charming art style, witty dialogue, and challenging puzzles, players navigate through a colorful pirate-infested world. Guybrush's quest to prove himself as a pirate and win the heart of the governor has captivated gamers with its engaging story and comedic narrative.",
+        developer: "Lucasfilm Games",
+        publisher: "Lucasfilm Games",
+        price: 49.99,
+        release_date: "October 1990",
+        featured: true,
+        images: the_secret_of_monkey_island,
+        language: ["English"],
+        tag: ["Adventure", "Point-and-Click"]
+      },
+      {
+        title: "GoldenEye 007",
+        description: "GoldenEye 007 is a first-person shooter based on the James Bond film of the same name. Developed by Rare and published by Nintendo, players step into the shoes of secret agent James Bond as they navigate through various missions, engaging in stealth, action, and espionage.",
+        long_description: "Released in 1997, GoldenEye 007 redefined the first-person shooter genre on consoles. With its engaging single-player campaign and highly praised multiplayer mode, players engaged in intense battles set within iconic locations from the film. The game's influence on console FPS gaming and its legacy as a classic multiplayer experience have solidified its place in gaming history.",
+        developer: "Rare",
+        publisher: "Nintendo",
+        price: 49.99,
+        release_date: "August 25, 1997",
+        featured: true,
+        images: goldeneye_007_images,
+        language: ["English"],
+        tag: ["First-Person Shooter", "Action"]
+      },
+      {
+        title: "Half-Life",
+        description: "Half-Life is a groundbreaking first-person shooter developed by Valve. Players take on the role of Gordon Freeman, a scientist thrust into a chaotic situation at the Black Mesa Research Facility, as they uncover a mysterious interdimensional rift and battle hostile alien creatures.",
+        long_description: "Released in 1998, Half-Life transformed the FPS genre with its immersive storytelling, intelligent AI, and seamless narrative delivery. The game's emphasis on environmental storytelling and exploration, combined with its innovative physics and weapons, marked a new era in narrative-driven shooters. Its impact on game design, modding, and storytelling techniques remains influential to this day.",
+        developer: "Valve",
+        publisher: "Sierra Studios",
+        price: 49.99,
+        release_date: "November 19, 1998",
+        featured: true,
+        images: half_life_images,
+        language: ["English"],
+        tag: ["First-Person Shooter", "Sci-Fi"]
+      }#,
+      # {
+      #   title: "",
+      #   description: "",
+      #   long_description: "",
+      #   developer: "",
+      #   publisher: "",
+      #   price: 29.99,
+      #   release_date: "",
+      #   featured: true,
+      #   images: ,
+      #   language: [""],
+      #   tag: [""]
+      # }
     ]
     )
-
-    
 
     # Creates library items"
     puts "Creating library items..."

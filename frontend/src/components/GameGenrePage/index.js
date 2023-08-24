@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { fetchGames } from '../../store/game';
 import { fetchAllReviews } from '../../store/review';
 import StoreNavigation from '../StoreNavigation';
+import GenreCarousel from './GenreCarousel';
 import './GameGenrePage.css';
 
 const GameGenrePage = () => {
@@ -82,7 +83,6 @@ const GameGenrePage = () => {
             <div className="pip-scroller">
                 <div className="pip-scroller-background"></div>
                 <div className="pip-scroller-foreground" style={{left: `${100*(index)/games.length}%`, right: `${100*((games.length - index - 1)/games.length)}%`}}></div>
-                {/* <div className="pip-scroller-foreground" style={{left: `0%`, right: `80%`}}></div> */}
                 <div className="pip-scrollbar" style={{left: '0%', width:`${100*(index)/games.length}%`}} onClick={decrement}></div>
                 <div className="pip-scrollbar" style={{right: '0%', width:`${100*((games.length - index - 1)/games.length)}%`}} onClick={increment}></div>
             </div>

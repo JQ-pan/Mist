@@ -179,7 +179,7 @@
     color: #556772;
 }
 
-.tags-content {
+.tag-link {
     display: inline-block;
     line-height: 19px;
     padding: 0 7px;
@@ -195,12 +195,12 @@
     text-overflow: ellipsis;
 }
 
-.tags-content:hover {
+.tag-link:hover {
     color: white;
     background-color: #67c1f5;
 }
 
-.tags-content:hover > .tag-link {
+.tag-link:hover > .tag-link {
     color: white;
 }
 
