@@ -40,6 +40,7 @@ const GameIndex = () => {
         return acc;
     }, {})
 
+    console.log(reviewRatios);
     const reviewObject = {};
 
     for (const [key, array] of Object.entries(reviewRatios)) {
