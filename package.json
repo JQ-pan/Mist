@@ -22,5 +22,8 @@
   "homepage": "https://github.com/JQ-pan/Mist#readme",
   "engines": {
     "node": "16.18.1"
+  },
+  "dependencies": {
+    "sass": "^1.66.1"
   }
 }

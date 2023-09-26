@@ -4,7 +4,7 @@ import './LibraryItem.css';
 const LibraryItem = ({ libraryItem }) => {
     const history = useHistory();
     const handleClick = () => {
-        history.push('/' + libraryItem.id);
+        history.push('/game/' + libraryItem.id);
     }
 
     return (
