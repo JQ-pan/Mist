@@ -35,8 +35,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_05_041603) do
     t.string "images", default: [], null: false, array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "long_description", null: false
-    t.text "language", default: [], null: false, array: true
+    t.text "long_description"
+    t.string "language", default: [], null: false, array: true
     t.string "tag", default: [], null: false, array: true
     t.index ["featured"], name: "index_games_on_featured"
     t.index ["title"], name: "index_games_on_title"
