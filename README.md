@@ -21,6 +21,8 @@ This is a full stack web application that is a clone of the popular game library
 ## Shopping cart
 ![Shopping cart](/readme_assets/shopping_cart_screenshot.PNG "Shopping Cart")
 
+## Categories
+
 # To do / future features
 - Mobile / Smaller Screens
 - Rating other user's reviews
