@@ -33,11 +33,7 @@ const Featured = ({ games }) => {
     return (
         <div className="home-content carousel-background">
             <div className="carousel">
-
-                <div className="inner"
-                    onMouseEnter={handleMouse}
-                    onMouseLeave={handleMouse}
-                >
+                <div className="inner" onMouseEnter={handleMouse} onMouseLeave={handleMouse}>
                     <button className="arrow left" onClick={handlePre}>
                         <div></div>
                     </button>
@@ -54,7 +50,6 @@ const Featured = ({ games }) => {
                             </div>
                         )}
                 </div>
-
                 <div className="page">
                     {games.map((game, i) => (
                         <span
