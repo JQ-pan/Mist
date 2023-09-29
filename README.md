@@ -12,7 +12,7 @@ This is a full stack web application that is a clone of the popular game library
 ## Index Carousel
 ![Carousel gif](/readme_assets/Carousel-gif.gif "Carousel")
 
-Most of the carousels in this application are built from scratch utilizing React's state and event handlers to change the image currently being displayed. Games that are currently featured are the 
+Most of the carousels in this application are built from scratch utilizing React's state and event handlers to change the image currently being displayed. Games that are considered most popular are featured in this carousel.
 
 ![Featured Item Screenshot](/readme_assets/featured_item_ss.PNG "Carousel")
 
