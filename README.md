@@ -27,6 +27,7 @@ const Featured = ({ games }) => {
     const [counter, setCounter] = useState(1);
     const [pause, setPause] = useState(false);
 
+    // Handles the right arrow onClick
     const handleNext = () => {
         if (counter !== games.length) {
             setCounter(counter + 1);
@@ -35,6 +36,7 @@ const Featured = ({ games }) => {
         }
     };
 
+    // Handles the left arrow onClick
     const handlePre = () => {
         if (counter !== 1) {
             setCounter(counter - 1);
@@ -43,15 +45,69 @@ const Featured = ({ games }) => {
         }
     };
 
+    // Handles clicking on nubs corresponding with slide index
     const handlePage = page => {
         setCounter(page);
     };
 
-    const handleMouse = () => {
-        setPause(!pause);
+    return (
+        // Carousel is rendered with a list of nubs directly underneath
+        {games.map((game, i) =>
+            <div key={i} className={counter - 1 === i ? "show" : "not-show"}>
+                <FeaturedItem key={i} game={game} isActive={counter - 1 === i} />
+            </div>
+        )}
+
+        {games.map((game, i) => (
+            <span key={i} className={counter - 1 === i ? "dot displayed" : "dot"} onClick={() => handlePage(i + 1)} />
+        ))}
+
+    )
+```
+
+
+
+```js
+// components/GameIndexPage/FeaturedItem.js
+const FeaturedItem = ({ game, isActive }) => {
+    const [index, setIndex] = useState(0);
+    const imageUrls = game.images.slice(1) || [];
+
+    // Handle mouse events listens for the user's mouse hovering over one of the side images in order to render it on the main image container
+    const handleMouseEnter = index => {
+        if (isActive) {
+            setIndex(index);
+        }
     }
 
-    return (...)
+    // When the user's mouse leaves, render the default main image instead.
+    const handleMouseLeave = () => {
+        if (isActive) {
+            setIndex(0);
+        }
+    }
+
+    const mainImage = imageUrls.map((img, i) => {
+        return (
+            <img
+                key={i}
+                className={index === i ? "main-image show-slide" : "main-image not-show-slide"} 
+                src={imageUrls[i]} alt="" />
+        )
+    })
+
+    const sideImages = imageUrls.slice(1, 5).map((imageUrl, i) => {
+        return (
+            <div key={i}>
+                <img
+                    className="side-image" 
+                    src={imageUrl} alt="" 
+                    onMouseEnter={() => handleMouseEnter(i + 1)}
+                    onMouseLeave={() => handleMouseLeave()}
+                />
+            </div>
+        )
+    })
 ```
 
 ## Game Show Carousel
