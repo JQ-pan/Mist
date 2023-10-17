@@ -19,6 +19,41 @@ Each slide of the carousel displays images and text that are relevant to one gam
 
 ![Carousel gif](/readme_assets/Carousel-gif.gif "Carousel")
 
+Instead of using a carousel library online, I decided to build it from scratch to practice my skills in React using functional components and hooks. 
+
+```js
+// components/GameIndexPage/Featured.js
+const Featured = ({ games }) => {
+    const [counter, setCounter] = useState(1);
+    const [pause, setPause] = useState(false);
+
+    const handleNext = () => {
+        if (counter !== games.length) {
+            setCounter(counter + 1);
+        } else {
+            setCounter(1);
+        }
+    };
+
+    const handlePre = () => {
+        if (counter !== 1) {
+            setCounter(counter - 1);
+        } else {
+            setCounter(games.length);
+        }
+    };
+
+    const handlePage = page => {
+        setCounter(page);
+    };
+
+    const handleMouse = () => {
+        setPause(!pause);
+    }
+
+    return (...)
+```
+
 ## Game Show Carousel
 ![Game Carousel](/readme_assets/Game-show-page-carousel.gif "Game Carousel")
 
