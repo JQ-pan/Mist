@@ -42,21 +42,13 @@ const Featured = ({ games }) => {
                     </button>
                         {games.map((game, i) =>
                             <div key={i} className={counter - 1 === i ? "show" : "not-show"}>
-                                <FeaturedItem
-                                    key={i}
-                                    game={game}
-                                    isActive={counter - 1 === i}
-                                />
+                                <FeaturedItem key={i} game={game} isActive={counter - 1 === i} />
                             </div>
                         )}
                 </div>
                 <div className="page">
                     {games.map((game, i) => (
-                        <span
-                            key={i}
-                            className={counter - 1 === i ? "dot displayed" : "dot"}
-                            onClick={() => handlePage(i + 1)}
-                        />
+                        <span key={i} className={counter - 1 === i ? "dot displayed" : "dot"} onClick={() => handlePage(i + 1)} />
                     ))}
                 </div>
             </div>

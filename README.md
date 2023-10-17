@@ -1,5 +1,7 @@
 # Welcome to **Mist**
-This is a full stack web application that is a clone of the popular game library, Steam.
+_Welcome to Mist, your one-stop destination for all things gaming – from discovering and purchasing games to sharing reviews._
+
+Mist [(live link)](https://mist.onrender.com/) is a homage to the video game distribution system known as Steam, which was developed by Valve Corporation. Instead of modern video games, I have opted to use Nintendo Entertainment System games which were some of the most popular arcade games in the early 1980s.
 
 ## Technologies used
 - React with Redux: Handles data on frontend and renders components
@@ -9,12 +11,13 @@ This is a full stack web application that is a clone of the popular game library
 - CSS: Styling
 - onRender: Hosting service
 
-## Index Carousel
+## Featured Carousel
+
+The most prominent feature in this application is the Featured & Recommended carousel on the home page.
+
+Each slide of the carousel displays images and text that are relevant to one game including one main image and four game screenshots
+
 ![Carousel gif](/readme_assets/Carousel-gif.gif "Carousel")
-
-Most of the carousels in this application are built from scratch utilizing React's state and event handlers to change the image currently being displayed. Games that are considered most popular are featured in this carousel.
-
-![Featured Item Screenshot](/readme_assets/featured_item_ss.PNG "Carousel")
 
 ## Game Show Carousel
 ![Game Carousel](/readme_assets/Game-show-page-carousel.gif "Game Carousel")
