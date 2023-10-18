@@ -65,7 +65,7 @@ const Featured = ({ games }) => {
     )
 ```
 
-
+Each item that is featured in this carousel are rendered on load so the carousel can switch between slides seamlessly
 
 ```js
 // components/GameIndexPage/FeaturedItem.js
