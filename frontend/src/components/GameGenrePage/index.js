@@ -87,16 +87,21 @@ const GameGenrePage = () => {
                 <div className="pip-scrollbar" style={{right: '0%', width:`${100*((games.length - index - 1)/games.length)}%`}} onClick={increment}></div>
             </div>
         </div>
-        // <div className="container">
-        //     <div className="category-section-title">
-        //         Recommended For You
-        //     </div>
-        // </div>
-        // <div className="container">
-        //     <div className="category-section-title">
-        //         Popular Titles
-        //     </div>
-        // </div>
+        {
+            /**
+             // <div className="container">
+             //     <div className="category-section-title">
+             //         Recommended For You
+             //     </div>
+             // </div>
+             // <div className="container">
+             //     <div className="category-section-title">
+             //         Popular Titles
+             //     </div>
+             // </div>
+             * 
+             */
+        }
         <div className="footer-spacer" />
     </div>
 }
