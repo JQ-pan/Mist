@@ -17,7 +17,7 @@ function GameShowPage() {
     const dispatch = useDispatch();
     const history = useHistory();
     const { gameId } = useParams();
-    
+
     useEffect(() => {
         dispatch(fetchGame(gameId));
         dispatch(fetchUsers());
@@ -27,7 +27,7 @@ function GameShowPage() {
     }, [dispatch, gameId])
 
     const game = useSelector(state => state.games ? state.games[gameId] : {});
-    
+
     const languages = game ? game.language.map((language) => (
         <tr style={{}} className="">
             <td style={{ width: '94px', textAlign: 'left' }} className="ellipsis">
@@ -113,7 +113,7 @@ function GameShowPage() {
     </div>)
 
     if (game === undefined) {
-        return <>Still loading...</>
+        return <> Still loading... </>
     } else {
         return (
             <div className="show-page">
@@ -168,7 +168,7 @@ function GameShowPage() {
 
                             <div className="tags-row">
                                 <div className="tags-title">Popular user-defined tags for this product:</div>
-                                <div className="tags-content">{game.tag.map((tag, i) => 
+                                <div className="tags-content">{game.tag.map((tag, i) =>
                                     <Link className="tag-link" key={i} exact to={`/${tag.toLowerCase().replace(/ /g, '-')}`}>
                                         {tag}
                                     </Link>
@@ -239,7 +239,7 @@ function GameShowPage() {
                             <div className="reviews-area">
                                 <div className="game-show-reviews-listed">
                                     <div className="game-show-review-content">
-                                        <Reviews game={game} reviewsArray={reviewsArray}/>
+                                        <Reviews game={game} reviewsArray={reviewsArray} />
                                     </div>
                                 </div>
                             </div>
