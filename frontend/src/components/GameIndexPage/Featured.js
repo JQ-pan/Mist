@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import FeaturedItem from "./FeaturedItem";
 import './Featured.css';
 
@@ -29,6 +29,17 @@ const Featured = ({ games }) => {
     const handleMouse = () => {
         setPause(!pause);
     }
+
+    useEffect(() => {
+        let interval = setInterval(() => {
+            if (!pause) {
+                handleNext();
+            } else {
+                clearInterval(interval);
+            }
+        }, 6000);
+        return () => clearInterval(interval);
+    })
 
     return (
         <div className="home-content carousel-background">

@@ -28,9 +28,9 @@ function GameShowCarousel({ game }) {
         setCounter(page);
     };
 
-    // const handleMouse = () => {
-    //     setPause(!pause);
-    // }
+    const handleMouse = () => {
+        setPause(!pause);
+    }
 
     useEffect(() => {
         let interval = setInterval(() => {
@@ -45,7 +45,7 @@ function GameShowCarousel({ game }) {
 
     return (
         <div className="game-show-carousel-wrapper">
-            <div className="game-show-carousel-slides-wrapper">
+            <div className="game-show-carousel-slides-wrapper" onMouseEnter={handleMouse} onMouseLeave={handleMouse}>
                 {images.map((url, i) => <img
                     src={url}
                     className={counter - 1 === i ? "show-slide-selected game-show-carousel-image" : "game-show-carousel-image"}
